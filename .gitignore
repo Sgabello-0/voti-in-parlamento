@@ -1,0 +1,17 @@
+node_modules/
+
+# Cache delle risposte grezze delle fonti (si rigenera)
+/data/raw/
+
+# Firebase: file di debug e cache locale del deploy
+firebase-debug.log
+firebase-debug.*.log
+ui-debug.log
+database-debug.log
+firestore-debug.log
+pubsub-debug.log
+.firebase/
+
+# File di sistema
+.DS_Store
+Thumbs.db

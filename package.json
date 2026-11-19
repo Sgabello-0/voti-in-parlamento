@@ -1,0 +1,16 @@
+{
+  "name": "voti-in-parlamento",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Voti nominali di Camera e Senato con il gruppo di ogni parlamentare alla data del voto, dagli open data ufficiali.",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "scarica": "node scripts/scarica-votazione.mjs",
+    "build": "node scripts/build.mjs",
+    "anteprima": "node scripts/anteprima.mjs",
+    "test": "node scripts/test-fase1.mjs"
+  }
+}

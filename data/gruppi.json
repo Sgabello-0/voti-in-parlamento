@@ -1,0 +1,145 @@
+{
+  "_istruzioni": "Compila \"ordine\" (numero: posizione da sinistra a destra nell'emiciclo) e \"colore\" (es. \"#1F77B4\") per ogni gruppo. Facoltativo: \"etichetta\", una sigla breve da mostrare al posto di quella ufficiale (utile per le sigle lunghe). Puoi anche correggere \"nome\". Lo script aggiunge da solo i gruppi nuovi e non modifica mai i valori già scritti. Le sigle sono quelle delle fonti ufficiali e possono cambiare nel tempo (es. un gruppo che cambia nome).",
+  "camera": [
+    {
+      "sigla": "PD-IDP",
+      "nome": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+      "ordine": null,
+      "colore": null
+    },
+    {
+      "sigla": "NM-M-C",
+      "nome": "NOI MODERATI (NOI CON L'ITALIA, CORAGGIO ITALIA, UDC E ITALIA AL CENTRO)-MAIE-CENTRO POPOLARE",
+      "ordine": null,
+      "colore": null
+    },
+    {
+      "sigla": "APERRE",
+      "nome": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+      "ordine": null,
+      "colore": null
+    },
+    {
+      "sigla": "M5S",
+      "nome": "MOVIMENTO 5 STELLE",
+      "ordine": null,
+      "colore": null
+    },
+    {
+      "sigla": "FDI",
+      "nome": "FRATELLI D'ITALIA",
+      "ordine": null,
+      "colore": null
+    },
+    {
+      "sigla": "FI-PPE",
+      "nome": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+      "ordine": null,
+      "colore": null
+    },
+    {
+      "sigla": "LEGA",
+      "nome": "LEGA - SALVINI PREMIER",
+      "ordine": null,
+      "colore": null
+    },
+    {
+      "sigla": "M-SCN",
+      "nome": "MISTO-SUD CHIAMA NORD",
+      "ordine": null,
+      "colore": null
+    },
+    {
+      "sigla": "IV-CR",
+      "nome": "ITALIA VIVA-CASA RIFORMISTA",
+      "ordine": null,
+      "colore": null
+    },
+    {
+      "sigla": "M-FNVF",
+      "nome": "MISTO-FUTURO NAZIONALE VANNACCI - FREE",
+      "ordine": null,
+      "colore": null
+    },
+    {
+      "sigla": "M-+E-S",
+      "nome": "MISTO-+EUROPA - STATI UNITI D'EUROPA",
+      "ordine": null,
+      "colore": null
+    },
+    {
+      "sigla": "M-MIN",
+      "nome": "MISTO-MINORANZE LINGUISTICHE",
+      "ordine": null,
+      "colore": null
+    },
+    {
+      "sigla": "AVS",
+      "nome": "ALLEANZA VERDI E SINISTRA",
+      "ordine": null,
+      "colore": null
+    },
+    {
+      "sigla": "M-ALT",
+      "nome": "MISTO",
+      "ordine": null,
+      "colore": null
+    }
+  ],
+  "senato": [
+    {
+      "sigla": "FI-BP-PPE",
+      "nome": "Forza Italia - Berlusconi Presidente - PPE",
+      "ordine": null,
+      "colore": null
+    },
+    {
+      "sigla": "FdI",
+      "nome": "Fratelli d'Italia",
+      "ordine": null,
+      "colore": null
+    },
+    {
+      "sigla": "Cd'I-UDC-NM (NcI, CI, IaC)-MAIE-CP",
+      "nome": "Civici d'Italia-UDC-Noi Moderati (Noi con l'Italia, Coraggio Italia, Italia al Centro)-MAIE-Centro Popolare",
+      "ordine": null,
+      "colore": null
+    },
+    {
+      "sigla": "LSP-PSd'Az",
+      "nome": "Lega Salvini Premier - Partito Sardo d'Azione",
+      "ordine": null,
+      "colore": null
+    },
+    {
+      "sigla": "Aut (SVP-PATT, Cb)",
+      "nome": "Per le Autonomie (SVP-PATT, Campobase)",
+      "ordine": null,
+      "colore": null
+    },
+    {
+      "sigla": "IV-C-RE",
+      "nome": "Italia Viva - Il Centro - Renew Europe",
+      "ordine": null,
+      "colore": null
+    },
+    {
+      "sigla": "PD-IDP",
+      "nome": "Partito Democratico - Italia Democratica e Progressista",
+      "ordine": null,
+      "colore": null
+    },
+    {
+      "sigla": "Misto",
+      "nome": "Misto",
+      "ordine": null,
+      "colore": null
+    },
+    {
+      "sigla": "M5S",
+      "nome": "MoVimento 5 Stelle",
+      "ordine": null,
+      "colore": null
+    }
+  ]
+}
