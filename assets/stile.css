@@ -23,6 +23,10 @@
   --rosso-testo: #F87171;
 
   --senza-colore: #94A3B8; /* gruppi senza "colore" in data/gruppi.json */
+
+  /* Riquadro arrotondato dietro l'emiciclo: un po' più scuro dello sfondo, così i pallini
+     hanno ancora più contrasto (grigio 3.4:1, rosso 5.0:1, bianco 17:1). */
+  --pannello: #06122A;
   --durata: .3s;
   color-scheme: dark;
 }
@@ -76,6 +80,25 @@ html:not(.js) .solo-js { display: none; }
 /* --- Intestazione della votazione ------------------------------------- */
 
 .intestazione { padding: 28px 0 8px; }
+
+/* Pagina di una votazione: testo a sinistra, grafico a ciambella a destra */
+.intestazione-votazione { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: center; }
+.ciambella { margin: 0; width: 200px; }
+.ciambella-svg { display: block; width: 100%; height: auto; }
+.c-fondo { stroke: var(--card); }
+.c-favorevoli { stroke: var(--verde); }
+.c-contrari { stroke: var(--rosso); }
+.c-astenuti { stroke: var(--bianco); }
+.ciambella-numero { font-size: 44px; font-weight: 800; fill: var(--testo); font-variant-numeric: tabular-nums; }
+.ciambella-etichetta { font-size: 16px; fill: var(--testo-2); }
+.ciambella-sopra { font-size: 15px; font-weight: 600; fill: var(--testo-2); }
+/* Spicchio sotto il mouse (classi messe da emiciclo.js): si ingrossa, gli altri si attenuano */
+.arco { cursor: pointer; transition: stroke-width .2s ease-out, opacity .2s ease-out; }
+.ciambella-svg.attiva .arco { opacity: .35; }
+.ciambella-svg.attiva .arco.attivo { opacity: 1; stroke-width: 34px; }
+.ciambella-svg.attiva .ciambella-numero.c-favorevoli { fill: var(--verde); }
+.ciambella-svg.attiva .ciambella-numero.c-contrari { fill: var(--rosso-testo); }
+.ciambella-svg.attiva .ciambella-numero.c-astenuti { fill: var(--bianco); }
 .sopratitolo { margin: 0 0 6px; color: var(--testo-2); font-size: .95rem; }
 h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); margin: 0 0 10px; }
 .descrizione { margin: 0 0 14px; color: var(--testo-2); max-width: 75ch; }
@@ -100,11 +123,14 @@ h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); margin: 0 0 10px; }
 .tot-contrari dd { color: var(--rosso-testo); }
 .tot-astenuti dd { color: var(--bianco); }
 
-/* --- Barra sopra l'emiciclo: titolo + selettore Voto | Partito ---------- */
+/* --- Sezione dell'emiciclo: occupa tutta la larghezza dello schermo ------ */
 
-.sezione-emiciclo { margin-top: 28px; }
-.barra-emiciclo { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
-.barra-emiciclo h2 { margin: 0; }
+.sezione-emiciclo { margin-top: 28px; padding: 0 16px; }
+/* titolo e legenda dei voti restano allineati alla colonna centrale della pagina */
+.sezione-emiciclo > h2,
+.sezione-emiciclo > .legenda-voti { max-width: 1088px; margin-left: auto; margin-right: auto; }
+
+.sezione-emiciclo > h2 { margin-bottom: 12px; }
 
 .selettore { display: inline-flex; align-items: center; gap: 2px; padding: 4px; background: var(--card); border-radius: 999px; }
 .selettore-etichetta { padding: 0 8px 0 10px; color: var(--testo-2); font-size: .9rem; }
@@ -122,49 +148,119 @@ h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); margin: 0 0 10px; }
 
 /* --- Emiciclo ------------------------------------------------------------ */
 
-/* Su schermi larghi: disegno a sinistra, legenda dei gruppi in alto a destra. */
-.emiciclo { margin: 12px 0 0; display: grid; grid-template-columns: minmax(0, 1fr) 210px; gap: 16px; align-items: start; }
-.emiciclo-disegno { position: relative; }
-.emiciclo-svg { display: block; width: 100%; height: auto; touch-action: manipulation; user-select: none; -webkit-user-select: none; }
+/* Riquadro scuro arrotondato, largo quanto lo schermo. Dentro:
+   comandi in alto a sinistra, legenda dei gruppi in alto a destra, emiciclo al centro. */
+.emiciclo {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 290px;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "comandi legenda" "disegno legenda";
+  gap: 8px 24px;
+  margin: 0;
+  padding: 16px 20px 12px;
+  background: var(--pannello);
+  border: 1px solid var(--bordo);
+  border-radius: 18px;
+}
+.emiciclo-comandi { grid-area: comandi; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.emiciclo-disegno { grid-area: disegno; position: relative; }
+.legenda-partiti { grid-area: legenda; }
+/* l'emiciclo è il più grande possibile, ma comandi e disegno stanno sempre nell'altezza della finestra */
+.emiciclo-svg { display: block; width: 100%; height: auto; max-height: calc(100vh - 130px); max-height: calc(100dvh - 130px); touch-action: manipulation; user-select: none; -webkit-user-select: none; }
+/* su schermi larghi la legenda sta a destra: se è più alta della finestra, scorre */
+.legenda-partiti { max-height: calc(100vh - 60px); max-height: calc(100dvh - 60px); overflow-y: auto; overscroll-behavior: contain; }
 
-/* Pallini nitidi. Il riempimento dipende dalla vista (Voto o Partito). */
+/* Pulsante "Schermo intero" (lo mostra emiciclo.js se il browser lo supporta) */
+.schermo-intero {
+  min-height: 36px;
+  padding: 6px 14px;
+  border: 1px solid var(--bordo);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--testo);
+  font: inherit;
+  cursor: pointer;
+}
+.schermo-intero:hover { background: var(--card); }
+.schermo-intero[hidden] { display: none; }
+/* A schermo intero il riquadro riempie tutto lo schermo */
+.emiciclo:fullscreen { border: 0; border-radius: 0; padding: 20px 28px; overflow: auto; }
+.emiciclo:fullscreen .emiciclo-svg { max-height: calc(100vh - 90px); }
+
+/* Pallini. Il riempimento dipende dalla vista (Voto o Partito). */
 .pallino {
   fill: var(--grigio);
+  stroke: transparent;
+  stroke-width: 0;
   transform-box: fill-box;
   transform-origin: center;
-  transition: fill var(--durata), fill-opacity var(--durata), stroke var(--durata), transform var(--durata), opacity var(--durata);
+  transition: fill var(--durata), fill-opacity var(--durata), stroke var(--durata), stroke-width var(--durata), transform .2s ease-out, opacity var(--durata);
   /* Animazione d'ingresso: grigi -> colorati, da sinistra a destra (--k va da 0 a 1). */
   animation: accendi .35s ease-out backwards;
   animation-delay: calc(var(--k) * .75s);
 }
 @keyframes accendi { from { fill: #5B6B82; } }
+/* finita l'animazione d'ingresso, emiciclo.js aggiunge "pronto": l'animazione non deve più ripartire */
+.emiciclo-svg.pronto .pallino,
+.emiciclo-svg.pronto .bagliore circle { animation: none; }
 
 /* Vista Voto (predefinita) */
 .pallino.v-favorevole { fill: var(--verde); }
 .pallino.v-contrario { fill: var(--rosso); }
 .pallino.v-astenuto { fill: var(--bianco); }
 
-/* Vista Partito: colore del gruppo, pallini un po' più piccoli (più spazio per gli aloni). */
-.vista-partito .pallino { fill: var(--cg, var(--senza-colore)); transform: scale(.8); }
-.vista-partito .pallino.v-assente,
-.vista-partito .pallino.v-missione,
-.vista-partito .pallino.v-non_votante { fill-opacity: .4; stroke: var(--grigio); stroke-width: 2; }
+/* Vista Partito: tutti i pallini del gruppo dello stesso colore (anche chi non ha votato);
+   chi ha votato ha un anello sottile e un piccolo bagliore del colore del voto.
+   Pallini un po' più piccoli, così c'è più spazio tra uno e l'altro. */
+.vista-partito .pallino { fill: var(--cg, var(--senza-colore)); stroke-width: 3; transform: scale(.8); }
+.vista-partito .pallino.v-favorevole { stroke: var(--verde); }
+.vista-partito .pallino.v-contrario { stroke: var(--rosso); }
+.vista-partito .pallino.v-astenuto { stroke: var(--bianco); }
 
-/* Aloni: tre gruppi (sì / no / astenuti), una sola sfocatura per gruppo.
+/* Bagliori: tre gruppi (sì / no / astenuti) con una sola sfocatura ciascuno, sotto ai pallini.
    Visibili solo nella vista Partito. */
-.aloni { opacity: 0; visibility: hidden; transition: opacity var(--durata), visibility 0s var(--durata); }
-.vista-partito .aloni { opacity: 1; visibility: visible; transition: opacity var(--durata); }
-.alone { filter: url(#sfocatura); }
-.alone-favorevole { fill: var(--verde); }
-.alone-contrario { fill: var(--rosso); }
-.alone-astenuto { fill: var(--bianco); }
-.alone circle { opacity: .75; animation: compari .35s ease-out backwards; animation-delay: calc(var(--k) * .75s); }
+.bagliori { opacity: 0; visibility: hidden; transition: opacity var(--durata), visibility 0s var(--durata); }
+.vista-partito .bagliori { opacity: 1; visibility: visible; transition: opacity var(--durata); }
+.bagliore { filter: url(#bagliore); }
+.bagliore-favorevole { fill: var(--verde); }
+.bagliore-contrario { fill: var(--rosso); }
+.bagliore-astenuto { fill: var(--bianco); }
+.bagliore circle {
+  opacity: .6;
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform .2s ease-out, opacity var(--durata);
+  animation: compari .35s ease-out backwards;
+  animation-delay: calc(var(--k) * .75s);
+}
+.bagliore circle.in-evidenza { transform: translate(var(--dx), var(--dy)) scale(1.2); } /* segue lo spicchio staccato */
 @keyframes compari { from { opacity: 0; } }
+
+/* Di base gli spicchi sono attaccati. Puntatore su un pallino: il suo spicchio si stacca
+   dagli altri (si sposta verso l'esterno) e si ingrandisce, insieme alla sua sigla.
+   Le classi le mette emiciclo.js. */
+.spicchio, .etichetta { transition: transform .22s ease-out; }
+.spicchio.in-evidenza, .etichetta.in-evidenza { transform: translate(var(--dx), var(--dy)); }
+.spicchio.in-evidenza .pallino { transform: scale(1.2); }
+.vista-partito .spicchio.in-evidenza .pallino { transform: scale(.96); }
+/* ...mentre i pallini di tutti gli altri gruppi diventano più piccoli e più trasparenti */
+.emiciclo-svg.con-staccato .spicchio:not(.in-evidenza) .pallino { transform: scale(.75); opacity: .4; }
+.vista-partito .emiciclo-svg.con-staccato .spicchio:not(.in-evidenza) .pallino { transform: scale(.6); }
+.emiciclo-svg.con-staccato .bagliore circle:not(.in-evidenza) { opacity: .15; }
+.emiciclo-svg.con-staccato .etichetta:not(.in-evidenza) { opacity: .45; }
+.etichetta { transition: transform .22s ease-out, opacity .22s ease-out; }
+/* se è attivo anche il filtro per gruppo, i gruppi filtrati restano al 20% */
+.filtrata .emiciclo-svg.con-staccato .spicchio .pallino:not(.attivo) { opacity: .2; }
+/* il pallino puntato, ancora più grande */
+.emiciclo-svg .spicchio.in-evidenza .pallino.puntato { transform: scale(1.55); }
+html:not(.vista-partito) .emiciclo-svg .pallino.puntato { stroke: var(--testo); stroke-width: 2; }
 
 /* Sigle dei gruppi fuori dall'arco (cliccabili: filtro per gruppo) */
 .sigla { font-size: 18px; font-weight: 600; fill: var(--testo-2); cursor: pointer; }
 .sigla:hover { fill: var(--testo); }
 .guida { stroke: var(--testo-2); stroke-width: 1; }
+/* Scritta sotto il banco del Governo */
+.didascalia-banco { font-size: 16px; font-weight: 600; letter-spacing: .05em; fill: var(--testo-2); text-transform: uppercase; }
 
 /* Risultato al centro */
 .risultato { font-weight: 800; font-variant-numeric: tabular-nums; }
@@ -174,14 +270,12 @@ h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); margin: 0 0 10px; }
 .t-trattino { fill: var(--testo-2); font-weight: 400; }
 .risultato-didascalia { font-size: 16px; fill: var(--testo-2); }
 
-/* Pallino evidenziato al passaggio del mouse / tocco (creato da emiciclo.js) */
-.evidenza { pointer-events: none; stroke: var(--testo); stroke-width: 3; }
-
 /* Tooltip */
 .tooltip {
   position: absolute;
   z-index: 2;
-  max-width: 260px;
+  width: max-content;                       /* largo quanto serve al contenuto... */
+  max-width: min(340px, calc(100% - 8px));  /* ...ma senza esagerare né uscire dal riquadro */
   padding: 8px 12px;
   background: var(--card);
   border: 1px solid var(--bordo);
@@ -192,8 +286,10 @@ h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); margin: 0 0 10px; }
   pointer-events: none;
 }
 .tooltip[hidden] { display: none; }
-.tooltip strong { display: block; }
-.tooltip .tt-gruppo { color: var(--testo-2); }
+.tooltip strong { display: block; font-size: 1rem; }
+.tooltip .tt-incarico { display: block; margin-top: 1px; color: var(--testo); font-size: .85rem; font-style: italic; }
+.tooltip .tt-gruppo { display: flex; align-items: baseline; gap: 6px; margin: 2px 0 4px; color: var(--testo-2); font-size: .85rem; }
+.tooltip .tt-gruppo .chip { position: relative; top: 1px; }
 
 /* Filtro per gruppo: gli altri gruppi al 20% */
 [data-g] { transition: opacity var(--durata); }
@@ -206,11 +302,12 @@ h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); margin: 0 0 10px; }
 .legenda-partiti ul { list-style: none; margin: 0; padding: 0; }
 .legenda-partiti button {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
   width: 100%;
-  min-height: 28px;
-  padding: 2px 6px;
+  min-height: 26px;
+  padding: 3px 6px;
+  line-height: 1.25;
   border: 0;
   border-radius: 6px;
   background: transparent;
@@ -222,18 +319,23 @@ h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); margin: 0 0 10px; }
 .legenda-partiti button:hover { background: var(--card); }
 .legenda-partiti button[aria-pressed="true"] { background: var(--card); font-weight: 600; }
 
-.chip { flex: none; display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: var(--cg, var(--senza-colore)); }
+.legenda-partiti .chip { margin-top: 3px; }
+.legenda-sigla { margin-left: 6px; color: var(--testo-2); font-size: .78rem; white-space: nowrap; }
 
-/* Legenda degli aloni: solo nella vista Partito */
-.legenda-aloni { display: none; margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--bordo); }
-.vista-partito .legenda-aloni { display: block; }
-.legenda-aloni ul { display: grid; gap: 4px; }
-.legenda-aloni li { display: flex; align-items: center; gap: 8px; padding: 0 6px; color: var(--testo); }
-.alone-chip { flex: none; width: 12px; height: 12px; border-radius: 50%; background: var(--senza-colore); }
-.a-favorevole { box-shadow: 0 0 6px 3px var(--verde); }
-.a-contrario { box-shadow: 0 0 6px 3px var(--rosso); }
-.a-astenuto { box-shadow: 0 0 6px 3px var(--bianco); }
-.a-nessuno { opacity: .4; outline: 1px solid var(--grigio); }
+/* Rettangolo colorato del gruppo (i pallini rotondi, invece, sono i voti) */
+.chip { flex: none; display: inline-block; width: 18px; height: 12px; border-radius: 3px; background: var(--cg, var(--senza-colore)); }
+
+/* Legenda dei bordi (colore del voto): solo nella vista Partito */
+.legenda-bordi { display: none; margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--bordo); }
+.vista-partito .legenda-bordi { display: block; }
+.legenda-bordi ul { display: grid; gap: 4px; }
+.legenda-bordi li { display: flex; align-items: center; gap: 8px; padding: 0 6px; color: var(--testo); }
+/* esempio di pallino: interno grigio neutro, bordo del colore del voto */
+.bordo-chip { flex: none; width: 14px; height: 14px; border-radius: 50%; background: var(--senza-colore); border: 3px solid; }
+.b-favorevole { border-color: var(--verde); box-shadow: 0 0 5px var(--verde); }
+.b-contrario { border-color: var(--rosso); box-shadow: 0 0 5px var(--rosso); }
+.b-astenuto { border-color: var(--bianco); box-shadow: 0 0 5px var(--bianco); }
+.b-nessuno { border: 0; }
 
 /* --- Legenda dei voti (sotto l'emiciclo) -------------------------------- */
 
@@ -278,9 +380,14 @@ tfoot th, tfoot td { border-bottom: 0; font-weight: 700; }
 .sigla-tabella { display: block; font-weight: 700; }
 .nome-gruppo { display: block; color: var(--testo-2); font-size: .82rem; min-width: 14ch; }
 
-.elenco td:nth-child(2), .elenco th:nth-child(2),
-.elenco td:nth-child(3), .elenco th:nth-child(3) { text-align: left; }
-.elenco abbr { text-decoration: none; }
+.elenco td:nth-child(2), .elenco th:nth-child(2) { text-align: left; }
+.elenco .incarico { display: block; color: var(--testo-2); font-size: .82rem; } /* incarico di Governo sotto il nome */
+/* Intestazione di ogni gruppo nell'elenco completo */
+.riga-gruppo th { padding-top: 22px; border-bottom: 2px solid var(--bordo); font-size: 1.02rem; font-weight: 700; }
+.riga-gruppo th > * { vertical-align: middle; }
+.riga-gruppo .chip { margin-right: 10px; }
+.riga-gruppo-dettagli { margin-left: 10px; color: var(--testo-2); font-size: .85rem; font-weight: 400; white-space: nowrap; }
+.elenco tbody:first-of-type .riga-gruppo th { padding-top: 10px; }
 .voto { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; color: var(--testo-2); }
 .voto.v-favorevole { color: var(--verde); }
 .voto.v-contrario { color: var(--rosso-testo); }
@@ -288,14 +395,35 @@ tfoot th, tfoot td { border-bottom: 0; font-weight: 700; }
 
 /* --- Pagina iniziale ---------------------------------------------------- */
 
+/* Barra di ricerca (la gestisce assets/ricerca.js) */
+.ricerca { display: block; margin: 8px 0 8px; }
+.ricerca input {
+  width: 100%;
+  max-width: 600px;
+  padding: 12px 16px;
+  border: 1px solid var(--bordo);
+  border-radius: 12px;
+  background: var(--card);
+  color: var(--testo);
+  font: inherit;
+  font-size: 1.05rem;
+}
+.ricerca input::placeholder { color: var(--testo-2); }
+.ricerca-esito { min-height: 1.5em; margin: 8px 0 0; color: var(--testo-2); }
+
+/* Un blocco per ramo (Camera, Senato) */
+.ramo { margin-top: 24px; }
+.ramo h2 { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
+.conteggio { color: var(--testo-2); font-size: .9rem; font-weight: 400; }
+
 .schede { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin: 0; padding: 0; list-style: none; }
 .scheda { position: relative; padding: 18px; background: var(--card); border-radius: 14px; }
-.scheda h3 { margin: 0 0 8px; font-size: 1.15rem; }
-.scheda h3 a { color: var(--testo); text-decoration: none; }
-.scheda h3 a::after { content: ""; position: absolute; inset: 0; border-radius: 14px; } /* tutta la scheda è cliccabile */
-.scheda:hover h3 a { text-decoration: underline; }
+.scheda h4 { margin: 0 0 8px; font-size: 1.15rem; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; } /* titoli lunghi (decreti): massimo 4 righe, il titolo intero è nella pagina */
+.scheda h4 a { color: var(--testo); text-decoration: none; }
+.scheda h4 a::after { content: ""; position: absolute; inset: 0; border-radius: 14px; } /* tutta la scheda è cliccabile */
+.scheda:hover h4 a { text-decoration: underline; }
 .scheda:focus-within { outline: 3px solid #FACC15; outline-offset: 2px; }
-.scheda h3 a:focus-visible { outline: none; }
+.scheda h4 a:focus-visible { outline: none; }
 .scheda-descrizione { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; font-size: .92rem; }
 .scheda-risultato { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin: 0; }
 .numero { font-weight: 600; font-variant-numeric: tabular-nums; }
@@ -303,22 +431,138 @@ tfoot th, tfoot td { border-bottom: 0; font-weight: 700; }
 .n-contrari { color: var(--rosso-testo); }
 .n-astenuti { color: var(--bianco); }
 
+/* --- Home: sezioni per tipo --------------------------------------------- */
+
+.tipo { margin-top: 22px; }
+.tipo-testa { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; }
+.tipo-testa h3 { margin: 0; font-size: 1.1rem; }
+.tutte { font-weight: 600; white-space: nowrap; }
+.tipo-spiegazione { margin: 4px 0 10px; color: var(--testo-2); font-size: .9rem; max-width: 80ch; }
+
+/* Risultati della ricerca nella home */
+.ricerca-risultati h2 { margin: 18px 0 8px; font-size: 1.1rem; }
+.ricerca-risultati ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 2px; }
+.ricerca-risultati li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; padding: 8px 12px; background: var(--card); border-radius: 10px; }
+.risultato-dettagli { color: var(--testo-2); font-size: .85rem; }
+
+/* Liste (tutte le votazioni di un tipo, voti di un parlamentare) */
+.lista-votazioni td:nth-child(2), .lista-votazioni th:nth-child(2) { text-align: left; }
+.lista-votazioni td:first-child { white-space: nowrap; color: var(--testo-2); }
+.voti-tipo .lista-votazioni td:last-child { white-space: nowrap; } /* sigla del gruppo */
+.lista-votazioni td.n-favorevoli, .lista-votazioni td.n-contrari, .lista-votazioni td.n-astenuti { font-weight: 600; }
+.esito-testo.esito-approvato { color: var(--verde); }
+.esito-testo.esito-respinto { color: var(--rosso-testo); }
+h1 .conteggio { font-size: 1rem; vertical-align: middle; }
+
+/* Pagina del parlamentare */
+.intestazione-parlamentare { display: flex; align-items: center; gap: 20px; }
+.avatar {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: var(--cg, var(--card));
+  color: #0B1D3A;
+  font-size: 2rem;
+  font-weight: 800;
+  border: 3px solid var(--bordo);
+}
+.gruppo-attuale { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin: 0 0 6px; }
+.nota-data { color: var(--testo-2); font-size: .82rem; }
+.incarico-governo { margin: 0 0 6px; font-style: italic; }
+.link-ufficiale { font-weight: 600; }
+.voti-parlamentare .descrizione { margin-bottom: 4px; }
+.voti-tipo { margin-top: 14px; }
+.voti-tipo summary { cursor: pointer; list-style: revert; }
+.voti-tipo summary h2 { display: inline; font-size: 1.1rem; margin: 0; }
+.voti-tipo[open] summary { margin-bottom: 8px; }
+
+/* Nomi cliccabili nell'elenco di una votazione */
+.elenco td a { color: var(--testo); text-decoration: none; }
+.elenco td a:hover { text-decoration: underline; color: var(--link); }
+
+/* "Trova un deputato" nel riquadro dell'emiciclo */
+.trova { position: relative; flex: 1 1 220px; max-width: 320px; }
+.trova input {
+  width: 100%;
+  min-height: 40px;
+  padding: 8px 14px;
+  border: 1px solid var(--bordo);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--testo);
+  font: inherit;
+}
+.trova input::placeholder { color: var(--testo-2); }
+.trova-risultati {
+  position: absolute;
+  z-index: 3;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 4px;
+  list-style: none;
+  background: var(--card);
+  border: 1px solid var(--bordo);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / .45);
+}
+.trova-risultati[hidden] { display: none; }
+.trova-risultati button {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  padding: 6px 10px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--testo);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.trova-risultati button:hover, .trova-risultati button:focus-visible { background: var(--sfondo); }
+.trova-risultati button span { color: var(--testo-2); font-size: .85rem; }
+.trova-nessuno { padding: 6px 10px; color: var(--testo-2); }
+
+/* Riga in fondo al tooltip: "Clic per aprire la scheda" */
+.tooltip .tt-azione { display: block; margin-top: 4px; color: var(--testo-2); font-size: .78rem; }
+.pallino { cursor: pointer; }
+
 /* --- Schermi stretti (telefono e tablet in verticale) -------------------- */
 
+/* Schermi medi e piccoli: la legenda va sotto l'emiciclo (su più colonne),
+   così l'emiciclo usa tutta la larghezza. */
+@media (max-width: 1100px) {
+  .emiciclo { grid-template-columns: 1fr; grid-template-rows: auto; grid-template-areas: "comandi" "disegno" "legenda"; }
+  .legenda-partiti { max-height: none; overflow: visible; }
+  .legenda-partiti ul { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 2px 12px; }
+  .legenda-bordi ul { display: flex; flex-wrap: wrap; gap: 4px 14px; }
+}
+
 @media (max-width: 860px) {
-  .emiciclo { grid-template-columns: 1fr; }
-  .legenda-partiti ul { display: flex; flex-wrap: wrap; gap: 2px 4px; }
-  .legenda-partiti button { width: auto; }
-  .legenda-aloni ul { display: flex; flex-wrap: wrap; gap: 4px 14px; }
+  .intestazione-votazione { grid-template-columns: 1fr; }
+  .ciambella { width: 170px; }
 }
 
 @media (max-width: 600px) {
-  .alone { filter: url(#sfocatura-piccola); } /* meno sfocatura su schermi piccoli */
+  .sezione-emiciclo { padding: 0 8px; }   /* riquadro più largo sul telefono... */
+  .sezione-emiciclo > h2,
+  .sezione-emiciclo > .legenda-voti { padding: 0 8px; } /* ...ma testi allineati al resto */
+  .emiciclo { padding: 10px 8px 8px; border-radius: 14px; }
+  .bagliore { filter: url(#bagliore-piccolo); } /* meno sfocatura su schermi piccoli */
   .sigla { font-size: 30px; }                 /* sigle più grandi... */
+  .didascalia-banco { font-size: 26px; }
   .sigla.minore, .guida { display: none; }    /* ...e solo quelle dei gruppi più grandi */
   .risultato-didascalia { display: none; }
   .totali > div { min-width: 0; flex: 1 1 28%; }
   .riepilogo .nome-gruppo { display: none; } /* il nome esteso resta nel suggerimento del pulsante */
+  .intestazione-parlamentare { gap: 14px; }
+  .avatar { width: 64px; height: 64px; font-size: 1.4rem; }
 }
 
 /* Chi preferisce meno movimento: niente animazioni né transizioni */

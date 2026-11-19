@@ -12,6 +12,11 @@
       "nome": "Senato della Repubblica – dati.senato.it (votazione e voti dei senatori)",
       "url": "http://dati.senato.it/votazione/19-395-2",
       "licenza": "CC BY 3.0 IT"
+    },
+    {
+      "nome": "Camera dei deputati – dati.camera.it (incarichi di Governo)",
+      "url": "https://dati.camera.it",
+      "licenza": "CC BY-SA 4.0"
     }
   ],
   "totali": {
@@ -22,60 +27,61 @@
     "votanti": 150
   },
   "esito": "approvato",
+  "tipo": "finale",
   "gruppi": [
     {
-      "sigla": "Aut (SVP-PATT, Cb)",
-      "nome": "Per le Autonomie (SVP-PATT, Campobase)",
-      "ordine": null,
-      "colore": null
-    },
-    {
-      "sigla": "Cd'I-UDC-NM (NcI, CI, IaC)-MAIE-CP",
-      "nome": "Civici d'Italia-UDC-Noi Moderati (Noi con l'Italia, Coraggio Italia, Italia al Centro)-MAIE-Centro Popolare",
-      "ordine": null,
-      "colore": null
-    },
-    {
-      "sigla": "FdI",
-      "nome": "Fratelli d'Italia",
-      "ordine": null,
-      "colore": null
-    },
-    {
-      "sigla": "FI-BP-PPE",
-      "nome": "Forza Italia - Berlusconi Presidente - PPE",
-      "ordine": null,
-      "colore": null
-    },
-    {
-      "sigla": "IV-C-RE",
-      "nome": "Italia Viva - Il Centro - Renew Europe",
-      "ordine": null,
-      "colore": null
-    },
-    {
-      "sigla": "LSP-PSd'Az",
-      "nome": "Lega Salvini Premier - Partito Sardo d'Azione",
-      "ordine": null,
-      "colore": null
+      "sigla": "Misto",
+      "nome": "Misto",
+      "ordine": 1,
+      "colore": "#ADB5BD"
     },
     {
       "sigla": "M5S",
       "nome": "MoVimento 5 Stelle",
-      "ordine": null,
-      "colore": null
-    },
-    {
-      "sigla": "Misto",
-      "nome": "Misto",
-      "ordine": null,
-      "colore": null
+      "ordine": 2,
+      "colore": "#ffe931"
     },
     {
       "sigla": "PD-IDP",
       "nome": "Partito Democratico - Italia Democratica e Progressista",
-      "ordine": null,
-      "colore": null
+      "ordine": 3,
+      "colore": "#da291c"
+    },
+    {
+      "sigla": "IV-C-RE",
+      "nome": "Italia Viva - Il Centro - Renew Europe",
+      "ordine": 4,
+      "colore": "#cc288f"
+    },
+    {
+      "sigla": "Aut (SVP-PATT, Cb)",
+      "nome": "Per le Autonomie (SVP-PATT, Campobase)",
+      "ordine": 5,
+      "colore": "#FFA94D"
+    },
+    {
+      "sigla": "Cd'I-UDC-NM (NcI, CI, IaC)-MAIE-CP",
+      "nome": "Civici d'Italia-UDC-Noi Moderati (Noi con l'Italia, Coraggio Italia, Italia al Centro)-MAIE-Centro Popolare",
+      "ordine": 6,
+      "colore": "#eb631b"
+    },
+    {
+      "sigla": "FI-BP-PPE",
+      "nome": "Forza Italia - Berlusconi Presidente - PPE",
+      "ordine": 7,
+      "colore": "#009741"
+    },
+    {
+      "sigla": "FdI",
+      "nome": "Fratelli d'Italia",
+      "ordine": 8,
+      "colore": "#3f86d2"
+    },
+    {
+      "sigla": "LSP-PSd'Az",
+      "nome": "Lega Salvini Premier - Partito Sardo d'Azione",
+      "ordine": 9,
+      "colore": "#386e94"
     }
   ],
   "parlamentari": [
@@ -84,7 +90,13 @@
       "nome": "Maria Elisabetta",
       "cognome": "Alberti Casellati",
       "gruppo": "FI-BP-PPE",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "ministro",
+        "incarichi": [
+          "Ministra per le Riforme istituzionali e la semplificazione normativa"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.senato.it/senatore/32578",
@@ -133,7 +145,13 @@
       "nome": "Alberto",
       "cognome": "Barachini",
       "gruppo": "FI-BP-PPE",
-      "voto": "favorevole"
+      "voto": "favorevole",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretario di Stato alla Presidenza del Consiglio dei ministri"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.senato.it/senatore/36431",
@@ -168,7 +186,13 @@
       "nome": "Anna Maria",
       "cognome": "Bernini",
       "gruppo": "FI-BP-PPE",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "ministro",
+        "incarichi": [
+          "Ministro dell'Università e della ricerca"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.senato.it/senatore/36384",
@@ -252,7 +276,13 @@
       "nome": "Lucia",
       "cognome": "Borgonzoni",
       "gruppo": "LSP-PSd'Az",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretaria di Stato per la Cultura"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.senato.it/senatore/32856",
@@ -266,7 +296,13 @@
       "nome": "Alessio",
       "cognome": "Butti",
       "gruppo": "FdI",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretario di Stato alla Presidenza del Consiglio dei ministri"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.senato.it/senatore/34485",
@@ -280,7 +316,13 @@
       "nome": "Roberto",
       "cognome": "Calderoli",
       "gruppo": "LSP-PSd'Az",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "ministro",
+        "incarichi": [
+          "Ministro per gli Affari regionali e le autonomie"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.senato.it/senatore/30110",
@@ -364,7 +406,13 @@
       "nome": "Luca",
       "cognome": "Ciriani",
       "gruppo": "FdI",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "ministro",
+        "incarichi": [
+          "Ministro per i Rapporti con il Parlamento"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.senato.it/senatore/22910",
@@ -490,7 +538,13 @@
       "nome": "Claudio",
       "cognome": "Durigon",
       "gruppo": "LSP-PSd'Az",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretario di Stato per il Lavoro e le politiche sociali"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.senato.it/senatore/32624",
@@ -518,7 +572,13 @@
       "nome": "Giovanbattista",
       "cognome": "Fazzolari",
       "gruppo": "FdI",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretario di Stato alla Presidenza del Consiglio dei ministri"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.senato.it/senatore/4192",
@@ -595,7 +655,13 @@
       "nome": "Daniela",
       "cognome": "Garnero Santanche'",
       "gruppo": "FdI",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "ministro",
+        "incarichi": [
+          "Ministra del Turismo"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.senato.it/senatore/1103",
@@ -665,7 +731,13 @@
       "nome": "Antonio",
       "cognome": "Iannone",
       "gruppo": "FdI",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretario di Stato per le Infrastrutture e i trasporti"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.senato.it/senatore/36401",
@@ -686,7 +758,13 @@
       "nome": "Patrizio Giacomo",
       "cognome": "La Pietra",
       "gruppo": "FdI",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretario di Stato per l'Agricoltura, la sovranità alimentare e le foreste"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.senato.it/senatore/1275",
@@ -931,7 +1009,13 @@
       "nome": "Alessandro",
       "cognome": "Morelli",
       "gruppo": "LSP-PSd'Az",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretario di Stato alla Presidenza del Consiglio dei ministri"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.senato.it/senatore/33110",
@@ -1008,7 +1092,13 @@
       "nome": "Andrea",
       "cognome": "Ostellari",
       "gruppo": "LSP-PSd'Az",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretario di Stato per la Giustizia"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.senato.it/senatore/34243",
@@ -1155,7 +1245,13 @@
       "nome": "Isabella",
       "cognome": "Rauti",
       "gruppo": "FdI",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretaria di Stato per la Difesa"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.senato.it/senatore/30742",
@@ -1232,7 +1328,14 @@
       "nome": "Matteo",
       "cognome": "Salvini",
       "gruppo": "LSP-PSd'Az",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "vicepresidente",
+        "incarichi": [
+          "Vicepresidente del Consiglio dei ministri",
+          "Ministro delle Infrastrutture e dei trasporti"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.senato.it/senatore/36443",
@@ -1330,7 +1433,13 @@
       "nome": "Francesco Paolo",
       "cognome": "Sisto",
       "gruppo": "FI-BP-PPE",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "viceministro",
+        "incarichi": [
+          "Vice Ministro della Giustizia"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.senato.it/senatore/36426",
@@ -1435,7 +1544,13 @@
       "nome": "Adolfo",
       "cognome": "Urso",
       "gruppo": "FdI",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "ministro",
+        "incarichi": [
+          "Ministro delle Imprese e del made in Italy"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.senato.it/senatore/29604",
@@ -1498,7 +1613,13 @@
       "nome": "Paolo",
       "cognome": "Zangrillo",
       "gruppo": "FI-BP-PPE",
-      "voto": "favorevole"
+      "voto": "favorevole",
+      "governo": {
+        "ruolo": "ministro",
+        "incarichi": [
+          "Ministro per la Pubblica amministrazione"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.senato.it/senatore/36430",

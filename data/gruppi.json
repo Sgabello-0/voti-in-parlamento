@@ -3,85 +3,85 @@
   "camera": [
     {
       "sigla": "AVS",
-      "nome": "ALLEANZA VERDI E SINISTRA",
+      "nome": "Alleanza Verdi e Sinistra",
       "ordine": 1,
       "colore": "#20C997"
     },
     {
       "sigla": "M5S",
-      "nome": "MOVIMENTO 5 STELLE",
+      "nome": "Movimento 5 Stelle",
       "ordine": 2,
       "colore": "#ffe931"
     },
     {
       "sigla": "PD-IDP",
-      "nome": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+      "nome": "Partito Democratico - Italia Democratica e Progressista",
       "ordine": 3,
       "colore": "#da291c"
     },
     {
       "sigla": "M-+E-S",
-      "nome": "MISTO-+EUROPA - STATI UNITI D'EUROPA",
+      "nome": "Misto-+Europa - Stati Uniti d'Europa",
       "ordine": 4,
       "colore": "#26aee7"
     },
     {
       "sigla": "IV-CR",
-      "nome": "ITALIA VIVA-CASA RIFORMISTA",
+      "nome": "Italia Viva-Casa Riformista",
       "ordine": 5,
       "colore": "#cc288f"
     },
     {
       "sigla": "APERRE",
-      "nome": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+      "nome": "Azione-Popolari Europeisti Riformatori-Renew Europe",
       "ordine": 6,
       "colore": "#228873"
     },
     {
       "sigla": "M-MIN",
-      "nome": "MISTO-MINORANZE LINGUISTICHE",
+      "nome": "Misto-Minoranze Linguistiche",
       "ordine": 7,
       "colore": "#FFA94D"
     },
     {
       "sigla": "M-ALT",
-      "nome": "MISTO",
+      "nome": "Misto",
       "ordine": 8,
       "colore": "#ADB5BD"
     },
     {
       "sigla": "NM-M-C",
-      "nome": "NOI MODERATI (NOI CON L'ITALIA, CORAGGIO ITALIA, UDC E ITALIA AL CENTRO)-MAIE-CENTRO POPOLARE",
+      "nome": "Noi Moderati (Noi con l'Italia, Coraggio Italia, UDC e Italia al Centro)-MAIE-Centro Popolare",
       "ordine": 9,
       "colore": "#eb631b"
     },
     {
       "sigla": "M-SCN",
-      "nome": "MISTO-SUD CHIAMA NORD",
+      "nome": "Misto-Sud chiama Nord",
       "ordine": 10,
       "colore": "#ffd533"
     },
     {
       "sigla": "FI-PPE",
-      "nome": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+      "nome": "Forza Italia - Berlusconi Presidente - PPE",
       "ordine": 11,
       "colore": "#009741"
     },
     {
       "sigla": "FDI",
-      "nome": "FRATELLI D'ITALIA",
+      "nome": "Fratelli d'Italia",
       "ordine": 12,
       "colore": "#3f86d2"
     },
     {
       "sigla": "LEGA",
-      "nome": "LEGA - SALVINI PREMIER",
+      "nome": "Lega - Salvini Premier",
       "ordine": 13,
       "colore": "#386e94"
     },
     {
       "sigla": "M-FNVF",
-      "nome": "MISTO-FUTURO NAZIONALE VANNACCI - FREE",
+      "nome": "Misto-Futuro Nazionale Vannacci - Free",
       "ordine": 14,
       "colore": "#263a97"
     }
@@ -106,19 +106,27 @@
       "colore": "#da291c"
     },
     {
-      "sigla": "Aut (SVP-PATT, Cb)",
-      "nome": "Per le Autonomie (SVP-PATT, Campobase)",
-      "ordine": 4,
-      "colore": "#FFA94D"
-    },
-    {
       "sigla": "IV-C-RE",
       "nome": "Italia Viva - Il Centro - Renew Europe",
-      "ordine": 5,
+      "ordine": 4,
       "colore": "#cc288f"
     },
     {
+      "sigla": "IV-CR",
+      "nome": "Italia Viva - Casa Riformista",
+      "ordine": 4,
+      "colore": "#cc288f"
+    },
+    {
+      "sigla": "Aut (SVP-PATT, Cb)",
+      "etichetta": "Aut",
+      "nome": "Per le Autonomie (SVP-PATT, Campobase)",
+      "ordine": 5,
+      "colore": "#FFA94D"
+    },
+    {
       "sigla": "Cd'I-UDC-NM (NcI, CI, IaC)-MAIE-CP",
+      "etichetta": "Cd'I-NM",
       "nome": "Civici d'Italia-UDC-Noi Moderati (Noi con l'Italia, Coraggio Italia, Italia al Centro)-MAIE-Centro Popolare",
       "ordine": 6,
       "colore": "#eb631b"

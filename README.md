@@ -22,18 +22,25 @@ lib/                      codice Node
   senato.mjs              lettura di una votazione del Senato (dati.senato.it)
   comune.mjs              controlli e salvataggio delle votazioni, aggiornamento di gruppi.json
   scarica.mjs             punto d'ingresso comune (usato dallo script e dai test)
+  elenco.mjs              elenco delle votazioni di un periodo (per lo scaricamento in blocco)
   emiciclo.mjs            geometria dell'emiciclo e disegno dell'SVG
+  ciambella.mjs           grafico a ciambella (favorevoli, contrari, astenuti, presenti al centro)
   pagine.mjs              modelli HTML delle pagine
   html.mjs                piccole funzioni per l'HTML (escape, date, maiuscole)
+  tipi.mjs                tipi di votazione (finale, emendamento, ordine del giorno…) e loro spiegazioni
+  governo.mjs             membri del Governo alla data del voto (open data della Camera)
+  percorsi.mjs            indirizzi delle pagine (votazioni, parlamentari, liste per tipo)
 assets/                   file copiati nel sito così come sono
   stile.css               tutto lo stile (colori in :root)
-  emiciclo.js             interattività: vista Voto/Partito, tooltip, filtro per gruppo
+  emiciclo.js             interattività: vista Voto/Partito, tooltip, filtro, ciambella, schermo intero
+  ricerca.js              barra di ricerca della pagina iniziale
 scripts/
   scarica-votazione.mjs   scarica una votazione → data/votazioni/<slug>.json
+  scarica-periodo.mjs     scarica tutte le votazioni (o solo le finali) di un periodo
   build.mjs               genera il sito in public/
   anteprima.mjs           server locale per vedere il sito
   test-fase1.mjs          test sulle due votazioni di riferimento
-public/                   sito generato (non modificarlo a mano: lo rifà la build)
+public/                   sito generato (non è in git: lo rifà la build)
 firebase.json, .firebaserc  configurazione di Firebase Hosting
 ```
 
@@ -90,14 +97,30 @@ Opzioni:
 Il numero di seduta e di votazione si trovano sui siti ufficiali (per la Camera:
 `https://www.camera.it/leg19/410?idSeduta=0747&tipo=votazioni`).
 
-Titolo e descrizione **non vengono ricordati**: se riscarichi una votazione, ripassa le opzioni.
-Le due votazioni di esempio sono state scaricate così:
+**Titoli automatici.** Il titolo leggibile viene ricavato dai testi ufficiali, senza inventare nulla:
+
+- Camera: se la descrizione ufficiale è un codice (es. "DDL 3043-A - VOTO FINALE"), il titolo è
+  l'oggetto dell'atto (il testo tra virgolette nel suo titolo) seguito da cosa si vota
+  ("… – voto finale"); se è già un titolo vero e proprio, resta quello;
+- Senato: titolo breve ufficiale del disegno di legge principale + cosa si vota
+  (es. "Contrasto all'antisemitismo – voto finale"); descrizione: titolo completo e ddl abbinati.
+
+`--titolo` e `--descrizione` servono solo se vuoi un testo diverso. **Non vengono ricordati**:
+se riscarichi una votazione, ripassa le opzioni.
+
+### Scaricare tutte le votazioni di un periodo
 
 ```sh
-node scripts/scarica-votazione.mjs camera 747 53 --titolo "Contrasto all'antisemitismo – voto finale"
-node scripts/scarica-votazione.mjs senato 395 2 --titolo "Contrasto all'antisemitismo – voto finale" \
-  --descrizione "Disposizioni per il contrasto all'antisemitismo e per l'adozione della definizione operativa di antisemitismo (S.1004, esaminato insieme a S.1575, S.1627, S.1722, S.1757, S.1762 e S.1765)"
+node scripts/scarica-periodo.mjs --dal 2026-09-01 --elenco         # solo l'elenco, senza scaricare
+node scripts/scarica-periodo.mjs --dal 2026-09-01 --solo-finali    # solo le votazioni finali
+node scripts/scarica-periodo.mjs --dal 2026-09-01                  # tutte
 ```
+
+Opzioni: `--al AAAA-MM-GG` (predefinita: oggi), `--ramo camera|senato`, `--aggiorna`.
+Le votazioni già scaricate vengono saltate; quelle a voto segreto, annullate o di sola verifica
+del numero legale vengono saltate con il motivo. Alla fine lo script elenca scaricate, saltate
+ed errori: un errore su una votazione non ferma le altre. L'elenco viene sempre riletto dalla
+fonte; i dati delle singole votazioni usano la cache.
 
 Cosa fa lo script:
 
@@ -164,13 +187,24 @@ L'indirizzo pubblico del sito è in **una sola costante**, `URL_BASE` in `script
 
 La build crea:
 
-- `public/index.html` con l'elenco delle votazioni (dalla più recente);
+- `public/index.html`: le votazioni divise per ramo (Camera, poi Senato) e, dentro ogni ramo, per
+  **tipo** in ordine di importanza (voti finali, fiducia, risoluzioni, pregiudiziali, articoli,
+  emendamenti, ordini del giorno, altre), ciascuno con una breve spiegazione e le più recenti; una
+  **barra di ricerca** trova votazioni e parlamentari (si può aprire anche con `?q=parole`);
+- `public/votazioni/<ramo>/<tipo>/`: tutte le votazioni di un tipo, dalla più recente;
+- `public/deputati/<nome-cognome-id>/` e `public/senatori/…`: la **pagina di ogni parlamentare**,
+  con gruppo, eventuale incarico di Governo, link alla scheda ufficiale negli open data e tutti
+  i suoi voti divisi per tipo. Le foto non ci sono: gli indirizzi delle foto negli open data non
+  funzionano (Camera: errore 404; Senato: protezione anti-bot), al loro posto ci sono le iniziali;
+- `public/indice.json`: l'indice usato dalla barra di ricerca (lo scarica solo chi cerca);
 - `public/votazioni/<slug>/index.html`, una pagina per votazione;
 - `public/404.html`, `public/sitemap.xml`, `public/robots.txt`;
 - `public/assets/` con CSS e JS. Il nome contiene un'impronta del contenuto, così i browser
   possono tenerli in cache a lungo.
 
-`public/` è versionata in git per comodità: è sempre generata, quindi non modificarla a mano.
+`public/` non è in git: si rigenera sempre con `npm run build` (e Firebase la rigenera da solo
+prima di ogni deploy). Se in un commit precedente era stata aggiunta, toglila dal repository
+con `git rm -r --cached public` e fai un commit.
 
 ## Pubblicare su Firebase Hosting
 
@@ -202,13 +236,49 @@ firebase hosting:channel:deploy anteprima
 3. Tra gli spicchi c'è un piccolo spazio; le sigle stanno fuori dall'arco. Su telefono si
    vedono solo quelle dei gruppi più grandi, le altre sono nella legenda.
 
-Vista **Voto**: il colore del pallino è il voto. Vista **Partito**: il colore è quello del
-gruppo e un alone luminoso indica il voto. Gli aloni sono tre livelli (sì, no, astenuti) con
-una sola sfocatura ciascuno, per non pesare sul browser. La scelta resta nell'indirizzo
-(`?vista=partito`). Chi ha impostato "riduci movimento" nel sistema non vede animazioni.
+L'emiciclo sta su un riquadro arrotondato largo quanto lo schermo, un po' più scuro dello
+sfondo (`--pannello`, #06122A), che aumenta il contrasto dei pallini. Il disegno è il più
+grande possibile ma sta sempre nell'altezza della finestra. Dentro il riquadro ci sono, in
+alto a sinistra, il selettore Voto/Partito e il pulsante **Schermo intero** (mostrato solo
+se il browser lo supporta), e in alto a destra la legenda dei gruppi con un rettangolo del
+colore di ciascuno.
 
-I colori del rosso usati per il **testo** (`--rosso-testo`, #F87171) sono un po' più chiari
-di quello dei pallini (#EF4444): il rosso originale come testo piccolo non raggiunge il
+- Vista **Voto**: il colore del pallino è il voto.
+- Vista **Partito**: tutti i pallini di un gruppo hanno il colore del gruppo, anche chi non
+  ha votato. Chi ha votato ha in più un anello sottile e un piccolo bagliore del colore del
+  voto (verde favorevole, rosso contrario, bianco astenuto); chi non ha votato no. I bagliori
+  sono tre livelli (sì, no, astenuti) con una sola sfocatura ciascuno, per non pesare sul
+  browser. La scelta resta nell'indirizzo (`?vista=partito`).
+- Di base gli spicchi sono attaccati: l'emiciclo è un semicerchio continuo. Passando con il
+  mouse (o toccando) un pallino compare il tooltip e **lo spicchio del suo gruppo si stacca**
+  dagli altri: si sposta verso l'esterno, passa in primo piano e i suoi pallini si
+  ingrandiscono, mentre quelli degli altri gruppi diventano più piccoli e trasparenti.
+- La disposizione si adatta alla finestra: oltre 1100 px la legenda sta a destra (e scorre se
+  è più alta dell'emiciclo), sotto i 1100 px va sotto l'emiciclo; il disegno è sempre alto al
+  massimo quanto la finestra.
+- Clic su un pallino: apre la pagina del parlamentare (con il dito: primo tocco tooltip, secondo
+  tocco la pagina). Nel riquadro c'è anche **"Trova un deputato/senatore"**: scrivi un nome e il suo
+  pallino si evidenzia.
+- **Banco del Governo**: i parlamentari che alla data del voto fanno parte del Governo (dagli open
+  data della Camera, `ocd:membroGoverno`) siedono in una fila sotto il centro dell'emiciclo, con il
+  Presidente del Consiglio al centro e poi, in sezioni separate, vicepresidenti, ministri, viceministri
+  e sottosegretari. Al Senato l'abbinamento con i senatori si fa per data di nascita e cognome, o per
+  nome e cognome quando la data manca; se non è sicuro non viene fatto (es. Musumeci: "Sebastiano"
+  per la Camera, "Nello" per il Senato).
+- Chi ha impostato "riduci movimento" nel sistema non vede animazioni.
+
+Sopra l'emiciclo, a destra del titolo, c'è un grafico a ciambella con favorevoli, contrari e
+astenuti e il numero dei presenti al centro (`lib/ciambella.mjs`). Passando con il mouse su
+uno spicchio (o toccandolo) lo spicchio si ingrossa e al centro compaiono il suo numero e la
+percentuale sul totale degli spicchi. Al Senato i presenti
+comprendono anche chi presiede, che non vota: per questo il numero al centro può superare di
+uno la somma degli spicchi.
+
+L'elenco "Come ha votato ogni deputato/senatore" è diviso per gruppo, nello stesso ordine
+dell'emiciclo, e in ordine alfabetico dentro ogni gruppo.
+
+Colori del **testo**: il rosso per le scritte su fondo scuro (`--rosso-testo`, #F87171) è un
+po' più chiaro di quello dei pallini (#EF4444), che come testo piccolo non raggiunge il
 contrasto WCAG AA sulle card.
 
 ## Licenza

@@ -12,8 +12,11 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
-import { paginaVotazione, paginaIndice, pagina404 } from '../lib/pagine.mjs';
+import { paginaVotazione, paginaIndice, pagina404, paginaParlamentare, paginaElencoTipo } from '../lib/pagine.mjs';
 import { nomeCompleto } from '../lib/html.mjs';
+import { RUOLI_GOVERNO } from '../lib/governo.mjs';
+import { TIPI } from '../lib/tipi.mjs';
+import { percorsoParlamentare, percorsoTipo } from '../lib/percorsi.mjs';
 
 // ---------------------------------------------------------------------------
 // Impostazioni del sito: l'indirizzo pubblico si cambia SOLO qui.
@@ -64,7 +67,7 @@ const mancanti = { ordine: new Set(), colore: new Set(), etichettaLunga: new Set
  * Unisce la votazione con le impostazioni di data/gruppi.json (ordine, colore, etichetta)
  * e calcola tutto ciò che serve alla pagina: gruppi in ordine, conteggi, posti nell'emiciclo.
  */
-function preparaVotazione(v, archivioGruppi) {
+function preparaVotazione(v, archivioGruppi, anagrafica) {
   const ramo = RAMI[v.ramo];
   if (!ramo) throw new Error(`${v.slug}: ramo sconosciuto "${v.ramo}"`);
   const impostazioni = Array.isArray(archivioGruppi[v.ramo]) ? archivioGruppi[v.ramo] : [];
@@ -103,25 +106,41 @@ function preparaVotazione(v, archivioGruppi) {
     g.totale++;
   }
 
-  // Posti nell'emiciclo: per gruppo, poi per voto, poi per cognome.
-  const seggi = v.parlamentari
-    .map((p) => ({ ...p, nomeCompleto: nomeCompleto(p), indiceGruppo: perSigla.get(p.gruppo).indice }))
+  // Posti nell'emiciclo. Nelle file: per gruppo, poi per voto, poi per cognome.
+  // Poi i membri del Governo, che siedono nel banco del Governo: in ordine di importanza
+  // (il primo va al centro del banco), poi per cognome.
+  const tutti = v.parlamentari.map((p) => ({
+    ...p,
+    nomeCompleto: nomeCompleto(p),
+    indiceGruppo: perSigla.get(p.gruppo).indice,
+    percorso: percorsoParlamentare(v.ramo, anagrafica.get(p.id_fonte) ?? p), // pagina del parlamentare
+  }));
+  const nelleFile = tutti
+    .filter((p) => !p.governo)
     .sort((a, b) =>
       a.indiceGruppo - b.indiceGruppo ||
       ORDINE_VOTI.indexOf(a.voto) - ORDINE_VOTI.indexOf(b.voto) ||
       a.cognome.localeCompare(b.cognome, 'it') ||
       a.nome.localeCompare(b.nome, 'it'));
+  const alGoverno = tutti
+    .filter((p) => p.governo)
+    .sort((a, b) => RUOLI_GOVERNO.indexOf(a.governo.ruolo) - RUOLI_GOVERNO.indexOf(b.governo.ruolo) || a.cognome.localeCompare(b.cognome, 'it'));
+  const seggi = [...nelleFile, ...alGoverno];
+  // Quanti membri del Governo per ruolo (per la spiegazione sotto l'emiciclo)
+  const ruoliGoverno = RUOLI_GOVERNO.map((ruolo) => ({ ruolo, numero: alGoverno.filter((p) => p.governo.ruolo === ruolo).length })).filter((r) => r.numero > 0);
 
-  // Elenco completo, in ordine alfabetico.
-  const elenco = v.parlamentari
-    .map((p) => ({ ...p, nomeCompleto: nomeCompleto(p), etichettaGruppo: perSigla.get(p.gruppo).etichetta, nomeGruppo: perSigla.get(p.gruppo).nome }))
+  // Elenco completo: diviso per gruppo (nell'ordine dell'emiciclo), alfabetico dentro ogni gruppo.
+  const alfabetico = v.parlamentari
+    .map((p) => ({ ...p, nomeCompleto: nomeCompleto(p) }))
     .sort((a, b) => a.cognome.localeCompare(b.cognome, 'it') || a.nome.localeCompare(b.nome, 'it'));
+  const elencoPerGruppo = gruppi.map((g) => ({ gruppo: g, membri: alfabetico.filter((p) => p.gruppo === g.sigla) }));
 
   return {
     ...v,
     gruppi,
     seggi,
-    elenco,
+    ruoliGoverno,
+    elencoPerGruppo,
     ramoNome: ramo.nome,
     ramoBreve: ramo.breve,
     parlamentareSingolare: ramo.singolare,
@@ -172,14 +191,13 @@ async function build() {
   const nomiFile = (await fs.readdir(cartellaVotazioni)).filter((f) => f.endsWith('.json')).sort();
   if (nomiFile.length === 0) throw new Error('Nessuna votazione in data/votazioni/: scaricane una con scripts/scarica-votazione.mjs');
 
-  const votazioni = [];
+  // 1. Primo giro veloce: nome di ogni parlamentare (serve per l'indirizzo della sua pagina,
+  //    che deve essere lo stesso in tutte le votazioni).
+  const anagrafica = new Map(); // id_fonte -> { id_fonte, nome, cognome, ramo }
   for (const f of nomiFile) {
     const v = await leggiJson(path.join(cartellaVotazioni, f));
-    if (`${v.slug}.json` !== f) throw new Error(`${f}: lo slug interno ("${v.slug}") non corrisponde al nome del file`);
-    votazioni.push(preparaVotazione(v, archivioGruppi));
+    for (const p of v.parlamentari) if (!anagrafica.has(p.id_fonte)) anagrafica.set(p.id_fonte, { id_fonte: p.id_fonte, nome: p.nome, cognome: p.cognome, ramo: v.ramo });
   }
-  // Più recenti in alto.
-  votazioni.sort((a, b) => b.data.localeCompare(a.data) || a.slug.localeCompare(b.slug));
 
   // Riparto da zero: public/ contiene solo file generati.
   await fs.rm(PUBBLICA, { recursive: true, force: true });
@@ -188,23 +206,89 @@ async function build() {
     NOME_SITO,
     css: await copiaAsset('stile.css'),
     js: await copiaAsset('emiciclo.js'),
+    jsRicerca: await copiaAsset('ricerca.js'),
   };
 
-  for (const v of votazioni) await scrivi(path.join('votazioni', v.slug, 'index.html'), paginaVotazione(v, ctx));
-  await scrivi('index.html', paginaIndice(votazioni, ctx));
+  // 2. Una votazione alla volta: scrivo la sua pagina e tengo solo un riassunto
+  //    (per home, liste per tipo e ricerca) e i voti di ogni parlamentare (per le loro pagine).
+  const riassunti = [];
+  const voti = new Map(); // id_fonte -> [{ slug, voto, gruppo, incarico }]
+  const ultimoGruppo = new Map(); // id_fonte -> { data, sigla, nome, colore }
+  for (const f of nomiFile) {
+    const grezza = await leggiJson(path.join(cartellaVotazioni, f));
+    if (`${grezza.slug}.json` !== f) throw new Error(`${f}: lo slug interno ("${grezza.slug}") non corrisponde al nome del file`);
+    const v = preparaVotazione(grezza, archivioGruppi, anagrafica);
+    await scrivi(path.join('votazioni', v.slug, 'index.html'), paginaVotazione(v, ctx));
+    riassunti.push({
+      slug: v.slug, url: `/votazioni/${v.slug}/`, ramo: v.ramo, ramoNome: v.ramoNome, ramoBreve: v.ramoBreve,
+      data: v.data, seduta: v.seduta, numero_votazione: v.numero_votazione, titolo: v.titolo, descrizione: v.descrizione,
+      tipo: v.tipo || 'altro', esito: v.esito, totali: v.totali,
+    });
+    const perSigla = new Map(v.gruppi.map((g) => [g.sigla, g]));
+    for (const p of grezza.parlamentari) {
+      if (!voti.has(p.id_fonte)) voti.set(p.id_fonte, []);
+      voti.get(p.id_fonte).push({ slug: v.slug, voto: p.voto, gruppo: p.gruppo, incarico: p.governo ? p.governo.incarichi.join(' · ') : '' });
+      const u = ultimoGruppo.get(p.id_fonte);
+      if (!u || v.data >= u.data) {
+        const g = perSigla.get(p.gruppo);
+        ultimoGruppo.set(p.id_fonte, { data: v.data, sigla: g.etichetta, nome: g.nome, colore: g.colore, incarico: p.governo ? p.governo.incarichi.join(' · ') : '' });
+      }
+    }
+  }
+  const recentiPrima = (a, b) => b.data.localeCompare(a.data) || b.seduta - a.seduta || b.numero_votazione - a.numero_votazione;
+  riassunti.sort(recentiPrima);
+  const riassuntoDi = new Map(riassunti.map((r) => [r.slug, r]));
+
+  // 3. Pagine dei parlamentari
+  const schede = [];
+  for (const [id, righe] of voti) {
+    const a = anagrafica.get(id);
+    const p = {
+      ...a,
+      nomeCompleto: nomeCompleto(a),
+      percorso: percorsoParlamentare(a.ramo, a),
+      gruppo: ultimoGruppo.get(id),
+      voti: righe.map((r) => ({ ...r, ...riassuntoDi.get(r.slug), gruppoVoto: r.gruppo })).sort(recentiPrima),
+    };
+    await scrivi(path.join(p.percorso, 'index.html'), paginaParlamentare(p, ctx));
+    schede.push({ percorso: p.percorso, nomeCompleto: p.nomeCompleto, cognome: a.cognome, ramo: a.ramo, gruppo: p.gruppo });
+  }
+
+  // 4. Liste per tipo (una pagina per ramo e tipo) e pagina iniziale
+  const liste = [];
+  for (const ramo of ['camera', 'senato']) {
+    for (const t of TIPI) {
+      const righe = riassunti.filter((r) => r.ramo === ramo && r.tipo === t.chiave);
+      if (!righe.length) continue;
+      const percorso = percorsoTipo(ramo, t.chiave);
+      await scrivi(path.join(percorso, 'index.html'), paginaElencoTipo({ ramo, ramoNome: RAMI[ramo].nome, tipo: t, righe, percorso }, ctx));
+      liste.push({ percorso, data: righe[0].data });
+    }
+  }
+  await scrivi('index.html', paginaIndice(riassunti, ctx));
   await scrivi('404.html', pagina404(ctx));
 
-  const ultimaData = votazioni[0].data;
+  // 5. Indice per la barra di ricerca (lo carica ricerca.js solo quando serve)
+  await scrivi('indice.json', JSON.stringify({
+    votazioni: riassunti.map((r) => [r.url, r.titolo, r.data, r.ramo, r.tipo, r.esito ?? '']),
+    parlamentari: schede
+      .sort((a, b) => a.cognome.localeCompare(b.cognome, 'it'))
+      .map((s) => [s.percorso, s.nomeCompleto, s.ramo, s.gruppo?.nome || s.gruppo?.sigla || '']),
+  }));
+
+  // 6. Sitemap e robots.txt
+  const ultimaData = riassunti[0].data;
   await scrivi('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>${URL_BASE}/</loc><lastmod>${ultimaData}</lastmod></url>
-${votazioni.map((v) => `<url><loc>${v.url}</loc><lastmod>${v.data}</lastmod></url>`).join('\n')}
+${liste.map((l) => `<url><loc>${URL_BASE}${l.percorso}</loc><lastmod>${l.data}</lastmod></url>`).join('\n')}
+${riassunti.map((r) => `<url><loc>${URL_BASE}${r.url}</loc><lastmod>${r.data}</lastmod></url>`).join('\n')}
+${schede.map((s) => `<url><loc>${URL_BASE}${s.percorso}</loc><lastmod>${ultimaData}</lastmod></url>`).join('\n')}
 </urlset>
 `);
   await scrivi('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${URL_BASE}/sitemap.xml\n`);
 
-  console.log(`Sito generato in public/: ${votazioni.length} votazioni.`);
-  for (const v of votazioni) console.log(`  /votazioni/${v.slug}/`);
+  console.log(`Sito generato in public/: ${riassunti.length} votazioni, ${schede.length} parlamentari, ${liste.length} liste per tipo.`);
   const elenca = (insieme) => [...insieme].join(', ');
   if (mancanti.ordine.size) avvisi.push(`Gruppi senza "ordine" in data/gruppi.json (vanno in fondo a destra): ${elenca(mancanti.ordine)}`);
   if (mancanti.colore.size) avvisi.push(`Gruppi senza "colore" in data/gruppi.json (grigi nella vista Partito): ${elenca(mancanti.colore)}`);

@@ -3,6 +3,10 @@ node_modules/
 # Cache delle risposte grezze delle fonti (si rigenera)
 /data/raw/
 
+# Sito generato (centinaia di MB con tutte le votazioni): lo rifà "npm run build",
+# e Firebase lo rigenera da solo prima di ogni deploy
+/public/
+
 # Firebase: file di debug e cache locale del deploy
 firebase-debug.log
 firebase-debug.*.log

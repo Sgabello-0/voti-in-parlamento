@@ -22,90 +22,91 @@
     "votanti": 240
   },
   "esito": "approvato",
+  "tipo": "finale",
   "gruppi": [
-    {
-      "sigla": "APERRE",
-      "nome": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
-      "ordine": null,
-      "colore": null
-    },
     {
       "sigla": "AVS",
       "nome": "ALLEANZA VERDI E SINISTRA",
-      "ordine": null,
-      "colore": null
-    },
-    {
-      "sigla": "FDI",
-      "nome": "FRATELLI D'ITALIA",
-      "ordine": null,
-      "colore": null
-    },
-    {
-      "sigla": "FI-PPE",
-      "nome": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
-      "ordine": null,
-      "colore": null
-    },
-    {
-      "sigla": "IV-CR",
-      "nome": "ITALIA VIVA-CASA RIFORMISTA",
-      "ordine": null,
-      "colore": null
-    },
-    {
-      "sigla": "LEGA",
-      "nome": "LEGA - SALVINI PREMIER",
-      "ordine": null,
-      "colore": null
-    },
-    {
-      "sigla": "M-+E-S",
-      "nome": "MISTO-+EUROPA - STATI UNITI D'EUROPA",
-      "ordine": null,
-      "colore": null
-    },
-    {
-      "sigla": "M-ALT",
-      "nome": "MISTO",
-      "ordine": null,
-      "colore": null
-    },
-    {
-      "sigla": "M-FNVF",
-      "nome": "MISTO-FUTURO NAZIONALE VANNACCI - FREE",
-      "ordine": null,
-      "colore": null
-    },
-    {
-      "sigla": "M-MIN",
-      "nome": "MISTO-MINORANZE LINGUISTICHE",
-      "ordine": null,
-      "colore": null
-    },
-    {
-      "sigla": "M-SCN",
-      "nome": "MISTO-SUD CHIAMA NORD",
-      "ordine": null,
-      "colore": null
+      "ordine": 1,
+      "colore": "#20C997"
     },
     {
       "sigla": "M5S",
       "nome": "MOVIMENTO 5 STELLE",
-      "ordine": null,
-      "colore": null
-    },
-    {
-      "sigla": "NM-M-C",
-      "nome": "NOI MODERATI (NOI CON L'ITALIA, CORAGGIO ITALIA, UDC E ITALIA AL CENTRO)-MAIE-CENTRO POPOLARE",
-      "ordine": null,
-      "colore": null
+      "ordine": 2,
+      "colore": "#ffe931"
     },
     {
       "sigla": "PD-IDP",
       "nome": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
-      "ordine": null,
-      "colore": null
+      "ordine": 3,
+      "colore": "#da291c"
+    },
+    {
+      "sigla": "M-+E-S",
+      "nome": "MISTO-+EUROPA - STATI UNITI D'EUROPA",
+      "ordine": 4,
+      "colore": "#26aee7"
+    },
+    {
+      "sigla": "IV-CR",
+      "nome": "ITALIA VIVA-CASA RIFORMISTA",
+      "ordine": 5,
+      "colore": "#cc288f"
+    },
+    {
+      "sigla": "APERRE",
+      "nome": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+      "ordine": 6,
+      "colore": "#228873"
+    },
+    {
+      "sigla": "M-MIN",
+      "nome": "MISTO-MINORANZE LINGUISTICHE",
+      "ordine": 7,
+      "colore": "#FFA94D"
+    },
+    {
+      "sigla": "M-ALT",
+      "nome": "MISTO",
+      "ordine": 8,
+      "colore": "#ADB5BD"
+    },
+    {
+      "sigla": "NM-M-C",
+      "nome": "NOI MODERATI (NOI CON L'ITALIA, CORAGGIO ITALIA, UDC E ITALIA AL CENTRO)-MAIE-CENTRO POPOLARE",
+      "ordine": 9,
+      "colore": "#eb631b"
+    },
+    {
+      "sigla": "M-SCN",
+      "nome": "MISTO-SUD CHIAMA NORD",
+      "ordine": 10,
+      "colore": "#ffd533"
+    },
+    {
+      "sigla": "FI-PPE",
+      "nome": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+      "ordine": 11,
+      "colore": "#009741"
+    },
+    {
+      "sigla": "FDI",
+      "nome": "FRATELLI D'ITALIA",
+      "ordine": 12,
+      "colore": "#3f86d2"
+    },
+    {
+      "sigla": "LEGA",
+      "nome": "LEGA - SALVINI PREMIER",
+      "ordine": 13,
+      "colore": "#386e94"
+    },
+    {
+      "sigla": "M-FNVF",
+      "nome": "MISTO-FUTURO NAZIONALE VANNACCI - FREE",
+      "ordine": 14,
+      "colore": "#263a97"
     }
   ],
   "parlamentari": [
@@ -121,7 +122,13 @@
       "nome": "LUCIA",
       "cognome": "ALBANO",
       "gruppo": "FDI",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretaria di Stato per l'Economia e le finanze"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308872_19",
@@ -275,7 +282,13 @@
       "nome": "PAOLO",
       "cognome": "BARELLI",
       "gruppo": "FI-PPE",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretario di Stato alla Presidenza del Consiglio dei ministri"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308001_19",
@@ -310,7 +323,13 @@
       "nome": "MARIA TERESA",
       "cognome": "BELLUCCI",
       "gruppo": "FDI",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "viceministro",
+        "incarichi": [
+          "Vice Ministra del Lavoro e delle politiche sociali"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307604_19",
@@ -772,7 +791,13 @@
       "nome": "EDMONDO",
       "cognome": "CIRIELLI",
       "gruppo": "FDI",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "viceministro",
+        "incarichi": [
+          "Vice Ministro degli Affari esteri e della cooperazione internazionale"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307688_19",
@@ -1129,7 +1154,13 @@
       "nome": "TULLIO",
       "cognome": "FERRANTE",
       "gruppo": "FI-PPE",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretario di Stato per le Infrastrutture e i trasporti"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d309140_19",
@@ -1150,7 +1181,13 @@
       "nome": "WANDA",
       "cognome": "FERRO",
       "gruppo": "FDI",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretaria di Stato per l'Interno"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308799_19",
@@ -1213,14 +1250,26 @@
       "nome": "TOMMASO",
       "cognome": "FOTI",
       "gruppo": "FDI",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "ministro",
+        "incarichi": [
+          "Ministro per gli Affari europei, il PNRR e le politiche di coesione"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d301457_19",
       "nome": "PAOLA",
       "cognome": "FRASSINETTI",
       "gruppo": "FDI",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretaria di Stato per l'Istruzione e il merito"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307630_19",
@@ -1241,7 +1290,13 @@
       "nome": "FEDERICO",
       "cognome": "FRENI",
       "gruppo": "LEGA",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretario di Stato per l'Economia e le finanze"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308870_19",
@@ -1304,7 +1359,13 @@
       "nome": "VANNIA",
       "cognome": "GAVA",
       "gruppo": "LEGA",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "viceministro",
+        "incarichi": [
+          "Vice Ministra dell'Ambiente e della sicurezza energetica"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d305580_19",
@@ -1318,7 +1379,13 @@
       "nome": "MARCELLO",
       "cognome": "GEMMATO",
       "gruppo": "FDI",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretario di Stato per la Salute"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308620_19",
@@ -1388,7 +1455,13 @@
       "nome": "GIANCARLO",
       "cognome": "GIORGETTI",
       "gruppo": "LEGA",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "ministro",
+        "incarichi": [
+          "Ministro dell'Economia e delle finanze"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308787_19",
@@ -1598,7 +1671,13 @@
       "nome": "MAURIZIO",
       "cognome": "LEO",
       "gruppo": "FDI",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "viceministro",
+        "incarichi": [
+          "Vice Ministro dell'Economia e delle finanze"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308911_19",
@@ -1612,7 +1691,13 @@
       "nome": "FRANCESCO",
       "cognome": "LOLLOBRIGIDA",
       "gruppo": "FDI",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "ministro",
+        "incarichi": [
+          "Ministro dell'Agricoltura, della sovranità alimentare e delle foreste"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307829_19",
@@ -1871,14 +1956,26 @@
       "nome": "GIANMARCO",
       "cognome": "MAZZI",
       "gruppo": "FDI",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "ministro",
+        "incarichi": [
+          "Ministro del Turismo"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d302103_19",
       "nome": "GIORGIA",
       "cognome": "MELONI",
       "gruppo": "FDI",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "presidente",
+        "incarichi": [
+          "Presidente del Consiglio dei ministri"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308936_19",
@@ -1941,7 +2038,13 @@
       "nome": "NICOLA",
       "cognome": "MOLTENI",
       "gruppo": "LEGA",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretario di Stato per l'Interno"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307464_19",
@@ -2018,7 +2121,13 @@
       "nome": "CARLO",
       "cognome": "NORDIO",
       "gruppo": "FDI",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "ministro",
+        "incarichi": [
+          "Ministro della Giustizia"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308781_19",
@@ -2186,7 +2295,13 @@
       "nome": "GILBERTO",
       "cognome": "PICHETTO FRATIN",
       "gruppo": "FI-PPE",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "ministro",
+        "incarichi": [
+          "Ministro dell'Ambiente e della sicurezza energetica"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308791_19",
@@ -2270,7 +2385,13 @@
       "nome": "EMANUELE",
       "cognome": "PRISCO",
       "gruppo": "FDI",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretario di Stato per l'Interno"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308243_19",
@@ -2361,7 +2482,13 @@
       "nome": "EDOARDO",
       "cognome": "RIXI",
       "gruppo": "LEGA",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "viceministro",
+        "incarichi": [
+          "Vice Ministro delle Infrastrutture e dei trasporti"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d305688_19",
@@ -2375,7 +2502,13 @@
       "nome": "EUGENIA MARIA",
       "cognome": "ROCCELLA",
       "gruppo": "FDI",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "ministro",
+        "incarichi": [
+          "Ministra per la Famiglia, la natalità e le pari opportunità"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308891_19",
@@ -2634,7 +2767,14 @@
       "nome": "MATILDE",
       "cognome": "SIRACUSANO",
       "gruppo": "FI-PPE",
-      "voto": "favorevole"
+      "voto": "favorevole",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretaria di Stato per i Rapporti con il Parlamento",
+          "Sottosegretaria di stato alla Presidenza del Consiglio dei Ministri"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307608_19",
@@ -2718,7 +2858,14 @@
       "nome": "ANTONIO",
       "cognome": "TAJANI",
       "gruppo": "FI-PPE",
-      "voto": "missione"
+      "voto": "missione",
+      "governo": {
+        "ruolo": "vicepresidente",
+        "incarichi": [
+          "Vicepresidente del Consiglio dei ministri",
+          "Ministro degli Affari esteri e della cooperazione internazionale"
+        ]
+      }
     },
     {
       "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308925_19",
