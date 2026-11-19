@@ -2,144 +2,144 @@
   "_istruzioni": "Compila \"ordine\" (numero: posizione da sinistra a destra nell'emiciclo) e \"colore\" (es. \"#1F77B4\") per ogni gruppo. Facoltativo: \"etichetta\", una sigla breve da mostrare al posto di quella ufficiale (utile per le sigle lunghe). Puoi anche correggere \"nome\". Lo script aggiunge da solo i gruppi nuovi e non modifica mai i valori già scritti. Le sigle sono quelle delle fonti ufficiali e possono cambiare nel tempo (es. un gruppo che cambia nome).",
   "camera": [
     {
-      "sigla": "PD-IDP",
-      "nome": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
-      "ordine": null,
-      "colore": null
-    },
-    {
-      "sigla": "NM-M-C",
-      "nome": "NOI MODERATI (NOI CON L'ITALIA, CORAGGIO ITALIA, UDC E ITALIA AL CENTRO)-MAIE-CENTRO POPOLARE",
-      "ordine": null,
-      "colore": null
-    },
-    {
-      "sigla": "APERRE",
-      "nome": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
-      "ordine": null,
-      "colore": null
+      "sigla": "AVS",
+      "nome": "ALLEANZA VERDI E SINISTRA",
+      "ordine": 1,
+      "colore": "#20C997"
     },
     {
       "sigla": "M5S",
       "nome": "MOVIMENTO 5 STELLE",
-      "ordine": null,
-      "colore": null
+      "ordine": 2,
+      "colore": "#ffe931"
     },
     {
-      "sigla": "FDI",
-      "nome": "FRATELLI D'ITALIA",
-      "ordine": null,
-      "colore": null
-    },
-    {
-      "sigla": "FI-PPE",
-      "nome": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
-      "ordine": null,
-      "colore": null
-    },
-    {
-      "sigla": "LEGA",
-      "nome": "LEGA - SALVINI PREMIER",
-      "ordine": null,
-      "colore": null
-    },
-    {
-      "sigla": "M-SCN",
-      "nome": "MISTO-SUD CHIAMA NORD",
-      "ordine": null,
-      "colore": null
-    },
-    {
-      "sigla": "IV-CR",
-      "nome": "ITALIA VIVA-CASA RIFORMISTA",
-      "ordine": null,
-      "colore": null
-    },
-    {
-      "sigla": "M-FNVF",
-      "nome": "MISTO-FUTURO NAZIONALE VANNACCI - FREE",
-      "ordine": null,
-      "colore": null
+      "sigla": "PD-IDP",
+      "nome": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+      "ordine": 3,
+      "colore": "#da291c"
     },
     {
       "sigla": "M-+E-S",
       "nome": "MISTO-+EUROPA - STATI UNITI D'EUROPA",
-      "ordine": null,
-      "colore": null
+      "ordine": 4,
+      "colore": "#26aee7"
+    },
+    {
+      "sigla": "IV-CR",
+      "nome": "ITALIA VIVA-CASA RIFORMISTA",
+      "ordine": 5,
+      "colore": "#cc288f"
+    },
+    {
+      "sigla": "APERRE",
+      "nome": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+      "ordine": 6,
+      "colore": "#228873"
     },
     {
       "sigla": "M-MIN",
       "nome": "MISTO-MINORANZE LINGUISTICHE",
-      "ordine": null,
-      "colore": null
-    },
-    {
-      "sigla": "AVS",
-      "nome": "ALLEANZA VERDI E SINISTRA",
-      "ordine": null,
-      "colore": null
+      "ordine": 7,
+      "colore": "#FFA94D"
     },
     {
       "sigla": "M-ALT",
       "nome": "MISTO",
-      "ordine": null,
-      "colore": null
+      "ordine": 8,
+      "colore": "#ADB5BD"
+    },
+    {
+      "sigla": "NM-M-C",
+      "nome": "NOI MODERATI (NOI CON L'ITALIA, CORAGGIO ITALIA, UDC E ITALIA AL CENTRO)-MAIE-CENTRO POPOLARE",
+      "ordine": 9,
+      "colore": "#eb631b"
+    },
+    {
+      "sigla": "M-SCN",
+      "nome": "MISTO-SUD CHIAMA NORD",
+      "ordine": 10,
+      "colore": "#ffd533"
+    },
+    {
+      "sigla": "FI-PPE",
+      "nome": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+      "ordine": 11,
+      "colore": "#009741"
+    },
+    {
+      "sigla": "FDI",
+      "nome": "FRATELLI D'ITALIA",
+      "ordine": 12,
+      "colore": "#3f86d2"
+    },
+    {
+      "sigla": "LEGA",
+      "nome": "LEGA - SALVINI PREMIER",
+      "ordine": 13,
+      "colore": "#386e94"
+    },
+    {
+      "sigla": "M-FNVF",
+      "nome": "MISTO-FUTURO NAZIONALE VANNACCI - FREE",
+      "ordine": 14,
+      "colore": "#263a97"
     }
   ],
   "senato": [
     {
-      "sigla": "FI-BP-PPE",
-      "nome": "Forza Italia - Berlusconi Presidente - PPE",
-      "ordine": null,
-      "colore": null
-    },
-    {
-      "sigla": "FdI",
-      "nome": "Fratelli d'Italia",
-      "ordine": null,
-      "colore": null
-    },
-    {
-      "sigla": "Cd'I-UDC-NM (NcI, CI, IaC)-MAIE-CP",
-      "nome": "Civici d'Italia-UDC-Noi Moderati (Noi con l'Italia, Coraggio Italia, Italia al Centro)-MAIE-Centro Popolare",
-      "ordine": null,
-      "colore": null
-    },
-    {
-      "sigla": "LSP-PSd'Az",
-      "nome": "Lega Salvini Premier - Partito Sardo d'Azione",
-      "ordine": null,
-      "colore": null
-    },
-    {
-      "sigla": "Aut (SVP-PATT, Cb)",
-      "nome": "Per le Autonomie (SVP-PATT, Campobase)",
-      "ordine": null,
-      "colore": null
-    },
-    {
-      "sigla": "IV-C-RE",
-      "nome": "Italia Viva - Il Centro - Renew Europe",
-      "ordine": null,
-      "colore": null
-    },
-    {
-      "sigla": "PD-IDP",
-      "nome": "Partito Democratico - Italia Democratica e Progressista",
-      "ordine": null,
-      "colore": null
-    },
-    {
       "sigla": "Misto",
       "nome": "Misto",
-      "ordine": null,
-      "colore": null
+      "ordine": 1,
+      "colore": "#ADB5BD"
     },
     {
       "sigla": "M5S",
       "nome": "MoVimento 5 Stelle",
-      "ordine": null,
-      "colore": null
+      "ordine": 2,
+      "colore": "#ffe931"
+    },
+    {
+      "sigla": "PD-IDP",
+      "nome": "Partito Democratico - Italia Democratica e Progressista",
+      "ordine": 3,
+      "colore": "#da291c"
+    },
+    {
+      "sigla": "Aut (SVP-PATT, Cb)",
+      "nome": "Per le Autonomie (SVP-PATT, Campobase)",
+      "ordine": 4,
+      "colore": "#FFA94D"
+    },
+    {
+      "sigla": "IV-C-RE",
+      "nome": "Italia Viva - Il Centro - Renew Europe",
+      "ordine": 5,
+      "colore": "#cc288f"
+    },
+    {
+      "sigla": "Cd'I-UDC-NM (NcI, CI, IaC)-MAIE-CP",
+      "nome": "Civici d'Italia-UDC-Noi Moderati (Noi con l'Italia, Coraggio Italia, Italia al Centro)-MAIE-Centro Popolare",
+      "ordine": 6,
+      "colore": "#eb631b"
+    },
+    {
+      "sigla": "FI-BP-PPE",
+      "nome": "Forza Italia - Berlusconi Presidente - PPE",
+      "ordine": 7,
+      "colore": "#009741"
+    },
+    {
+      "sigla": "FdI",
+      "nome": "Fratelli d'Italia",
+      "ordine": 8,
+      "colore": "#3f86d2"
+    },
+    {
+      "sigla": "LSP-PSd'Az",
+      "nome": "Lega Salvini Premier - Partito Sardo d'Azione",
+      "ordine": 9,
+      "colore": "#386e94"
     }
   ]
 }
