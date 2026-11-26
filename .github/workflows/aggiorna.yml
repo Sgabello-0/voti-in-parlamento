@@ -1,0 +1,74 @@
+# Aggiornamento automatico del sito, in cloud (GitHub Actions).
+# - Ogni giorno: scarica le votazioni nuove della legislatura in corso degli ultimi 3 giorni.
+# - Ogni domenica: controlla gli ultimi 30 giorni, per riprovare le votazioni a cui prima mancava
+#   qualche dato nelle fonti (senza riprovarle tutti i giorni: poche richieste ai server).
+# - Solo se ci sono votazioni nuove: le salva nel repository, rigenera il sito e lo pubblica
+#   su Firebase Hosting, progetto "voti-in-parlamento" (e nessun altro).
+#
+# Serve il segreto FIREBASE_SERVICE_ACCOUNT_VOTI_IN_PARLAMENTO (chiave di un account di servizio
+# con il ruolo "Firebase Hosting Admin"), creato con: npx firebase-tools init hosting:github
+
+name: Aggiornamento quotidiano
+
+on:
+  schedule:
+    - cron: '30 15 * * *'   # ogni giorno alle 15:30 UTC (16:30 ora solare, 17:30 ora legale)
+    - cron: '0 6 * * 0'     # ogni domenica alle 6:00 UTC: controllo degli ultimi 30 giorni
+  workflow_dispatch:
+    inputs:
+      giorni:
+        description: 'Quanti giorni indietro controllare'
+        default: '3'
+
+permissions:
+  contents: write   # per salvare le votazioni nuove nel repository
+
+concurrency:
+  group: aggiornamento
+  cancel-in-progress: false
+
+jobs:
+  aggiorna:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+
+      - name: Scarica le votazioni nuove
+        env:
+          GIORNI: ${{ github.event.inputs.giorni || (github.event.schedule == '0 6 * * 0' && '30') || '3' }}
+        run: node scripts/scarica-periodo.mjs --legislatura 19 --dal "$(date -u -d "$GIORNI days ago" +%F)" --fresco
+
+      - name: Ci sono votazioni nuove?
+        id: nuove
+        run: |
+          if [ -n "$(git status --porcelain -- data/votazioni data/gruppi.json)" ]; then
+            echo "si=true" >> "$GITHUB_OUTPUT"
+            git status --short -- data/votazioni data/gruppi.json | head -50
+          else
+            echo "Nessuna votazione nuova: niente da pubblicare."
+          fi
+
+      - name: Salva le votazioni nuove nel repository
+        if: steps.nuove.outputs.si == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/votazioni data/gruppi.json
+          git commit -m "Votazioni scaricate il $(date -u +%F)"
+          git push
+
+      - name: Pubblica il sito su Firebase Hosting (progetto voti-in-parlamento)
+        if: steps.nuove.outputs.si == 'true'
+        env:
+          CHIAVE: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_VOTI_IN_PARLAMENTO }}
+        run: |
+          printf '%s' "$CHIAVE" > "$RUNNER_TEMP/chiave.json"
+          export GOOGLE_APPLICATION_CREDENTIALS="$RUNNER_TEMP/chiave.json"
+          # il deploy esegue prima la build (predeploy in firebase.json)
+          npx -y firebase-tools@15.37.0 deploy --only hosting --project voti-in-parlamento --non-interactive
+          rm -f "$RUNNER_TEMP/chiave.json"

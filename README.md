@@ -4,6 +4,14 @@ Sito statico che mostra **come ha votato ogni parlamentare** nelle votazioni nom
 Camera e Senato, con il **gruppo parlamentare di ciascuno alla data del voto**.
 I dati vengono dagli open data ufficiali dei due rami del Parlamento.
 
+Cosa c'è nel sito:
+
+- **XIX legislatura** (dal 2022): tutte le votazioni dal 1° settembre 2026; prima, solo i voti
+  importanti (voti finali e questioni di fiducia);
+- **XVIII legislatura** (2018–2022): solo i voti importanti;
+- ogni giorno il sito si aggiorna da solo con le votazioni nuove (vedi
+  [Aggiornamento automatico](#aggiornamento-automatico)).
+
 - Nessun framework, nessuna dipendenza npm: serve solo Node.js 18 o successivo.
 - Le pagine sono HTML già pronto (titolo, totali, emiciclo, elenco completo), quindi
   leggibili dai motori di ricerca anche senza JavaScript. Il JavaScript serve solo per
@@ -29,19 +37,23 @@ lib/                      codice Node
   html.mjs                piccole funzioni per l'HTML (escape, date, maiuscole)
   tipi.mjs                tipi di votazione (finale, emendamento, ordine del giorno…) e loro spiegazioni
   governo.mjs             membri del Governo alla data del voto (open data della Camera)
-  percorsi.mjs            indirizzi delle pagine (votazioni, parlamentari, liste per tipo)
+  percorsi.mjs            indirizzi delle pagine (votazioni, parlamentari, liste, giorni)
+  legislature.mjs         legislature del sito: numeri romani, date, da quando ci sono tutte le votazioni
+  logo.mjs                logo e icona del sito (SVG)
 assets/                   file copiati nel sito così come sono
   stile.css               tutto lo stile (colori in :root)
   emiciclo.js             interattività: vista Voto/Partito, tooltip, filtro, ciambella, schermo intero
   ricerca.js              barra di ricerca della pagina iniziale
 scripts/
   scarica-votazione.mjs   scarica una votazione → data/votazioni/<slug>.json
-  scarica-periodo.mjs     scarica tutte le votazioni (o solo le finali) di un periodo
+  scarica-periodo.mjs     scarica tutte le votazioni (o solo quelle importanti) di un periodo
+  aggiorna.mjs            aggiornamento a mano: scarica le nuove, rigenera e pubblica
   build.mjs               genera il sito in public/
   anteprima.mjs           server locale per vedere il sito
   test-fase1.mjs          test sulle due votazioni di riferimento
 public/                   sito generato (non è in git: lo rifà la build)
 firebase.json, .firebaserc  configurazione di Firebase Hosting
+.github/workflows/aggiorna.yml  aggiornamento automatico quotidiano (GitHub Actions)
 ```
 
 ## Fonti e licenze
@@ -114,9 +126,16 @@ se riscarichi una votazione, ripassa le opzioni.
 node scripts/scarica-periodo.mjs --dal 2026-09-01 --elenco         # solo l'elenco, senza scaricare
 node scripts/scarica-periodo.mjs --dal 2026-09-01 --solo-finali    # solo le votazioni finali
 node scripts/scarica-periodo.mjs --dal 2026-09-01                  # tutte
+# una legislatura passata, solo i voti importanti (voti finali e questioni di fiducia):
+node scripts/scarica-periodo.mjs --legislatura 18 --dal 2018-03-23 --al 2022-10-12 --importanti
 ```
 
-Opzioni: `--al AAAA-MM-GG` (predefinita: oggi), `--ramo camera|senato`, `--aggiorna`.
+Opzioni: `--al AAAA-MM-GG` (predefinita: oggi), `--ramo camera|senato`, `--legislatura N`,
+`--importanti` (solo voti finali e fiducie, filtrati già nella query), `--aggiorna` (riscarica
+anche le votazioni presenti), `--fresco` (scarica quelle mancanti senza usare la cache: serve a
+riprovare quelle a cui prima mancava qualche dato nelle fonti).
+Se un elenco ha un numero "tondo" di righe (10.000, 20.000…) lo script si ferma: vuol dire che
+il server l'ha tagliato, e bisogna restringere il periodo.
 Le votazioni già scaricate vengono saltate; quelle a voto segreto, annullate o di sola verifica
 del numero legale vengono saltate con il motivo. Alla fine lo script elenca scaricate, saltate
 ed errori: un errore su una votazione non ferma le altre. L'elenco viene sempre riletto dalla
@@ -124,8 +143,12 @@ fonte; i dati delle singole votazioni usano la cache.
 
 Cosa fa lo script:
 
-- fa poche richieste e lente (almeno 2 secondi tra l'una e l'altra), con uno User-Agent
-  che identifica il progetto, e salva le risposte in `data/raw/`;
+- fa poche richieste e lente (almeno 2 secondi tra l'una e l'altra alla Camera, 5 al Senato),
+  con uno User-Agent che identifica il progetto, e salva le risposte in `data/raw/`;
+- mandati, adesioni ai gruppi, componenti del Misto e nomi dei gruppi si scaricano **una volta
+  per legislatura** (poi si filtrano alla data di ogni voto): così le richieste sono molte meno.
+  Per la legislatura in corso quella risposta vale solo per il giorno in cui è stata scaricata,
+  perché i gruppi cambiano;
 - include **tutti** i parlamentari in carica alla data, anche chi non ha votato
   (voto: `favorevole`, `contrario`, `astenuto`, `assente`, `missione`, `non_votante`);
 - prende il gruppo **alla data del voto**. Alla Camera usa la sigla registrata nel voto stesso
@@ -183,22 +206,25 @@ npm run anteprima    # apre un server su http://localhost:8080
 
 (Equivalenti: `node scripts/build.mjs` e `node scripts/anteprima.mjs`.)
 L'indirizzo pubblico del sito è in **una sola costante**, `URL_BASE` in `scripts/build.mjs`
-(ora `https://whosnext.web.app`), usata per i link canonici e per la sitemap.
+(ora `https://voti-in-parlamento.web.app`), usata per i link canonici e per la sitemap.
 
 La build crea:
 
-- `public/index.html`: le votazioni divise per ramo (Camera, poi Senato) e, dentro ogni ramo, per
-  **tipo** in ordine di importanza (voti finali, fiducia, risoluzioni, pregiudiziali, articoli,
-  emendamenti, ordini del giorno, altre), ciascuno con una breve spiegazione e le più recenti; una
-  **barra di ricerca** trova votazioni e parlamentari (si può aprire anche con `?q=parole`);
-- `public/votazioni/<ramo>/<tipo>/`: tutte le votazioni di un tipo, dalla più recente;
-- `public/deputati/<nome-cognome-id>/` e `public/senatori/…`: la **pagina di ogni parlamentare**,
-  con gruppo, eventuale incarico di Governo, link alla scheda ufficiale negli open data e tutti
-  i suoi voti divisi per tipo. Le foto non ci sono: gli indirizzi delle foto negli open data non
+- `public/index.html`: in cima i **voti del giorno** (l'ultima giornata con votazioni, prima le
+  più importanti), poi le **legislature**, e in ognuna le votazioni divise per ramo (Camera, poi
+  Senato) e per **tipo** in ordine di importanza (voti finali, fiducia, risoluzioni, pregiudiziali,
+  articoli, emendamenti, ordini del giorno, altre), con una breve spiegazione e le più recenti;
+  una **barra di ricerca** trova votazioni e parlamentari (si può aprire anche con `?q=parole`);
+- `public/votazioni/<legislatura>/<ramo>/<tipo>/`: tutte le votazioni di un tipo, dalla più recente
+  (i vecchi indirizzi senza legislatura rimandano alla XIX: vedi `redirects` in `firebase.json`);
+- `public/giorno/<AAAA-MM-GG>/`: tutte le votazioni di un giorno, con il giorno prima e dopo;
+- `public/deputati/<nome-cognome-id>/` e `public/senatori/…`: la **pagina di ogni parlamentare**
+  (una sola anche se è stato eletto in più legislature), con gruppo, eventuale incarico di Governo,
+  link alla scheda ufficiale negli open data e tutti i suoi voti divisi per legislatura e per tipo. Le foto non ci sono: gli indirizzi delle foto negli open data non
   funzionano (Camera: errore 404; Senato: protezione anti-bot), al loro posto ci sono le iniziali;
 - `public/indice.json`: l'indice usato dalla barra di ricerca (lo scarica solo chi cerca);
 - `public/votazioni/<slug>/index.html`, una pagina per votazione;
-- `public/404.html`, `public/sitemap.xml`, `public/robots.txt`;
+- `public/404.html`, `public/sitemap.xml`, `public/robots.txt`, `public/favicon.svg` (il logo);
 - `public/assets/` con CSS e JS. Il nome contiene un'impronta del contenuto, così i browser
   possono tenerli in cache a lungo.
 
@@ -208,21 +234,46 @@ con `git rm -r --cached public` e fai un commit.
 
 ## Pubblicare su Firebase Hosting
 
-Il progetto è già configurato (`firebase.json` pubblica la cartella `public/` sul sito
-`whosnext`; `.firebaserc` usa il progetto Firebase `whosnext`: **se l'ID del tuo progetto
-Firebase è diverso, cambialo lì**). Prima di ogni deploy Firebase esegue da solo `npm run build`.
+Il sito è pubblicato su **https://voti-in-parlamento.web.app**, nel progetto Firebase dedicato
+`voti-in-parlamento` (`.firebaserc`), sito Hosting `voti-in-parlamento` (`firebase.json`, che
+pubblica la cartella `public/`). Prima di ogni deploy Firebase esegue da solo `npm run build`.
 
 ```sh
-npm install -g firebase-tools   # una volta sola
-firebase login                  # una volta sola
-firebase deploy --only hosting
+npx firebase-tools login                    # una volta sola
+npx firebase-tools deploy --only hosting
 ```
+
+(Con `npm install -g firebase-tools` si può scrivere `firebase` al posto di `npx firebase-tools`.)
 
 Per un'anteprima temporanea online, senza toccare il sito pubblico:
 
 ```sh
 firebase hosting:channel:deploy anteprima
 ```
+
+**Limiti del piano gratuito di Firebase Hosting** (dalla [pagina ufficiale](https://firebase.google.com/docs/hosting/usage-quotas-pricing)):
+10 GB di spazio e circa 10 GB al mese di traffico (360 MB al giorno secondo la pagina dei prezzi),
+per progetto. Lo spazio conta **anche le versioni vecchie** del sito: conviene tenerne poche
+(console di Firebase → Hosting → tabella "Release history" → menu ⋮ → "Release storage
+settings", per esempio 3).
+
+## Aggiornamento automatico
+
+Ogni giorno GitHub Actions (`.github/workflows/aggiorna.yml`) scarica le votazioni nuove della
+legislatura in corso (ultimi 3 giorni; la domenica gli ultimi 30, per riprovare quelle a cui
+mancava qualche dato) e, **solo se ce ne sono di nuove**, le salva nel repository, rigenera il
+sito e lo pubblica sul progetto Firebase `voti-in-parlamento`. Si può lanciare anche a mano
+dalla scheda "Actions" del repository ("Run workflow").
+
+Serve, una volta sola, un account di servizio di Firebase salvato come segreto del repository
+(`FIREBASE_SERVICE_ACCOUNT_VOTI_IN_PARLAMENTO`). Il modo più semplice per crearlo:
+
+```sh
+npx firebase-tools init hosting:github --project voti-in-parlamento
+```
+
+(alle domande sul workflow di build e sul deploy automatico dopo una pull request rispondi "No":
+il workflow c'è già.) Per aggiornare a mano dal proprio computer: `node scripts/aggiorna.mjs`.
 
 ## Come è fatto l'emiciclo
 

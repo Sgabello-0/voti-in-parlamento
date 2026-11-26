@@ -1,15 +1,36 @@
 {
   "hosting": {
-    "site": "whosnext",
+    "site": "voti-in-parlamento",
     "public": "public",
     "predeploy": "npm run build",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
     "cleanUrls": true,
     "trailingSlash": true,
     "headers": [
       {
         "source": "/assets/**",
-        "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      }
+    ],
+    "redirects": [
+      {
+        "source": "/votazioni/camera/:tipo*",
+        "destination": "/votazioni/19/camera/:tipo*",
+        "type": 301
+      },
+      {
+        "source": "/votazioni/senato/:tipo*",
+        "destination": "/votazioni/19/senato/:tipo*",
+        "type": 301
       }
     ]
   }

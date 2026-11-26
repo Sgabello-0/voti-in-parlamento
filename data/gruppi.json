@@ -84,6 +84,210 @@
       "nome": "Misto-Futuro Nazionale Vannacci - Free",
       "ordine": 14,
       "colore": "#263a97"
+    },
+    {
+      "sigla": "AIV-RE",
+      "nome": "Azione - Italia Viva - Renew Europe",
+      "ordine": 5.5,
+      "colore": "#8E4FA0"
+    },
+    {
+      "sigla": "NM-M",
+      "nome": "Noi Moderati (Noi con l'Italia, Coraggio Italia, UDC, Italia al Centro)-MAIE",
+      "ordine": 9,
+      "colore": "#eb631b"
+    },
+    {
+      "sigla": "M-+EUR",
+      "nome": "Misto-+Europa",
+      "ordine": 4,
+      "colore": "#26aee7"
+    },
+    {
+      "sigla": "M-MAIE",
+      "nome": "Misto-MAIE-Movimento Associativo Italiani all'Estero",
+      "ordine": 6.6,
+      "colore": "#5DADE2"
+    },
+    {
+      "sigla": "LEU",
+      "nome": "Liberi e Uguali",
+      "ordine": 0.8,
+      "colore": "#C62828"
+    },
+    {
+      "sigla": "PD",
+      "nome": "Partito Democratico",
+      "ordine": 3,
+      "colore": "#da291c"
+    },
+    {
+      "sigla": "FI",
+      "nome": "Forza Italia - Berlusconi Presidente",
+      "ordine": 11,
+      "colore": "#009741"
+    },
+    {
+      "sigla": "M-CPAC",
+      "nome": "Misto-Civica Popolare-AP-PSI-Area Civica",
+      "ordine": 4.4,
+      "colore": "#F5A623"
+    },
+    {
+      "sigla": "M-E-CD",
+      "nome": "Misto-+Europa-Centro Democratico",
+      "ordine": 3.8,
+      "colore": "#26aee7"
+    },
+    {
+      "sigla": "M-NCI",
+      "nome": "Misto-Noi con l'Italia",
+      "ordine": 9,
+      "colore": "#eb631b"
+    },
+    {
+      "sigla": "M-NM",
+      "nome": "Misto-Noi Moderati (Noi con l'Italia, Coraggio Italia, UDC, Italia al Centro)-MAIE",
+      "ordine": 9,
+      "colore": "#eb631b"
+    },
+    {
+      "sigla": "M-AVS",
+      "nome": "Misto-Alleanza Verdi e Sinistra",
+      "ordine": 1,
+      "colore": "#20C997"
+    },
+    {
+      "sigla": "IVICRE",
+      "nome": "Italia Viva-Il Centro-Renew Europe",
+      "ordine": 5,
+      "colore": "#cc288f"
+    },
+    {
+      "sigla": "M-SI10",
+      "nome": "Misto-Sogno Italia-10 Volte Meglio",
+      "ordine": 9.4,
+      "colore": "#F57C00"
+    },
+    {
+      "sigla": "M-CVM",
+      "nome": "Misto-Cambiamo!-10 Volte Meglio",
+      "ordine": 9.4,
+      "colore": "#F57C00"
+    },
+    {
+      "sigla": "IV",
+      "nome": "Italia Viva",
+      "ordine": 5,
+      "colore": "#cc288f"
+    },
+    {
+      "sigla": "M-CDRE",
+      "nome": "Misto-Centro Democratico-Radicali Italiani-+Europa",
+      "ordine": 3.8,
+      "colore": "#26aee7"
+    },
+    {
+      "sigla": "M-PPAP",
+      "nome": "Misto-Popolo Protagonista - Alternativa Popolare",
+      "ordine": 9.2,
+      "colore": "#6C8EBF"
+    },
+    {
+      "sigla": "M-LACE",
+      "nome": "Misto-L'Alternativa c'è",
+      "ordine": 1.6,
+      "colore": "#C9A227"
+    },
+    {
+      "sigla": "M-CDEM",
+      "nome": "Misto-Centro Democratico",
+      "ordine": 3.6,
+      "colore": "#F39C12"
+    },
+    {
+      "sigla": "M-EFDV",
+      "nome": "Misto-Facciamo Eco-Federazione dei Verdi",
+      "ordine": 0.95,
+      "colore": "#3DBB61"
+    },
+    {
+      "sigla": "M-CPP",
+      "nome": "Misto-Cambiamo!-Popolo Protagonista",
+      "ordine": 9.4,
+      "colore": "#F57C00"
+    },
+    {
+      "sigla": "M-AERI",
+      "nome": "Misto-Azione-+Europa-Radicali Italiani",
+      "ordine": 4.2,
+      "colore": "#228873"
+    },
+    {
+      "sigla": "M-EUMP",
+      "nome": "Misto-Europeisti-MAIE-PSI",
+      "ordine": 6.6,
+      "colore": "#5DADE2"
+    },
+    {
+      "sigla": "M-MAPS",
+      "nome": "Misto-MAIE-PSI",
+      "ordine": 6.6,
+      "colore": "#5DADE2"
+    },
+    {
+      "sigla": "CI",
+      "nome": "Coraggio Italia",
+      "ordine": 9.3,
+      "colore": "#F7B32B"
+    },
+    {
+      "sigla": "M-MPSE",
+      "nome": "Misto-MAIE-PSI-FacciamoEco",
+      "ordine": 6.6,
+      "colore": "#5DADE2"
+    },
+    {
+      "sigla": "M-A",
+      "nome": "Misto-Alternativa",
+      "ordine": 1.6,
+      "colore": "#C9A227"
+    },
+    {
+      "sigla": "M-MPPR",
+      "nome": "Misto-ManifestA, Potere al Popolo, Partito della Rifondazione Comunista-Sinistra Europea",
+      "ordine": 0.5,
+      "colore": "#8B1E1E"
+    },
+    {
+      "sigla": "M-EVVE",
+      "nome": "Misto-Europa Verde-Verdi Europei",
+      "ordine": 0.9,
+      "colore": "#3DBB61"
+    },
+    {
+      "sigla": "IPF",
+      "nome": "Insieme per il Futuro",
+      "ordine": 2.6,
+      "colore": "#3C8DBC"
+    },
+    {
+      "sigla": "M-VICT",
+      "nome": "Misto-Vinciamo Italia - Italia al Centro con Toti",
+      "ordine": 9.4,
+      "colore": "#F57C00"
+    },
+    {
+      "sigla": "M-CI",
+      "nome": "Misto-Coraggio Italia",
+      "ordine": 9.3,
+      "colore": "#F7B32B"
+    },
+    {
+      "sigla": "IV-ICE",
+      "nome": "Italia Viva-Italia c'è",
+      "ordine": 5,
+      "colore": "#cc288f"
     }
   ],
   "senato": [
@@ -148,6 +352,62 @@
       "nome": "Lega Salvini Premier - Partito Sardo d'Azione",
       "ordine": 9,
       "colore": "#386e94"
+    },
+    {
+      "sigla": "PdL",
+      "nome": "Il Popolo della Libertà",
+      "ordine": null,
+      "colore": null
+    },
+    {
+      "sigla": "PD",
+      "nome": "Partito Democratico",
+      "ordine": null,
+      "colore": null
+    },
+    {
+      "sigla": "GAL",
+      "nome": "Grandi Autonomie e Libertà",
+      "ordine": null,
+      "colore": null
+    },
+    {
+      "sigla": "SCpI",
+      "nome": "Scelta Civica per l'Italia",
+      "ordine": null,
+      "colore": null
+    },
+    {
+      "sigla": "LN-Aut",
+      "nome": "Lega Nord e Autonomie",
+      "ordine": null,
+      "colore": null
+    },
+    {
+      "sigla": "Aut (SVP, UV, PATT, UPT) - PSI",
+      "nome": "Per le Autonomie (SVP, UV, PATT, UPT) - PSI",
+      "ordine": null,
+      "colore": null
+    },
+    {
+      "sigla": "Az-IV-RE",
+      "nome": "Azione-Italia Viva-Renew Europe",
+      "ordine": 4,
+      "colore": "#8E4FA0"
+    },
+    {
+      "sigla": "Cd'I-NM (UDC-CI-NcI-IaC)-MAIE",
+      "nome": "Civici d'Italia - Noi Moderati (UDC - Coraggio Italia - Noi con l'Italia - Italia al Centro) - MAIE",
+      "ordine": 6,
+      "colore": "#eb631b",
+      "etichetta": "Cd'I-NM"
+    },
+    {
+      "sigla": "Aut (SVP-Patt, Cb, SCN)",
+      "nome": "Per le Autonomie (SVP-Patt, Campobase, Sud Chiama Nord)",
+      "ordine": 5,
+      "colore": "#FFA94D",
+      "etichetta": "Aut"
     }
   ]
 }

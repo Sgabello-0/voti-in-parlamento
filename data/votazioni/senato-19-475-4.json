@@ -1,0 +1,1645 @@
+{
+  "slug": "senato-19-475-4",
+  "ramo": "senato",
+  "legislatura": 19,
+  "seduta": 475,
+  "numero_votazione": 4,
+  "data": "2026-11-11",
+  "titolo": "d-l n. 162/2026 - Disposizioni urgenti in materia di costo dei carburanti e fiscale – Em. 1.6, Croatti e Turco",
+  "descrizione": "Conversione in legge, con modificazioni, del decreto-legge 17 settembre 2026, n. 162, recante disposizioni urgenti per il sostegno economico e il contenimento degli effetti derivanti dal perdurante aumento del costo dei carburanti, nonché in materia fiscale (S.2085)",
+  "fonti": [
+    {
+      "nome": "Senato della Repubblica – dati.senato.it (votazione e voti dei senatori)",
+      "url": "http://dati.senato.it/votazione/19-475-4",
+      "licenza": "CC BY 3.0 IT"
+    },
+    {
+      "nome": "Camera dei deputati – dati.camera.it (incarichi di Governo)",
+      "url": "https://dati.camera.it",
+      "licenza": "CC BY-SA 4.0"
+    }
+  ],
+  "totali": {
+    "favorevoli": 45,
+    "contrari": 79,
+    "astenuti": 1,
+    "presenti": 126,
+    "votanti": 125
+  },
+  "esito": "respinto",
+  "tipo": "emendamento",
+  "gruppi": [
+    {
+      "sigla": "Misto",
+      "nome": "Misto",
+      "ordine": 1,
+      "colore": "#ADB5BD"
+    },
+    {
+      "sigla": "M5S",
+      "nome": "MoVimento 5 Stelle",
+      "ordine": 2,
+      "colore": "#ffe931"
+    },
+    {
+      "sigla": "PD-IDP",
+      "nome": "Partito Democratico - Italia Democratica e Progressista",
+      "ordine": 3,
+      "colore": "#da291c"
+    },
+    {
+      "sigla": "IV-CR",
+      "nome": "Italia Viva - Casa Riformista",
+      "ordine": 4,
+      "colore": "#cc288f"
+    },
+    {
+      "sigla": "Aut (SVP-PATT, Cb)",
+      "nome": "Per le Autonomie (SVP-PATT, Campobase)",
+      "ordine": 5,
+      "colore": "#FFA94D"
+    },
+    {
+      "sigla": "Cd'I-UDC-NM (NcI, CI, IaC)-MAIE-CP",
+      "nome": "Civici d'Italia-UDC-Noi Moderati (Noi con l'Italia, Coraggio Italia, Italia al Centro)-MAIE-Centro Popolare",
+      "ordine": 6,
+      "colore": "#eb631b"
+    },
+    {
+      "sigla": "FI-BP-PPE",
+      "nome": "Forza Italia - Berlusconi Presidente - PPE",
+      "ordine": 7,
+      "colore": "#009741"
+    },
+    {
+      "sigla": "FdI",
+      "nome": "Fratelli d'Italia",
+      "ordine": 8,
+      "colore": "#3f86d2"
+    },
+    {
+      "sigla": "LSP-PSd'Az",
+      "nome": "Lega Salvini Premier - Partito Sardo d'Azione",
+      "ordine": 9,
+      "colore": "#386e94"
+    }
+  ],
+  "parlamentari": [
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32",
+      "nome": "Maria Elisabetta",
+      "cognome": "Alberti Casellati",
+      "gruppo": "FI-BP-PPE",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "ministro",
+        "incarichi": [
+          "Ministra per le Riforme istituzionali e la semplificazione normativa"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32578",
+      "nome": "Alessandro",
+      "cognome": "Alfieri",
+      "gruppo": "PD-IDP",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36381",
+      "nome": "Vincenza",
+      "cognome": "Aloisio",
+      "gruppo": "M5S",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36382",
+      "nome": "Paola",
+      "cognome": "Ambrogio",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/31010",
+      "nome": "Bartolomeo",
+      "cognome": "Amidei",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36383",
+      "nome": "Renato",
+      "cognome": "Ancorotti",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/17542",
+      "nome": "Alberto",
+      "cognome": "Balboni",
+      "gruppo": "FdI",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretario di Stato per la Giustizia"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32583",
+      "nome": "Alberto",
+      "cognome": "Barachini",
+      "gruppo": "FI-BP-PPE",
+      "voto": "contrario",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretario di Stato alla Presidenza del Consiglio dei ministri"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36431",
+      "nome": "Michele",
+      "cognome": "Barcaiuolo",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/29270",
+      "nome": "Lorenzo",
+      "cognome": "Basso",
+      "gruppo": "PD-IDP",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/29273",
+      "nome": "Alfredo",
+      "cognome": "Bazoli",
+      "gruppo": "PD-IDP",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32586",
+      "nome": "Giorgio Maria",
+      "cognome": "Bergesio",
+      "gruppo": "LSP-PSd'Az",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/25558",
+      "nome": "Anna Maria",
+      "cognome": "Bernini",
+      "gruppo": "FI-BP-PPE",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "ministro",
+        "incarichi": [
+          "Ministro dell'Università e della ricerca"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36384",
+      "nome": "Gianni",
+      "cognome": "Berrino",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36385",
+      "nome": "Dolores",
+      "cognome": "Bevilacqua",
+      "gruppo": "M5S",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/22871",
+      "nome": "Michaela",
+      "cognome": "Biancofiore",
+      "gruppo": "Cd'I-UDC-NM (NcI, CI, IaC)-MAIE-CP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32851",
+      "nome": "Anna",
+      "cognome": "Bilotti",
+      "gruppo": "M5S",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36386",
+      "nome": "Mara",
+      "cognome": "Bizzotto",
+      "gruppo": "LSP-PSd'Az",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretaria di Stato per le Imprese e il made in Italy"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/25555",
+      "nome": "Francesco",
+      "cognome": "Boccia",
+      "gruppo": "PD-IDP",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/22877",
+      "nome": "Giulia",
+      "cognome": "Bongiorno",
+      "gruppo": "LSP-PSd'Az",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/29291",
+      "nome": "Mario Alejandro",
+      "cognome": "Borghese",
+      "gruppo": "Cd'I-UDC-NM (NcI, CI, IaC)-MAIE-CP",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/29292",
+      "nome": "Stefano",
+      "cognome": "Borghesi",
+      "gruppo": "LSP-PSd'Az",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/29293",
+      "nome": "Enrico",
+      "cognome": "Borghi",
+      "gruppo": "IV-CR",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/33070",
+      "nome": "Claudio",
+      "cognome": "Borghi Aquilini",
+      "gruppo": "LSP-PSd'Az",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32590",
+      "nome": "Lucia",
+      "cognome": "Borgonzoni",
+      "gruppo": "LSP-PSd'Az",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretaria di Stato per la Cultura"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32856",
+      "nome": "Carmela",
+      "cognome": "Bucalo",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/407",
+      "nome": "Alessio",
+      "cognome": "Butti",
+      "gruppo": "FdI",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretario di Stato alla Presidenza del Consiglio dei ministri"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/34485",
+      "nome": "Nicola",
+      "cognome": "Calandrini",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/422",
+      "nome": "Roberto",
+      "cognome": "Calderoli",
+      "gruppo": "LSP-PSd'Az",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "ministro",
+        "incarichi": [
+          "Ministro per gli Affari regionali e le autonomie"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/30110",
+      "nome": "Carlo",
+      "cognome": "Calenda",
+      "gruppo": "Misto",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36432",
+      "nome": "Susanna Donatella",
+      "cognome": "Campione",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36392",
+      "nome": "Susanna Lina Giulia",
+      "cognome": "Camusso",
+      "gruppo": "PD-IDP",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32862",
+      "nome": "Gianluca",
+      "cognome": "Cantalamessa",
+      "gruppo": "LSP-PSd'Az",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32598",
+      "nome": "Maria Cristina",
+      "cognome": "Cantu'",
+      "gruppo": "LSP-PSd'Az",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/520",
+      "nome": "Pier Ferdinando",
+      "cognome": "Casini",
+      "gruppo": "PD-IDP",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36388",
+      "nome": "Guido",
+      "cognome": "Castelli",
+      "gruppo": "FdI",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32600",
+      "nome": "Maria Domenica",
+      "cognome": "Castellone",
+      "gruppo": "M5S",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/33065",
+      "nome": "Roberto",
+      "cognome": "Cataldi",
+      "gruppo": "M5S",
+      "voto": "non_votante"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/30511",
+      "nome": "Elena",
+      "cognome": "Cattaneo",
+      "gruppo": "Aut (SVP-PATT, Cb)",
+      "voto": "astenuto"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/29067",
+      "nome": "Gian Marco",
+      "cognome": "Centinaio",
+      "gruppo": "LSP-PSd'Az",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32603",
+      "nome": "Luca",
+      "cognome": "Ciriani",
+      "gruppo": "FdI",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "ministro",
+        "incarichi": [
+          "Ministro per i Rapporti con il Parlamento"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/22910",
+      "nome": "Giulia",
+      "cognome": "Cosenza",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/22914",
+      "nome": "Stefania Gabriella Anastasia",
+      "cognome": "Craxi",
+      "gruppo": "FI-BP-PPE",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36387",
+      "nome": "Andrea",
+      "cognome": "Crisanti",
+      "gruppo": "Misto",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32608",
+      "nome": "Marco",
+      "cognome": "Croatti",
+      "gruppo": "M5S",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36390",
+      "nome": "Ilaria",
+      "cognome": "Cucchi",
+      "gruppo": "Misto",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/31875",
+      "nome": "Cecilia",
+      "cognome": "D'Elia",
+      "gruppo": "PD-IDP",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36391",
+      "nome": "Concetta",
+      "cognome": "Damante",
+      "gruppo": "M5S",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32747",
+      "nome": "Dario",
+      "cognome": "Damiani",
+      "gruppo": "FI-BP-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32898",
+      "nome": "Luca",
+      "cognome": "De Carlo",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/22918",
+      "nome": "Peppe",
+      "cognome": "De Cristofaro",
+      "gruppo": "Misto",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/22814",
+      "nome": "Antonio",
+      "cognome": "De Poli",
+      "gruppo": "Cd'I-UDC-NM (NcI, CI, IaC)-MAIE-CP",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36393",
+      "nome": "Andrea",
+      "cognome": "De Priamo",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36394",
+      "nome": "Raffaele",
+      "cognome": "De Rosa",
+      "gruppo": "FI-BP-PPE",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36395",
+      "nome": "Costanzo",
+      "cognome": "Della Porta",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/28670",
+      "nome": "Graziano",
+      "cognome": "Delrio",
+      "gruppo": "PD-IDP",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32619",
+      "nome": "Gabriella",
+      "cognome": "Di Girolamo",
+      "gruppo": "M5S",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36396",
+      "nome": "Marco",
+      "cognome": "Dreosto",
+      "gruppo": "LSP-PSd'Az",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/33096",
+      "nome": "Claudio",
+      "cognome": "Durigon",
+      "gruppo": "LSP-PSd'Az",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretario di Stato per il Lavoro e le politiche sociali"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32624",
+      "nome": "Meinhard",
+      "cognome": "Durnwalder",
+      "gruppo": "Aut (SVP-PATT, Cb)",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36398",
+      "nome": "Anna Maria",
+      "cognome": "Fallucchi",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36397",
+      "nome": "Marta",
+      "cognome": "Farolfi",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32628",
+      "nome": "Giovanbattista",
+      "cognome": "Fazzolari",
+      "gruppo": "FdI",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretario di Stato alla Presidenza del Consiglio dei ministri"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/4192",
+      "nome": "Claudio",
+      "cognome": "Fazzone",
+      "gruppo": "FI-BP-PPE",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/30294",
+      "nome": "Michele",
+      "cognome": "Fina",
+      "gruppo": "PD-IDP",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36399",
+      "nome": "Aurora",
+      "cognome": "Floridia",
+      "gruppo": "Aut (SVP-PATT, Cb)",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32634",
+      "nome": "Barbara",
+      "cognome": "Floridia",
+      "gruppo": "M5S",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36400",
+      "nome": "Silvio",
+      "cognome": "Franceschelli",
+      "gruppo": "PD-IDP",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/5799",
+      "nome": "Dario",
+      "cognome": "Franceschini",
+      "gruppo": "PD-IDP",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/29406",
+      "nome": "Silvia",
+      "cognome": "Fregolent",
+      "gruppo": "IV-CR",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/31725",
+      "nome": "Annamaria",
+      "cognome": "Furlan",
+      "gruppo": "IV-CR",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32637",
+      "nome": "Adriano",
+      "cognome": "Galliani",
+      "gruppo": "FI-BP-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/22963",
+      "nome": "Massimo",
+      "cognome": "Garavaglia",
+      "gruppo": "LSP-PSd'Az",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/18121",
+      "nome": "Daniela",
+      "cognome": "Garnero Santanche'",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/1103",
+      "nome": "Maurizio",
+      "cognome": "Gasparri",
+      "gruppo": "FI-BP-PPE",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32640",
+      "nome": "Felicia",
+      "cognome": "Gaudiano",
+      "gruppo": "M5S",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36433",
+      "nome": "Matteo",
+      "cognome": "Gelmetti",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/22966",
+      "nome": "Mariastella",
+      "cognome": "Gelmini",
+      "gruppo": "Cd'I-UDC-NM (NcI, CI, IaC)-MAIE-CP",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/1116",
+      "nome": "Antonino",
+      "cognome": "Germana'",
+      "gruppo": "LSP-PSd'Az",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/29105",
+      "nome": "Francesco",
+      "cognome": "Giacobbe",
+      "gruppo": "PD-IDP",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/29425",
+      "nome": "Andrea",
+      "cognome": "Giorgis",
+      "gruppo": "PD-IDP",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/1227",
+      "nome": "Antonio",
+      "cognome": "Guidi",
+      "gruppo": "Misto",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32644",
+      "nome": "Barbara",
+      "cognome": "Guidolin",
+      "gruppo": "M5S",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32645",
+      "nome": "Antonio",
+      "cognome": "Iannone",
+      "gruppo": "FdI",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretario di Stato per le Infrastrutture e i trasporti"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36401",
+      "nome": "Nicola",
+      "cognome": "Irto",
+      "gruppo": "PD-IDP",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/29447",
+      "nome": "Francesca",
+      "cognome": "La Marca",
+      "gruppo": "PD-IDP",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32650",
+      "nome": "Patrizio Giacomo",
+      "cognome": "La Pietra",
+      "gruppo": "FdI",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretario di Stato per l'Agricoltura, la sovranità alimentare e le foreste"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/1275",
+      "nome": "Ignazio",
+      "cognome": "La Russa",
+      "gruppo": "FdI",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36402",
+      "nome": "Elena",
+      "cognome": "Leonardi",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32653",
+      "nome": "Ettore Antonio",
+      "cognome": "Licheri",
+      "gruppo": "M5S",
+      "voto": "non_votante"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36434",
+      "nome": "Sabrina",
+      "cognome": "Licheri",
+      "gruppo": "M5S",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36403",
+      "nome": "Guido Quintino",
+      "cognome": "Liris",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36435",
+      "nome": "Marco",
+      "cognome": "Lisei",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36436",
+      "nome": "Marco",
+      "cognome": "Lombardo",
+      "gruppo": "Misto",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36404",
+      "nome": "Ada",
+      "cognome": "Lopreiato",
+      "gruppo": "M5S",
+      "voto": "non_votante"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32655",
+      "nome": "Pietro",
+      "cognome": "Lorefice",
+      "gruppo": "M5S",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/25474",
+      "nome": "Beatrice",
+      "cognome": "Lorenzin",
+      "gruppo": "PD-IDP",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/18055",
+      "nome": "Alberto",
+      "cognome": "Losacco",
+      "gruppo": "PD-IDP",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36405",
+      "nome": "Claudio",
+      "cognome": "Lotito",
+      "gruppo": "FI-BP-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/33946",
+      "nome": "Gianpietro",
+      "cognome": "Maffoni",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36437",
+      "nome": "Tino",
+      "cognome": "Magni",
+      "gruppo": "Misto",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32658",
+      "nome": "Alessandra",
+      "cognome": "Maiorino",
+      "gruppo": "M5S",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/1407",
+      "nome": "Lucio",
+      "cognome": "Malan",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/29467",
+      "nome": "Simona Flavia",
+      "cognome": "Malpezzi",
+      "gruppo": "PD-IDP",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32660",
+      "nome": "Daniele",
+      "cognome": "Manca",
+      "gruppo": "PD-IDP",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36438",
+      "nome": "Paola",
+      "cognome": "Mancini",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36439",
+      "nome": "Paolo",
+      "cognome": "Marcheschi",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/17924",
+      "nome": "Andrea",
+      "cognome": "Martella",
+      "gruppo": "PD-IDP",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/29480",
+      "nome": "Roberto",
+      "cognome": "Marti",
+      "gruppo": "LSP-PSd'Az",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/29132",
+      "nome": "Bruno",
+      "cognome": "Marton",
+      "gruppo": "M5S",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36440",
+      "nome": "Domenico",
+      "cognome": "Matera",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36406",
+      "nome": "Orfeo",
+      "cognome": "Mazzella",
+      "gruppo": "M5S",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36407",
+      "nome": "Filippo",
+      "cognome": "Melchiorre",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/29490",
+      "nome": "Marco",
+      "cognome": "Meloni",
+      "gruppo": "PD-IDP",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/1558",
+      "nome": "Roberto",
+      "cognome": "Menia",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/34558",
+      "nome": "Lavinia",
+      "cognome": "Mennuni",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36408",
+      "nome": "Ester",
+      "cognome": "Mieli",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36013",
+      "nome": "Tilde",
+      "cognome": "Minasi",
+      "gruppo": "LSP-PSd'Az",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/29138",
+      "nome": "Franco",
+      "cognome": "Mirabelli",
+      "gruppo": "PD-IDP",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/23011",
+      "nome": "Antonio",
+      "cognome": "Misiani",
+      "gruppo": "PD-IDP",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/28543",
+      "nome": "Mario",
+      "cognome": "Monti",
+      "gruppo": "Misto",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32988",
+      "nome": "Alessandro",
+      "cognome": "Morelli",
+      "gruppo": "LSP-PSd'Az",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretario di Stato alla Presidenza del Consiglio dei ministri"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/33110",
+      "nome": "Elena",
+      "cognome": "Murelli",
+      "gruppo": "LSP-PSd'Az",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36409",
+      "nome": "Dafne",
+      "cognome": "Musolino",
+      "gruppo": "IV-CR",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/28306",
+      "nome": "Nello",
+      "cognome": "Musumeci",
+      "gruppo": "FdI",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/25446",
+      "nome": "Gaetano",
+      "cognome": "Nastri",
+      "gruppo": "FdI",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32673",
+      "nome": "Gisella",
+      "cognome": "Naturale",
+      "gruppo": "M5S",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36410",
+      "nome": "Luigi",
+      "cognome": "Nave",
+      "gruppo": "Misto",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36411",
+      "nome": "Antonio",
+      "cognome": "Nicita",
+      "gruppo": "PD-IDP",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36412",
+      "nome": "Vita Maria",
+      "cognome": "Nocco",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36413",
+      "nome": "Mario",
+      "cognome": "Occhiuto",
+      "gruppo": "FI-BP-PPE",
+      "voto": "non_votante"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36414",
+      "nome": "Fausto",
+      "cognome": "Orsomarso",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32677",
+      "nome": "Andrea",
+      "cognome": "Ostellari",
+      "gruppo": "LSP-PSd'Az",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretario di Stato per la Giustizia"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/34243",
+      "nome": "Andrea",
+      "cognome": "Paganella",
+      "gruppo": "LSP-PSd'Az",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/33005",
+      "nome": "Raffaella",
+      "cognome": "Paita",
+      "gruppo": "IV-CR",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/4512",
+      "nome": "Adriano",
+      "cognome": "Paroli",
+      "gruppo": "FI-BP-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/29521",
+      "nome": "Dario",
+      "cognome": "Parrini",
+      "gruppo": "PD-IDP",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36415",
+      "nome": "Pietro",
+      "cognome": "Patton",
+      "gruppo": "Aut (SVP-PATT, Cb)",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32681",
+      "nome": "Stefano",
+      "cognome": "Patuanelli",
+      "gruppo": "M5S",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/35489",
+      "nome": "Cinzia",
+      "cognome": "Pellegrino",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/3900",
+      "nome": "Marcello",
+      "cognome": "Pera",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/25429",
+      "nome": "Giovanna",
+      "cognome": "Petrenga",
+      "gruppo": "Cd'I-UDC-NM (NcI, CI, IaC)-MAIE-CP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36416",
+      "nome": "Simona",
+      "cognome": "Petrucci",
+      "gruppo": "FdI",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/30512",
+      "nome": "Renzo",
+      "cognome": "Piano",
+      "gruppo": "Misto",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36417",
+      "nome": "Luca",
+      "cognome": "Pirondini",
+      "gruppo": "M5S",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/18562",
+      "nome": "Daisy",
+      "cognome": "Pirovano",
+      "gruppo": "LSP-PSd'Az",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32691",
+      "nome": "Elisa",
+      "cognome": "Pirro",
+      "gruppo": "M5S",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36441",
+      "nome": "Salvo",
+      "cognome": "Pogliese",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/33022",
+      "nome": "Manfredi",
+      "cognome": "Potenti",
+      "gruppo": "LSP-PSd'Az",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32697",
+      "nome": "Stefania",
+      "cognome": "Pucciarelli",
+      "gruppo": "LSP-PSd'Az",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36418",
+      "nome": "Vincenza",
+      "cognome": "Rando",
+      "gruppo": "PD-IDP",
+      "voto": "non_votante"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36419",
+      "nome": "Ernesto",
+      "cognome": "Rapani",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36442",
+      "nome": "Sergio",
+      "cognome": "Rastrelli",
+      "gruppo": "FdI",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32699",
+      "nome": "Isabella",
+      "cognome": "Rauti",
+      "gruppo": "FdI",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretaria di Stato per la Difesa"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/30742",
+      "nome": "Matteo",
+      "cognome": "Renzi",
+      "gruppo": "IV-CR",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32703",
+      "nome": "Tatjana",
+      "cognome": "Rojc",
+      "gruppo": "PD-IDP",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32706",
+      "nome": "Massimiliano",
+      "cognome": "Romeo",
+      "gruppo": "LSP-PSd'Az",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32707",
+      "nome": "Licia",
+      "cognome": "Ronzulli",
+      "gruppo": "FI-BP-PPE",
+      "voto": "non_votante"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36420",
+      "nome": "Gianni",
+      "cognome": "Rosa",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32779",
+      "nome": "Roberto",
+      "cognome": "Rosso",
+      "gruppo": "FI-BP-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/25411",
+      "nome": "Anna",
+      "cognome": "Rossomando",
+      "gruppo": "PD-IDP",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/30510",
+      "nome": "Carlo",
+      "cognome": "Rubbia",
+      "gruppo": "Aut (SVP-PATT, Cb)",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36421",
+      "nome": "Raoul",
+      "cognome": "Russo",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36422",
+      "nome": "Salvatore",
+      "cognome": "Sallemi",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/25407",
+      "nome": "Matteo",
+      "cognome": "Salvini",
+      "gruppo": "LSP-PSd'Az",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "vicepresidente",
+        "incarichi": [
+          "Vicepresidente del Consiglio dei ministri",
+          "Ministro delle Infrastrutture e dei trasporti"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36443",
+      "nome": "Giorgio",
+      "cognome": "Salvitti",
+      "gruppo": "Cd'I-UDC-NM (NcI, CI, IaC)-MAIE-CP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36444",
+      "nome": "Giovanni",
+      "cognome": "Satta",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/25402",
+      "nome": "Daniela",
+      "cognome": "Sbrollini",
+      "gruppo": "IV-CR",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/29573",
+      "nome": "Ivan",
+      "cognome": "Scalfarotto",
+      "gruppo": "IV-CR",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36423",
+      "nome": "Roberto Maria Ferdinando",
+      "cognome": "Scarpinato",
+      "gruppo": "M5S",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/33863",
+      "nome": "Marco",
+      "cognome": "Scurria",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32435",
+      "nome": "Liliana",
+      "cognome": "Segre",
+      "gruppo": "Misto",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/27622",
+      "nome": "Filippo",
+      "cognome": "Sensi",
+      "gruppo": "PD-IDP",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36424",
+      "nome": "Etelwardo",
+      "cognome": "Sigismondi",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36445",
+      "nome": "Francesco",
+      "cognome": "Silvestro",
+      "gruppo": "FI-BP-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/33137",
+      "nome": "Marco",
+      "cognome": "Silvestroni",
+      "gruppo": "FdI",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36425",
+      "nome": "Elena",
+      "cognome": "Sironi",
+      "gruppo": "M5S",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36446",
+      "nome": "Sandro",
+      "cognome": "Sisler",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/22263",
+      "nome": "Francesco Paolo",
+      "cognome": "Sisto",
+      "gruppo": "FI-BP-PPE",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "viceministro",
+        "incarichi": [
+          "Vice Ministro della Giustizia"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36426",
+      "nome": "Luigi",
+      "cognome": "Spagnolli",
+      "gruppo": "Aut (SVP-PATT, Cb)",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36427",
+      "nome": "Nicoletta",
+      "cognome": "Spelgatti",
+      "gruppo": "LSP-PSd'Az",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36428",
+      "nome": "Raffaele",
+      "cognome": "Speranzon",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36447",
+      "nome": "Domenica",
+      "cognome": "Spinelli",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/29185",
+      "nome": "Erika",
+      "cognome": "Stefani",
+      "gruppo": "LSP-PSd'Az",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/37739",
+      "nome": "Cristina",
+      "cognome": "Tajani",
+      "gruppo": "PD-IDP",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/37415",
+      "nome": "Daniela",
+      "cognome": "Ternullo",
+      "gruppo": "FI-BP-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/28550",
+      "nome": "Giuliomaria",
+      "cognome": "Terzi Di Sant'Agata",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32721",
+      "nome": "Elena",
+      "cognome": "Testor",
+      "gruppo": "LSP-PSd'Az",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/30915",
+      "nome": "Paolo",
+      "cognome": "Tosato",
+      "gruppo": "LSP-PSd'Az",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36448",
+      "nome": "Antonio Salvatore",
+      "cognome": "Trevisi",
+      "gruppo": "FI-BP-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36449",
+      "nome": "Francesca",
+      "cognome": "Tubetti",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32726",
+      "nome": "Mario",
+      "cognome": "Turco",
+      "gruppo": "M5S",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32727",
+      "nome": "Julia",
+      "cognome": "Unterberger",
+      "gruppo": "Aut (SVP-PATT, Cb)",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/2444",
+      "nome": "Adolfo",
+      "cognome": "Urso",
+      "gruppo": "FdI",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "ministro",
+        "incarichi": [
+          "Ministro delle Imprese e del made in Italy"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/29604",
+      "nome": "Valeria",
+      "cognome": "Valente",
+      "gruppo": "PD-IDP",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/28924",
+      "nome": "Francesco",
+      "cognome": "Verducci",
+      "gruppo": "PD-IDP",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/25377",
+      "nome": "Walter",
+      "cognome": "Verini",
+      "gruppo": "PD-IDP",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/33027",
+      "nome": "Giusy",
+      "cognome": "Versace",
+      "gruppo": "Cd'I-UDC-NM (NcI, CI, IaC)-MAIE-CP",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/32732",
+      "nome": "Francesco",
+      "cognome": "Zaffini",
+      "gruppo": "FdI",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36429",
+      "nome": "Ylenia",
+      "cognome": "Zambito",
+      "gruppo": "PD-IDP",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/24016",
+      "nome": "Sandra",
+      "cognome": "Zampa",
+      "gruppo": "PD-IDP",
+      "voto": "non_votante"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/17811",
+      "nome": "Pierantonio",
+      "cognome": "Zanettin",
+      "gruppo": "FI-BP-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/33038",
+      "nome": "Paolo",
+      "cognome": "Zangrillo",
+      "gruppo": "FI-BP-PPE",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "ministro",
+        "incarichi": [
+          "Ministro per la Pubblica amministrazione"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36430",
+      "nome": "Antonella",
+      "cognome": "Zedda",
+      "gruppo": "FdI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.senato.it/senatore/36450",
+      "nome": "Ignazio",
+      "cognome": "Zullo",
+      "gruppo": "FdI",
+      "voto": "assente"
+    }
+  ]
+}

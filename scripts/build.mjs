@@ -12,16 +12,18 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
-import { paginaVotazione, paginaIndice, pagina404, paginaParlamentare, paginaElencoTipo } from '../lib/pagine.mjs';
+import { paginaVotazione, paginaIndice, pagina404, paginaParlamentare, paginaElencoTipo, paginaGiorno } from '../lib/pagine.mjs';
 import { nomeCompleto } from '../lib/html.mjs';
 import { RUOLI_GOVERNO } from '../lib/governo.mjs';
 import { TIPI } from '../lib/tipi.mjs';
-import { percorsoParlamentare, percorsoTipo } from '../lib/percorsi.mjs';
+import { percorsoParlamentare, percorsoTipo, percorsoGiorno, idNumerico } from '../lib/percorsi.mjs';
+import { faviconSvg } from '../lib/logo.mjs';
+import { LEGISLATURE } from '../lib/legislature.mjs';
 
 // ---------------------------------------------------------------------------
 // Impostazioni del sito: l'indirizzo pubblico si cambia SOLO qui.
 // ---------------------------------------------------------------------------
-const URL_BASE = 'https://whosnext.web.app';
+const URL_BASE = 'https://voti-in-parlamento.web.app';
 const NOME_SITO = 'Voti in Parlamento';
 
 const radice = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -113,7 +115,7 @@ function preparaVotazione(v, archivioGruppi, anagrafica) {
     ...p,
     nomeCompleto: nomeCompleto(p),
     indiceGruppo: perSigla.get(p.gruppo).indice,
-    percorso: percorsoParlamentare(v.ramo, anagrafica.get(p.id_fonte) ?? p), // pagina del parlamentare
+    percorso: percorsoParlamentare(v.ramo, anagrafica.get(chiavePersona(v.ramo, p.id_fonte)) ?? p), // pagina del parlamentare
   }));
   const nelleFile = tutti
     .filter((p) => !p.governo)
@@ -157,6 +159,14 @@ function preparaVotazione(v, archivioGruppi, anagrafica) {
 // Supporto
 // ---------------------------------------------------------------------------
 
+/**
+ * Una persona, in tutte le legislature: alla Camera l'identificativo cambia con la legislatura
+ * (d302103_18, d302103_19) ma il numero della persona resta lo stesso; al Senato è già unico.
+ */
+function chiavePersona(ramo, idFonte) {
+  return `${ramo}:${idNumerico(idFonte)}`;
+}
+
 async function leggiJson(file) {
   try {
     return JSON.parse(await fs.readFile(file, 'utf8'));
@@ -193,10 +203,15 @@ async function build() {
 
   // 1. Primo giro veloce: nome di ogni parlamentare (serve per l'indirizzo della sua pagina,
   //    che deve essere lo stesso in tutte le votazioni).
-  const anagrafica = new Map(); // id_fonte -> { id_fonte, nome, cognome, ramo }
+  // Una scheda per persona (anche su più legislature), con il nome e l'identificativo più recenti.
+  const anagrafica = new Map(); // chiavePersona -> { id_fonte, nome, cognome, ramo, data }
   for (const f of nomiFile) {
     const v = await leggiJson(path.join(cartellaVotazioni, f));
-    for (const p of v.parlamentari) if (!anagrafica.has(p.id_fonte)) anagrafica.set(p.id_fonte, { id_fonte: p.id_fonte, nome: p.nome, cognome: p.cognome, ramo: v.ramo });
+    for (const p of v.parlamentari) {
+      const k = chiavePersona(v.ramo, p.id_fonte);
+      const prima = anagrafica.get(k);
+      if (!prima || v.data > prima.data) anagrafica.set(k, { id_fonte: p.id_fonte, nome: p.nome, cognome: p.cognome, ramo: v.ramo, data: v.data });
+    }
   }
 
   // Riparto da zero: public/ contiene solo file generati.
@@ -208,30 +223,32 @@ async function build() {
     js: await copiaAsset('emiciclo.js'),
     jsRicerca: await copiaAsset('ricerca.js'),
   };
+  await scrivi('favicon.svg', faviconSvg());
 
   // 2. Una votazione alla volta: scrivo la sua pagina e tengo solo un riassunto
   //    (per home, liste per tipo e ricerca) e i voti di ogni parlamentare (per le loro pagine).
   const riassunti = [];
-  const voti = new Map(); // id_fonte -> [{ slug, voto, gruppo, incarico }]
-  const ultimoGruppo = new Map(); // id_fonte -> { data, sigla, nome, colore }
+  const voti = new Map(); // chiavePersona -> [{ slug, voto, gruppo, incarico }]
+  const ultimoGruppo = new Map(); // chiavePersona -> { data, sigla, nome, colore }
   for (const f of nomiFile) {
     const grezza = await leggiJson(path.join(cartellaVotazioni, f));
     if (`${grezza.slug}.json` !== f) throw new Error(`${f}: lo slug interno ("${grezza.slug}") non corrisponde al nome del file`);
     const v = preparaVotazione(grezza, archivioGruppi, anagrafica);
     await scrivi(path.join('votazioni', v.slug, 'index.html'), paginaVotazione(v, ctx));
     riassunti.push({
-      slug: v.slug, url: `/votazioni/${v.slug}/`, ramo: v.ramo, ramoNome: v.ramoNome, ramoBreve: v.ramoBreve,
+      slug: v.slug, url: `/votazioni/${v.slug}/`, legislatura: v.legislatura, ramo: v.ramo, ramoNome: v.ramoNome, ramoBreve: v.ramoBreve,
       data: v.data, seduta: v.seduta, numero_votazione: v.numero_votazione, titolo: v.titolo, descrizione: v.descrizione,
       tipo: v.tipo || 'altro', esito: v.esito, totali: v.totali,
     });
     const perSigla = new Map(v.gruppi.map((g) => [g.sigla, g]));
     for (const p of grezza.parlamentari) {
-      if (!voti.has(p.id_fonte)) voti.set(p.id_fonte, []);
-      voti.get(p.id_fonte).push({ slug: v.slug, voto: p.voto, gruppo: p.gruppo, incarico: p.governo ? p.governo.incarichi.join(' · ') : '' });
-      const u = ultimoGruppo.get(p.id_fonte);
+      const k = chiavePersona(v.ramo, p.id_fonte);
+      if (!voti.has(k)) voti.set(k, []);
+      voti.get(k).push({ slug: v.slug, voto: p.voto, gruppo: p.gruppo, incarico: p.governo ? p.governo.incarichi.join(' · ') : '' });
+      const u = ultimoGruppo.get(k);
       if (!u || v.data >= u.data) {
         const g = perSigla.get(p.gruppo);
-        ultimoGruppo.set(p.id_fonte, { data: v.data, sigla: g.etichetta, nome: g.nome, colore: g.colore, incarico: p.governo ? p.governo.incarichi.join(' · ') : '' });
+        ultimoGruppo.set(k, { data: v.data, sigla: g.etichetta, nome: g.nome, colore: g.colore, incarico: p.governo ? p.governo.incarichi.join(' · ') : '' });
       }
     }
   }
@@ -254,41 +271,62 @@ async function build() {
     schede.push({ percorso: p.percorso, nomeCompleto: p.nomeCompleto, cognome: a.cognome, ramo: a.ramo, gruppo: p.gruppo });
   }
 
-  // 4. Liste per tipo (una pagina per ramo e tipo) e pagina iniziale
+  // 4. Liste per tipo (una pagina per legislatura, ramo e tipo)
+  const numeriLegislature = [...new Set(riassunti.map((r) => r.legislatura))].sort((a, b) => b - a);
   const liste = [];
-  for (const ramo of ['camera', 'senato']) {
-    for (const t of TIPI) {
-      const righe = riassunti.filter((r) => r.ramo === ramo && r.tipo === t.chiave);
-      if (!righe.length) continue;
-      const percorso = percorsoTipo(ramo, t.chiave);
-      await scrivi(path.join(percorso, 'index.html'), paginaElencoTipo({ ramo, ramoNome: RAMI[ramo].nome, tipo: t, righe, percorso }, ctx));
-      liste.push({ percorso, data: righe[0].data });
+  for (const legislatura of numeriLegislature) {
+    for (const ramo of ['camera', 'senato']) {
+      for (const t of TIPI) {
+        const righe = riassunti.filter((r) => r.legislatura === legislatura && r.ramo === ramo && r.tipo === t.chiave);
+        if (!righe.length) continue;
+        const percorso = percorsoTipo(legislatura, ramo, t.chiave);
+        await scrivi(path.join(percorso, 'index.html'), paginaElencoTipo({ legislatura, ramo, ramoNome: RAMI[ramo].nome, tipo: t, righe, percorso }, ctx));
+        liste.push({ percorso, data: righe[0].data });
+      }
     }
   }
-  await scrivi('index.html', paginaIndice(riassunti, ctx));
+
+  // 5. Una pagina per ogni giorno con votazioni, con i collegamenti al giorno prima e dopo
+  const giorni = [...new Set(riassunti.map((r) => r.data))].sort();
+  for (const [i, data] of giorni.entries()) {
+    const righe = riassunti.filter((r) => r.data === data);
+    await scrivi(path.join(percorsoGiorno(data), 'index.html'), paginaGiorno({ data, righe, precedente: giorni[i - 1], successivo: giorni[i + 1] }, ctx));
+  }
+
+  // 6. Pagina iniziale: voti dell'ultimo giorno, poi le legislature. Per ogni legislatura dico
+  //    da quando ci sono tutte le votazioni (e non solo i voti finali e le fiducie): è la data da
+  //    cui il progetto scarica tutto (LEGISLATURE[n].tutteDal), non la prima votazione "minore"
+  //    presente (ce ne possono essere di isolate, es. quelle dei test).
+  const legislature = numeriLegislature.map((numero) => {
+    const dellaLeg = riassunti.filter((r) => r.legislatura === numero);
+    const completaDal = LEGISLATURE[numero]?.tutteDal ?? null;
+    return { numero, completaDal, importantiPrima: !!completaDal && dellaLeg.some((r) => r.data < completaDal) };
+  });
+  await scrivi('index.html', paginaIndice(riassunti, ctx, { legislature, giorno: riassunti[0].data }));
   await scrivi('404.html', pagina404(ctx));
 
-  // 5. Indice per la barra di ricerca (lo carica ricerca.js solo quando serve)
+  // 7. Indice per la barra di ricerca (lo carica ricerca.js solo quando serve)
   await scrivi('indice.json', JSON.stringify({
-    votazioni: riassunti.map((r) => [r.url, r.titolo, r.data, r.ramo, r.tipo, r.esito ?? '']),
+    votazioni: riassunti.map((r) => [r.url, r.titolo, r.data, r.ramo, r.tipo, r.esito ?? '', r.legislatura]),
     parlamentari: schede
       .sort((a, b) => a.cognome.localeCompare(b.cognome, 'it'))
       .map((s) => [s.percorso, s.nomeCompleto, s.ramo, s.gruppo?.nome || s.gruppo?.sigla || '']),
   }));
 
-  // 6. Sitemap e robots.txt
+  // 8. Sitemap e robots.txt
   const ultimaData = riassunti[0].data;
   await scrivi('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>${URL_BASE}/</loc><lastmod>${ultimaData}</lastmod></url>
 ${liste.map((l) => `<url><loc>${URL_BASE}${l.percorso}</loc><lastmod>${l.data}</lastmod></url>`).join('\n')}
+${giorni.map((d) => `<url><loc>${URL_BASE}${percorsoGiorno(d)}</loc><lastmod>${d}</lastmod></url>`).join('\n')}
 ${riassunti.map((r) => `<url><loc>${URL_BASE}${r.url}</loc><lastmod>${r.data}</lastmod></url>`).join('\n')}
 ${schede.map((s) => `<url><loc>${URL_BASE}${s.percorso}</loc><lastmod>${ultimaData}</lastmod></url>`).join('\n')}
 </urlset>
 `);
   await scrivi('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${URL_BASE}/sitemap.xml\n`);
 
-  console.log(`Sito generato in public/: ${riassunti.length} votazioni, ${schede.length} parlamentari, ${liste.length} liste per tipo.`);
+  console.log(`Sito generato in public/: ${riassunti.length} votazioni (legislature ${numeriLegislature.join(', ')}), ${schede.length} parlamentari, ${liste.length} liste per tipo, ${giorni.length} giorni.`);
   const elenca = (insieme) => [...insieme].join(', ');
   if (mancanti.ordine.size) avvisi.push(`Gruppi senza "ordine" in data/gruppi.json (vanno in fondo a destra): ${elenca(mancanti.ordine)}`);
   if (mancanti.colore.size) avvisi.push(`Gruppi senza "colore" in data/gruppi.json (grigi nella vista Partito): ${elenca(mancanti.colore)}`);

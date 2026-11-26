@@ -10,8 +10,11 @@
 //   --al AAAA-MM-GG     fine del periodo (predefinita: oggi)
 //   --ramo camera|senato  solo un ramo (predefiniti: tutti e due)
 //   --solo-finali       solo le votazioni finali (sui testi interi: leggi, decreti, ratifiche…)
+//   --importanti        solo i voti importanti: votazioni finali e questioni di fiducia
 //   --elenco            mostra solo l'elenco, senza scaricare
 //   --aggiorna          riscarica anche le votazioni già presenti (e ignora la cache)
+//   --fresco            scarica le votazioni mancanti senza usare la cache (dati sempre aggiornati:
+//                       serve a riprovare quelle che prima mancavano di qualche dato nelle fonti)
 //   --legislatura N     (predefinita: 19)
 
 import fs from 'node:fs';
@@ -30,8 +33,10 @@ const opz = { legislatura: 19, al: new Date().toISOString().slice(0, 10) };
 for (let i = 0; i < argv.length; i++) {
   const a = argv[i];
   if (a === '--solo-finali') opz.soloFinali = true;
+  else if (a === '--importanti') opz.importanti = true;
   else if (a === '--elenco') opz.elenco = true;
   else if (a === '--aggiorna') opz.aggiorna = true;
+  else if (a === '--fresco') opz.fresco = true;
   else if (['--dal', '--al', '--ramo', '--legislatura'].includes(a) && i + 1 < argv.length) opz[a.slice(2)] = argv[++i];
   else {
     console.error(`Opzione non riconosciuta: ${a}`);
@@ -39,7 +44,7 @@ for (let i = 0; i < argv.length; i++) {
   }
 }
 if (!/^\d{4}-\d{2}-\d{2}$/.test(opz.dal ?? '') || !/^\d{4}-\d{2}-\d{2}$/.test(opz.al)) {
-  console.error('Uso: node scripts/scarica-periodo.mjs --dal AAAA-MM-GG [--al AAAA-MM-GG] [--ramo camera|senato] [--solo-finali] [--elenco] [--aggiorna]');
+  console.error('Uso: node scripts/scarica-periodo.mjs --dal AAAA-MM-GG [--al AAAA-MM-GG] [--ramo camera|senato] [--legislatura N] [--solo-finali | --importanti] [--elenco] [--aggiorna]');
   process.exit(1);
 }
 const rami = opz.ramo ? [opz.ramo] : ['camera', 'senato'];
@@ -47,18 +52,19 @@ const rami = opz.ramo ? [opz.ramo] : ['camera', 'senato'];
 // --- Elenco (sempre dalla fonte, senza cache: le votazioni nuove compaiono ogni giorno) ---
 const cartellaCache = path.join(radice, 'data', 'raw');
 const senzaCache = (endpoint, query) => sparql(endpoint, query, { cartellaCache, aggiorna: true });
-const parametri = { legislatura: Number(opz.legislatura), dal: opz.dal, al: opz.al };
+const parametri = { legislatura: Number(opz.legislatura), dal: opz.dal, al: opz.al, soloImportanti: !!opz.importanti };
 let elenco = [];
 if (rami.includes('camera')) elenco.push(...(await elencoCamera(parametri, senzaCache)));
 if (rami.includes('senato')) elenco.push(...(await elencoSenato(parametri, senzaCache)));
 const totaleTrovate = elenco.length;
 if (opz.soloFinali) elenco = elenco.filter((v) => v.finale);
+if (opz.importanti) elenco = elenco.filter((v) => v.finale || v.fiducia);
 elenco.sort((a, b) => a.data.localeCompare(b.data) || a.ramo.localeCompare(b.ramo) || a.seduta - b.seduta || a.numero - b.numero);
 
 const slug = (v) => `${v.ramo}-${opz.legislatura}-${v.seduta}-${v.numero}`;
 const presente = (v) => fs.existsSync(path.join(radice, 'data', 'votazioni', `${slug(v)}.json`));
 
-console.log(`Dal ${opz.dal} al ${opz.al}: ${totaleTrovate} votazioni negli open data${opz.soloFinali ? `, di cui ${elenco.length} finali` : ''}.`);
+console.log(`Legislatura ${opz.legislatura}, dal ${opz.dal} al ${opz.al}: ${totaleTrovate} votazioni negli open data${opz.soloFinali ? `, di cui ${elenco.length} finali` : opz.importanti ? `, di cui ${elenco.length} importanti (finali e fiducie)` : ''}.`);
 if (opz.elenco) {
   for (const v of elenco) {
     const stato = v.salta ? `SALTATA (${v.salta})` : presente(v) ? 'già scaricata' : 'da scaricare';
@@ -82,7 +88,7 @@ async function scaricaRamo(ramo) {
       continue;
     }
     try {
-      const r = await scaricaVotazione({ ramo: v.ramo, seduta: v.seduta, numero: v.numero, legislatura: Number(opz.legislatura), aggiorna: !!opz.aggiorna, radice });
+      const r = await scaricaVotazione({ ramo: v.ramo, seduta: v.seduta, numero: v.numero, legislatura: Number(opz.legislatura), aggiorna: !!opz.aggiorna || !!opz.fresco, radice });
       esito.scaricate++;
       console.log(`${etichetta} ok — ${r.votazione.titolo.slice(0, 90)}${r.nuoviGruppi.length ? `  (gruppi nuovi: ${r.nuoviGruppi.join(', ')})` : ''}`);
     } catch (e) {

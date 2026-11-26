@@ -19,3 +19,12 @@ pubsub-debug.log
 # File di sistema
 .DS_Store
 Thumbs.db
+
+# Aggiornamento automatico in corso / scritture temporanee
+/data/.aggiornamento-in-corso
+*.tmp
+
+# Skill per assistenti AI installate dalla CLI di Firebase (non fanno parte del sito)
+/.agents/
+/.claude/
+/skills-lock.json

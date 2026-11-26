@@ -27,6 +27,10 @@
   /* Riquadro arrotondato dietro l'emiciclo: un po' più scuro dello sfondo, così i pallini
      hanno ancora più contrasto (grigio 3.4:1, rosso 5.0:1, bianco 17:1). */
   --pannello: #06122A;
+  --card-2: #17335E;                      /* card sotto il puntatore */
+  --bordo-tenue: rgb(159 176 200 / .16);  /* bordi leggeri delle card (decorativi) */
+  --ombra: 0 1px 2px rgb(0 0 0 / .25), 0 8px 24px rgb(0 0 0 / .18);
+  --raggio: 16px;
   --durata: .3s;
   color-scheme: dark;
 }
@@ -37,7 +41,7 @@ html { -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0;
-  background: var(--sfondo);
+  background: radial-gradient(1100px 520px at 50% -260px, #1C3D73 0%, rgb(28 61 115 / 0) 72%) no-repeat, var(--sfondo);
   color: var(--testo);
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 1rem;
@@ -49,7 +53,7 @@ a:hover { color: var(--testo); }
 
 :focus-visible { outline: 3px solid #FACC15; outline-offset: 2px; }
 
-h1, h2, h3 { line-height: 1.2; }
+h1, h2, h3, h4, h5 { line-height: 1.2; }
 h2 { font-size: 1.3rem; margin: 0 0 12px; }
 
 .contenitore { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
@@ -71,11 +75,39 @@ html:not(.js) .solo-js { display: none; }
 
 /* --- Testata e piede ---------------------------------------------------- */
 
-.testata { border-bottom: 1px solid var(--bordo); }
-.marchio { display: inline-block; padding: 14px 0; color: var(--testo); font-weight: 700; text-decoration: none; letter-spacing: .01em; }
+.testata {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgb(11 29 58 / .86);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--bordo-tenue);
+}
+.testata-riga { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 16px; min-height: 60px; }
+.marchio { display: inline-flex; align-items: center; gap: 10px; padding: 8px 0; color: var(--testo); text-decoration: none; }
+.marchio:hover { color: var(--testo); }
+.logo-segno { display: block; width: 44px; height: auto; }
+.marchio-nome { font-size: 1.08rem; font-weight: 600; letter-spacing: -.01em; }
+.marchio-voti { font-weight: 800; }
+.menu { display: flex; flex-wrap: wrap; gap: 4px; }
+.menu a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  color: var(--testo-2);
+  font-size: .95rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+.menu a:hover { background: var(--card); color: var(--testo); }
 
-.piede { margin-top: 48px; border-top: 1px solid var(--bordo); padding: 24px 0 40px; color: var(--testo-2); font-size: .9rem; }
+.piede { margin-top: 64px; border-top: 1px solid var(--bordo-tenue); padding: 28px 0 44px; color: var(--testo-2); font-size: .9rem; }
 .piede p { max-width: 80ch; }
+.piede-marchio { display: flex; align-items: center; gap: 10px; color: var(--testo); font-weight: 700; }
+.piede-marchio .logo-segno { width: 32px; }
 
 /* --- Intestazione della votazione ------------------------------------- */
 
@@ -106,14 +138,34 @@ h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); margin: 0 0 10px; }
 .esito {
   display: inline-block;
   margin: 0;
-  padding: 2px 12px;
+  padding: 2px 10px;
   border: 1px solid currentColor;
   border-radius: 999px;
-  font-size: .9rem;
-  font-weight: 600;
+  font-size: .85rem;
+  font-weight: 700;
 }
-.esito-approvato { color: var(--verde); }
-.esito-respinto { color: var(--rosso-testo); }
+.esito-approvato { color: var(--verde); background: rgb(34 197 94 / .1); }
+.esito-respinto { color: var(--rosso-testo); background: rgb(248 113 113 / .1); }
+
+/* Percorso (legislatura › ramo › tipo) */
+.briciole { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin: 0 0 10px; color: var(--testo-2); font-size: .9rem; }
+.briciole a { color: var(--testo-2); }
+.briciole a:hover { color: var(--testo); }
+
+/* Etichette: ramo (Camera/Senato) e tipo di votazione */
+.etichetta-ramo, .etichetta-tipo {
+  display: inline-block;
+  padding: 1px 9px;
+  border-radius: 999px;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .01em;
+  white-space: nowrap;
+}
+.etichetta-ramo.r-camera { background: rgb(147 197 253 / .14); color: #BFDBFE; }
+.etichetta-ramo.r-senato { background: rgb(196 181 253 / .14); color: #DDD6FE; }
+.etichetta-tipo { border: 1px solid var(--bordo); color: var(--testo-2); }
+.etichetta-tipo.t-finale, .etichetta-tipo.t-fiducia { border-color: rgb(253 224 71 / .45); color: #FDE68A; }
 
 .totali { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 0; padding: 0; }
 .totali > div { min-width: 104px; padding: 8px 14px; background: var(--card); border-radius: 12px; }
@@ -350,7 +402,8 @@ html:not(.vista-partito) .emiciclo-svg .pallino.puntato { stroke: var(--testo); 
 
 /* --- Card e tabelle ------------------------------------------------------ */
 
-.card { margin-top: 28px; padding: 18px; background: var(--card); border-radius: 14px; }
+.card { margin-top: 28px; padding: 20px; background: var(--card); border: 1px solid var(--bordo-tenue); border-radius: var(--raggio); }
+.card > h2 { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
 .card .descrizione { margin-bottom: 10px; }
 
 .tabella-scorrevole { overflow-x: auto; -webkit-overflow-scrolling: touch; }
@@ -395,54 +448,143 @@ tfoot th, tfoot td { border-bottom: 0; font-weight: 700; }
 
 /* --- Pagina iniziale ---------------------------------------------------- */
 
-/* Barra di ricerca (la gestisce assets/ricerca.js) */
-.ricerca { display: block; margin: 8px 0 8px; }
+/* Parte alta della home: titolo grande e barra di ricerca (la gestisce assets/ricerca.js) */
+.eroe { padding: 56px 0 28px; }
+.eroe h1 { max-width: 18ch; margin: 0 0 12px; font-size: clamp(2.1rem, 5.5vw, 3.4rem); font-weight: 800; letter-spacing: -.025em; line-height: 1.05; }
+.eroe-testo { max-width: 60ch; margin: 0 0 24px; color: var(--testo-2); font-size: 1.12rem; }
+.ricerca { display: block; margin: 0; scroll-margin-top: 80px; }
 .ricerca input {
   width: 100%;
-  max-width: 600px;
-  padding: 12px 16px;
+  max-width: 640px;
+  min-height: 54px;
+  padding: 14px 18px 14px 50px;
   border: 1px solid var(--bordo);
-  border-radius: 12px;
-  background: var(--card);
+  border-radius: 14px;
+  background: var(--card) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239FB0C8' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.5-3.5'/%3E%3C/svg%3E") no-repeat 17px center / 20px 20px;
+  box-shadow: var(--ombra);
   color: var(--testo);
   font: inherit;
-  font-size: 1.05rem;
+  font-size: 1.08rem;
 }
 .ricerca input::placeholder { color: var(--testo-2); }
-.ricerca-esito { min-height: 1.5em; margin: 8px 0 0; color: var(--testo-2); }
+.ricerca input:hover { border-color: #33558A; }
+.ricerca-esito { min-height: 1.5em; margin: 10px 0 0; color: var(--testo-2); }
 
-/* Un blocco per ramo (Camera, Senato) */
-.ramo { margin-top: 24px; }
-.ramo h2 { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
 .conteggio { color: var(--testo-2); font-size: .9rem; font-weight: 400; }
+.anni { color: var(--testo-2); font-size: .95rem; font-weight: 500; }
+.tutte { font-weight: 600; white-space: nowrap; }
 
-.schede { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin: 0; padding: 0; list-style: none; }
-.scheda { position: relative; padding: 18px; background: var(--card); border-radius: 14px; }
-.scheda h4 { margin: 0 0 8px; font-size: 1.15rem; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; } /* titoli lunghi (decreti): massimo 4 righe, il titolo intero è nella pagina */
-.scheda h4 a { color: var(--testo); text-decoration: none; }
-.scheda h4 a::after { content: ""; position: absolute; inset: 0; border-radius: 14px; } /* tutta la scheda è cliccabile */
-.scheda:hover h4 a { text-decoration: underline; }
+/* Voti del giorno */
+.giorno-home {
+  margin-top: 8px;
+  padding: 24px;
+  background: linear-gradient(180deg, #16315A 0%, #10264A 100%);
+  border: 1px solid var(--bordo-tenue);
+  border-radius: 22px;
+  box-shadow: var(--ombra);
+  scroll-margin-top: 80px;
+}
+.giorno-testa { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 8px 24px; margin-bottom: 18px; }
+.occhiello { display: flex; align-items: center; gap: 8px; margin: 0 0 6px; color: #86EFAC; font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.occhiello::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--verde); box-shadow: 0 0 0 4px rgb(34 197 94 / .18); }
+.giorno-home h2 { margin: 0; font-size: clamp(1.5rem, 3vw, 2rem); letter-spacing: -.015em; }
+.giorno-data { display: block; margin-top: 4px; color: var(--testo-2); font-size: 1rem; font-weight: 500; }
+.giorno-data::first-letter { text-transform: uppercase; }
+.giorno-conteggi { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 10px 0 0; color: var(--testo-2); font-size: .92rem; }
+.giorno-conteggi .sep { margin: 0 4px; }
+
+/* Schede delle votazioni */
+.schede { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 14px; margin: 0; padding: 0; list-style: none; }
+.scheda {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 18px 18px;
+  background: var(--card);
+  border: 1px solid var(--bordo-tenue);
+  border-radius: var(--raggio);
+  transition: transform .18s ease-out, border-color .18s ease-out, background-color .18s ease-out, box-shadow .18s ease-out;
+}
+.scheda:hover { transform: translateY(-2px); background: var(--card-2); border-color: var(--bordo); box-shadow: var(--ombra); }
+.scheda-testa { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; margin: 0; color: var(--testo-2); font-size: .85rem; }
+.scheda-titolo { margin: 0; font-size: 1.08rem; font-weight: 650; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; } /* titoli lunghi (decreti): massimo 4 righe, il titolo intero è nella pagina */
+.scheda-titolo a { color: var(--testo); text-decoration: none; }
+.scheda-titolo a::after { content: ""; position: absolute; inset: 0; border-radius: var(--raggio); } /* tutta la scheda è cliccabile */
+.scheda:hover .scheda-titolo a { text-decoration: underline; text-decoration-color: var(--testo-2); }
 .scheda:focus-within { outline: 3px solid #FACC15; outline-offset: 2px; }
-.scheda h4 a:focus-visible { outline: none; }
-.scheda-descrizione { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; font-size: .92rem; }
-.scheda-risultato { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin: 0; }
-.numero { font-weight: 600; font-variant-numeric: tabular-nums; }
+.scheda-titolo a:focus-visible { outline: none; }
+.scheda-piede { display: grid; gap: 8px; margin-top: auto; }
+.scheda-risultato { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin: 0; font-size: .95rem; }
+.numero { font-weight: 650; font-variant-numeric: tabular-nums; }
 .n-favorevoli { color: var(--verde); }
 .n-contrari { color: var(--rosso-testo); }
 .n-astenuti { color: var(--bianco); }
 
-/* --- Home: sezioni per tipo --------------------------------------------- */
+/* Barra con le proporzioni di sì / no / astenuti */
+.barra { display: flex; gap: 2px; height: 8px; overflow: hidden; border-radius: 999px; background: var(--sfondo); }
+.barra span { min-width: 3px; }
+.b-favorevoli { background: var(--verde); }
+.b-contrari { background: var(--rosso); }
+.b-astenuti { background: var(--bianco); }
+
+/* --- Home: legislature, rami e tipi --------------------------------------- */
+
+.legislature { margin-top: 56px; scroll-margin-top: 80px; }
+.legislature-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+.legislature-nav a {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  min-height: 44px;
+  padding: 9px 16px;
+  background: var(--card);
+  border: 1px solid var(--bordo-tenue);
+  border-radius: 999px;
+  color: var(--testo);
+  text-decoration: none;
+}
+.legislature-nav a:hover { border-color: var(--bordo); background: var(--card-2); }
+.legislature-nav .romano { font-weight: 800; letter-spacing: .02em; }
+.legislature-nav .anni { font-size: .85rem; }
+
+.legislatura { margin-top: 40px; padding-top: 8px; scroll-margin-top: 72px; }
+.legislatura-testa { display: flex; align-items: center; gap: 16px; margin-bottom: 4px; }
+.legislatura-romano {
+  flex: none;
+  display: grid;
+  place-items: center;
+  min-width: 72px;
+  height: 72px;
+  margin: 0;
+  padding: 0 12px;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #1D3F75, #132A4F);
+  border: 1px solid var(--bordo);
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: .02em;
+}
+.legislatura h2 { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin: 0 0 4px; font-size: clamp(1.4rem, 3vw, 1.8rem); letter-spacing: -.015em; }
+.legislatura-nota { margin: 0; color: var(--testo-2); max-width: 75ch; }
+
+.ramo { margin-top: 28px; }
+.ramo h3 { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin: 0 0 4px; padding-left: 12px; border-left: 4px solid #93C5FD; font-size: 1.3rem; }
+.ramo.r-senato h3 { border-left-color: #C4B5FD; }
 
 .tipo { margin-top: 22px; }
 .tipo-testa { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; }
-.tipo-testa h3 { margin: 0; font-size: 1.1rem; }
-.tutte { font-weight: 600; white-space: nowrap; }
-.tipo-spiegazione { margin: 4px 0 10px; color: var(--testo-2); font-size: .9rem; max-width: 80ch; }
+.tipo-testa h4 { margin: 0; font-size: 1.08rem; }
+.tipo-spiegazione { margin: 4px 0 12px; color: var(--testo-2); font-size: .9rem; max-width: 80ch; }
+
+/* Pagina di un giorno */
+.giorni-nav { display: flex; justify-content: space-between; gap: 12px; margin: 18px 0 0; font-weight: 600; }
+.riga-tipo { display: block; color: var(--testo-2); font-size: .82rem; }
 
 /* Risultati della ricerca nella home */
 .ricerca-risultati h2 { margin: 18px 0 8px; font-size: 1.1rem; }
 .ricerca-risultati ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 2px; }
-.ricerca-risultati li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; padding: 8px 12px; background: var(--card); border-radius: 10px; }
+.ricerca-risultati li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; padding: 10px 14px; background: var(--card); border: 1px solid var(--bordo-tenue); border-radius: 12px; }
 .risultato-dettagli { color: var(--testo-2); font-size: .85rem; }
 
 /* Liste (tutte le votazioni di un tipo, voti di un parlamentare) */
@@ -473,10 +615,11 @@ h1 .conteggio { font-size: 1rem; vertical-align: middle; }
 .nota-data { color: var(--testo-2); font-size: .82rem; }
 .incarico-governo { margin: 0 0 6px; font-style: italic; }
 .link-ufficiale { font-weight: 600; }
-.voti-parlamentare .descrizione { margin-bottom: 4px; }
+.nota-voti { margin-top: 18px; }
+.voti-parlamentare > h2 { margin-bottom: 6px; }
 .voti-tipo { margin-top: 14px; }
 .voti-tipo summary { cursor: pointer; list-style: revert; }
-.voti-tipo summary h2 { display: inline; font-size: 1.1rem; margin: 0; }
+.voti-tipo summary h3 { display: inline; font-size: 1.05rem; margin: 0; }
 .voti-tipo[open] summary { margin-bottom: 8px; }
 
 /* Nomi cliccabili nell'elenco di una votazione */
@@ -550,6 +693,12 @@ h1 .conteggio { font-size: 1rem; vertical-align: middle; }
 }
 
 @media (max-width: 600px) {
+  .testata-riga { min-height: 0; padding-top: 4px; padding-bottom: 4px; }
+  .schede-giorno .scheda:nth-child(n+5) { display: none; } /* sul telefono bastano 4 schede: le altre sono nella pagina del giorno */
+  .menu a { min-height: 36px; padding: 4px 10px; font-size: .9rem; }
+  .eroe { padding: 32px 0 20px; }
+  .giorno-home { padding: 18px 14px; border-radius: 18px; }
+  .legislatura-romano { min-width: 56px; height: 56px; font-size: 1.2rem; border-radius: 14px; }
   .sezione-emiciclo { padding: 0 8px; }   /* riquadro più largo sul telefono... */
   .sezione-emiciclo > h2,
   .sezione-emiciclo > .legenda-voti { padding: 0 8px; } /* ...ma testi allineati al resto */

@@ -16,6 +16,8 @@
   const dataLeggibile = (iso) => { const [a, m, g] = iso.split('-').map(Number); return `${g} ${MESI[m - 1]} ${a}`; };
   const TIPI = { finale: 'Voto finale', fiducia: 'Fiducia', risoluzione: 'Risoluzione o mozione', pregiudiziale: 'Questione pregiudiziale', articolo: 'Articolo', emendamento: 'Emendamento', ordine_del_giorno: 'Ordine del giorno', altro: 'Altra votazione' };
   const RAMI = { camera: 'Camera', senato: 'Senato' };
+  const ROMANI = { 17: 'XVII', 18: 'XVIII', 19: 'XIX' };
+  const legislatura = (n) => (ROMANI[n] ? `${ROMANI[n]} legislatura` : '');
   const MAX_PARLAMENTARI = 12;
   const MAX_VOTAZIONI = 50;
 
@@ -30,8 +32,8 @@
         .then((r) => r.json())
         .then((j) => {
           indice = {
-            // votazioni: [url, titolo, data, ramo, tipo, esito]
-            votazioni: j.votazioni.map((v) => ({ v, testo: normalizza(`${v[1]} ${v[2]} ${dataLeggibile(v[2])} ${RAMI[v[3]]} ${TIPI[v[4]] ?? ''}`) })),
+            // votazioni: [url, titolo, data, ramo, tipo, esito, legislatura]
+            votazioni: j.votazioni.map((v) => ({ v, testo: normalizza(`${v[1]} ${v[2]} ${dataLeggibile(v[2])} ${RAMI[v[3]]} ${TIPI[v[4]] ?? ''} ${legislatura(v[6])}`) })),
             // parlamentari: [pagina, nome, ramo, gruppo]
             parlamentari: j.parlamentari.map((p) => ({ p, testo: normalizza(p[1]) })),
           };
@@ -81,7 +83,7 @@
         const li = el('li');
         const a = el('a', '', v[1]);
         a.href = v[0];
-        li.append(a, el('span', 'risultato-dettagli', `${dataLeggibile(v[2])} · ${RAMI[v[3]]} · ${TIPI[v[4]] ?? ''}${v[5] ? ' · ' + v[5] : ''}`));
+        li.append(a, el('span', 'risultato-dettagli', `${dataLeggibile(v[2])} · ${RAMI[v[3]]} · ${TIPI[v[4]] ?? ''}${v[5] ? ' · ' + v[5] : ''}${v[6] && v[6] !== 19 ? ' · ' + legislatura(v[6]) : ''}`));
         ul.append(li);
       }
       risultati.append(ul);
