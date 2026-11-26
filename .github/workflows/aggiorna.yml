@@ -4,6 +4,8 @@
 #   qualche dato nelle fonti (senza riprovarle tutti i giorni: poche richieste ai server).
 # - Solo se ci sono votazioni nuove: le salva nel repository, rigenera il sito e lo pubblica
 #   su Firebase Hosting, progetto "voti-in-parlamento" (e nessun altro).
+# - Quando arriva su main una modifica al codice o a data/gruppi.json: rigenera e pubblica
+#   (senza scaricare). I commit fatti da questo workflow non lo fanno ripartire (regola di GitHub).
 #
 # Serve il segreto FIREBASE_SERVICE_ACCOUNT_VOTI_IN_PARLAMENTO (chiave di un account di servizio
 # con il ruolo "Firebase Hosting Admin"), creato con: npx firebase-tools init hosting:github
@@ -19,6 +21,18 @@ on:
       giorni:
         description: 'Quanti giorni indietro controllare'
         default: '3'
+      pubblica:
+        description: 'Pubblica il sito anche se non ci sono votazioni nuove'
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths:
+      - 'data/gruppi.json'
+      - 'lib/**'
+      - 'scripts/build.mjs'
+      - 'assets/**'
+      - 'firebase.json'
 
 permissions:
   contents: write   # per salvare le votazioni nuove nel repository
@@ -39,12 +53,14 @@ jobs:
           node-version: 'lts/*'
 
       - name: Scarica le votazioni nuove
+        if: github.event_name != 'push'
         env:
           GIORNI: ${{ github.event.inputs.giorni || (github.event.schedule == '0 6 * * 0' && '30') || '3' }}
         run: node scripts/scarica-periodo.mjs --legislatura 19 --dal "$(date -u -d "$GIORNI days ago" +%F)" --fresco
 
       - name: Ci sono votazioni nuove?
         id: nuove
+        if: github.event_name != 'push'
         run: |
           if [ -n "$(git status --porcelain -- data/votazioni data/gruppi.json)" ]; then
             echo "si=true" >> "$GITHUB_OUTPUT"
@@ -63,7 +79,7 @@ jobs:
           git push
 
       - name: Pubblica il sito su Firebase Hosting (progetto voti-in-parlamento)
-        if: steps.nuove.outputs.si == 'true'
+        if: steps.nuove.outputs.si == 'true' || github.event_name == 'push' || github.event.inputs.pubblica == 'true'
         env:
           CHIAVE: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_VOTI_IN_PARLAMENTO }}
         run: |

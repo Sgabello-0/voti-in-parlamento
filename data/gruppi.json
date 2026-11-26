@@ -412,8 +412,9 @@
     {
       "sigla": "Cd'I-UDC-NM (NcI, CI, IaC)-MAIE-CP-SCN",
       "nome": "Civici d'Italia - UDC - Noi Moderati (Noi con l'Italia, Coraggio Italia, Italia al Centro) - MAIE - Centro Popolare - Sud chiama Nord",
-      "ordine": null,
-      "colore": null
+      "ordine": 6,
+      "colore": "#eb631b",
+      "etichetta": "Cd'I-NM"
     }
   ]
 }
