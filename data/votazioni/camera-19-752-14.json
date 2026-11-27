@@ -1,0 +1,3053 @@
+{
+  "slug": "camera-19-752-14",
+  "ramo": "camera",
+  "legislatura": 19,
+  "seduta": 752,
+  "numero_votazione": 14,
+  "data": "2026-11-25",
+  "titolo": "MOZ 1-619 CPV 10 DISP",
+  "descrizione": "",
+  "fonti": [
+    {
+      "nome": "Camera dei deputati – dati.camera.it (votazione e voti dei deputati)",
+      "url": "http://dati.camera.it/ocd/votazione.rdf/vs19_752_014",
+      "licenza": "CC BY-SA 4.0"
+    }
+  ],
+  "totali": {
+    "favorevoli": 9,
+    "contrari": 253,
+    "astenuti": 0,
+    "presenti": 262,
+    "votanti": 262
+  },
+  "esito": "respinto",
+  "tipo": "altro",
+  "gruppi": [
+    {
+      "sigla": "AVS",
+      "nome": "ALLEANZA VERDI E SINISTRA",
+      "ordine": 1,
+      "colore": "#20C997"
+    },
+    {
+      "sigla": "M5S",
+      "nome": "MOVIMENTO 5 STELLE",
+      "ordine": 2,
+      "colore": "#ffe931"
+    },
+    {
+      "sigla": "PD-IDP",
+      "nome": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA",
+      "ordine": 3,
+      "colore": "#da291c"
+    },
+    {
+      "sigla": "M-+E-S",
+      "nome": "MISTO-+EUROPA - STATI UNITI D'EUROPA",
+      "ordine": 4,
+      "colore": "#26aee7"
+    },
+    {
+      "sigla": "IV-CR",
+      "nome": "ITALIA VIVA-CASA RIFORMISTA",
+      "ordine": 5,
+      "colore": "#cc288f"
+    },
+    {
+      "sigla": "APERRE",
+      "nome": "AZIONE-POPOLARI EUROPEISTI RIFORMATORI-RENEW EUROPE",
+      "ordine": 6,
+      "colore": "#228873"
+    },
+    {
+      "sigla": "M-MIN",
+      "nome": "MISTO-MINORANZE LINGUISTICHE",
+      "ordine": 7,
+      "colore": "#FFA94D"
+    },
+    {
+      "sigla": "M-ALT",
+      "nome": "MISTO",
+      "ordine": 8,
+      "colore": "#ADB5BD"
+    },
+    {
+      "sigla": "NM-M-C",
+      "nome": "NOI MODERATI (NOI CON L'ITALIA, CORAGGIO ITALIA, UDC E ITALIA AL CENTRO)-MAIE-CENTRO POPOLARE",
+      "ordine": 9,
+      "colore": "#eb631b"
+    },
+    {
+      "sigla": "M-SCN",
+      "nome": "MISTO-SUD CHIAMA NORD",
+      "ordine": 10,
+      "colore": "#ffd533"
+    },
+    {
+      "sigla": "FI-PPE",
+      "nome": "FORZA ITALIA - BERLUSCONI PRESIDENTE - PPE",
+      "ordine": 11,
+      "colore": "#009741"
+    },
+    {
+      "sigla": "FDI",
+      "nome": "FRATELLI D'ITALIA",
+      "ordine": 12,
+      "colore": "#3f86d2"
+    },
+    {
+      "sigla": "LEGA",
+      "nome": "LEGA - SALVINI PREMIER",
+      "ordine": 13,
+      "colore": "#386e94"
+    },
+    {
+      "sigla": "M-FNVF",
+      "nome": "MISTO-FUTURO NAZIONALE VANNACCI - FREE",
+      "ordine": 14,
+      "colore": "#263a97"
+    }
+  ],
+  "parlamentari": [
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307394_19",
+      "nome": "DAVIDE",
+      "cognome": "AIELLO",
+      "gruppo": "M5S",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308421_19",
+      "nome": "LUCIA",
+      "cognome": "ALBANO",
+      "gruppo": "FDI",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretaria di Stato per l'Economia e le finanze"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308872_19",
+      "nome": "ENRICA",
+      "cognome": "ALIFANO",
+      "gruppo": "M5S",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308910_19",
+      "nome": "CRISTINA",
+      "cognome": "ALMICI",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308849_19",
+      "nome": "GAETANO",
+      "cognome": "AMATO",
+      "gruppo": "M5S",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308832_19",
+      "nome": "ALESSIA",
+      "cognome": "AMBROSI",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d305931_19",
+      "nome": "VINCENZO",
+      "cognome": "AMENDOLA",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308825_19",
+      "nome": "VINCENZO",
+      "cognome": "AMICH",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308884_19",
+      "nome": "ALESSANDRO",
+      "cognome": "AMORESE",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307686_19",
+      "nome": "GIORGIA",
+      "cognome": "ANDREUZZA",
+      "gruppo": "LEGA",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d302942_19",
+      "nome": "ANTONIO",
+      "cognome": "ANGELUCCI",
+      "gruppo": "LEGA",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308909_19",
+      "nome": "ALFREDO",
+      "cognome": "ANTONIOZZI",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308824_19",
+      "nome": "CHIARA",
+      "cognome": "APPENDINO",
+      "gruppo": "M5S",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308906_19",
+      "nome": "GIOVANNI",
+      "cognome": "ARRUZZOLO",
+      "gruppo": "FI-PPE",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d305704_19",
+      "nome": "ANNA",
+      "cognome": "ASCANI",
+      "gruppo": "PD-IDP",
+      "voto": "non_votante"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307302_19",
+      "nome": "STEFANIA",
+      "cognome": "ASCARI",
+      "gruppo": "M5S",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308846_19",
+      "nome": "CARMELA",
+      "cognome": "AURIEMMA",
+      "gruppo": "M5S",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307134_19",
+      "nome": "ROBERTO",
+      "cognome": "BAGNASCO",
+      "gruppo": "FI-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308931_19",
+      "nome": "OUIDAD",
+      "cognome": "BAKKALI",
+      "gruppo": "PD-IDP",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308805_19",
+      "nome": "ANTONIO",
+      "cognome": "BALDELLI",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307435_19",
+      "nome": "VITTORIA",
+      "cognome": "BALDINO",
+      "gruppo": "M5S",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308890_19",
+      "nome": "ANDREA",
+      "cognome": "BARABOTTI",
+      "gruppo": "LEGA",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308902_19",
+      "nome": "ANTHONY EMANUELE",
+      "cognome": "BARBAGALLO",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d300497_19",
+      "nome": "PAOLO",
+      "cognome": "BARELLI",
+      "gruppo": "FI-PPE",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretario di Stato alla Presidenza del Consiglio dei ministri"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308001_19",
+      "nome": "VALENTINA",
+      "cognome": "BARZOTTI",
+      "gruppo": "M5S",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307456_19",
+      "nome": "ALESSANDRO",
+      "cognome": "BATTILOCCHIO",
+      "gruppo": "FI-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307752_19",
+      "nome": "FRANCESCO",
+      "cognome": "BATTISTONI",
+      "gruppo": "FI-PPE",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308830_19",
+      "nome": "DAVIDE",
+      "cognome": "BELLOMO",
+      "gruppo": "FI-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307426_19",
+      "nome": "MARIA TERESA",
+      "cognome": "BELLUCCI",
+      "gruppo": "FDI",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "viceministro",
+        "incarichi": [
+          "Vice Ministra del Lavoro e delle politiche sociali"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307604_19",
+      "nome": "STEFANO",
+      "cognome": "BENIGNI",
+      "gruppo": "FI-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308762_19",
+      "nome": "STEFANO MARIA",
+      "cognome": "BENVENUTI GOSTOLI",
+      "gruppo": "FDI",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307471_19",
+      "nome": "ALESSANDRO MANUEL",
+      "cognome": "BENVENUTO",
+      "gruppo": "LEGA",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308913_19",
+      "nome": "FABRIZIO",
+      "cognome": "BENZONI",
+      "gruppo": "APERRE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308928_19",
+      "nome": "DAVIDE",
+      "cognome": "BERGAMINI",
+      "gruppo": "M-FNVF",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d302867_19",
+      "nome": "DEBORAH",
+      "cognome": "BERGAMINI",
+      "gruppo": "FI-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308815_19",
+      "nome": "MAURO",
+      "cognome": "BERRUTO",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308790_19",
+      "nome": "GIUSEPPE",
+      "cognome": "BICCHIELLI",
+      "gruppo": "LEGA",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307298_19",
+      "nome": "GALEAZZO",
+      "cognome": "BIGNAMI",
+      "gruppo": "FDI",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307151_19",
+      "nome": "SIMONE",
+      "cognome": "BILLI",
+      "gruppo": "LEGA",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307689_19",
+      "nome": "INGRID",
+      "cognome": "BISA",
+      "gruppo": "LEGA",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308801_19",
+      "nome": "GIANANGELO",
+      "cognome": "BOF",
+      "gruppo": "M-FNVF",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d305757_19",
+      "nome": "LAURA",
+      "cognome": "BOLDRINI",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d305549_19",
+      "nome": "SIMONA",
+      "cognome": "BONAFE'",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d302080_19",
+      "nome": "ANGELO",
+      "cognome": "BONELLI",
+      "gruppo": "AVS",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308244_19",
+      "nome": "ELENA",
+      "cognome": "BONETTI",
+      "gruppo": "APERRE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d306003_19",
+      "nome": "FRANCESCO",
+      "cognome": "BONIFAZI",
+      "gruppo": "IV-CR",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307601_19",
+      "nome": "SIMONA",
+      "cognome": "BORDONALI",
+      "gruppo": "LEGA",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308857_19",
+      "nome": "FRANCESCO EMILIO",
+      "cognome": "BORRELLI",
+      "gruppo": "AVS",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d309161_19",
+      "nome": "MARIA PAOLA",
+      "cognome": "BOSCAINI",
+      "gruppo": "FI-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d306160_19",
+      "nome": "MARIA ELENA",
+      "cognome": "BOSCHI",
+      "gruppo": "IV-CR",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d302754_19",
+      "nome": "CHIARA",
+      "cognome": "BRAGA",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d302838_19",
+      "nome": "MICHELA VITTORIA",
+      "cognome": "BRAMBILLA",
+      "gruppo": "NM-M-C",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307193_19",
+      "nome": "RAFFAELE",
+      "cognome": "BRUNO",
+      "gruppo": "M5S",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307762_19",
+      "nome": "FRANCESCO",
+      "cognome": "BRUZZONE",
+      "gruppo": "LEGA",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308937_19",
+      "nome": "ALICE",
+      "cognome": "BUONGUERRIERI",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308933_19",
+      "nome": "FEDERICO",
+      "cognome": "CAFIERO DE RAHO",
+      "gruppo": "M5S",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307162_19",
+      "nome": "SALVATORE",
+      "cognome": "CAIATA",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308766_19",
+      "nome": "TOMMASO ANTONINO",
+      "cognome": "CALDERONE",
+      "gruppo": "M-FNVF",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308794_19",
+      "nome": "GIANGIACOMO",
+      "cognome": "CALOVINI",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d306349_19",
+      "nome": "STEFANO",
+      "cognome": "CANDIANI",
+      "gruppo": "LEGA",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308786_19",
+      "nome": "GEROLAMO",
+      "cognome": "CANGIANO",
+      "gruppo": "FDI",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308765_19",
+      "nome": "GIOVANNI LUCA",
+      "cognome": "CANNATA",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307416_19",
+      "nome": "LUCIANO",
+      "cognome": "CANTONE",
+      "gruppo": "M5S",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307420_19",
+      "nome": "VIRGINIO",
+      "cognome": "CAPARVI",
+      "gruppo": "LEGA",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307215_19",
+      "nome": "UGO",
+      "cognome": "CAPPELLACCI",
+      "gruppo": "FI-PPE",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d306352_19",
+      "nome": "ENRICO",
+      "cognome": "CAPPELLETTI",
+      "gruppo": "M5S",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308819_19",
+      "nome": "GIANLUCA",
+      "cognome": "CARAMANNA",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308854_19",
+      "nome": "ALESSANDRO",
+      "cognome": "CARAMIELLO",
+      "gruppo": "M5S",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307161_19",
+      "nome": "NICOLA",
+      "cognome": "CARE'",
+      "gruppo": "PD-IDP",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307573_19",
+      "nome": "MARIA CRISTINA",
+      "cognome": "CARETTA",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d301531_19",
+      "nome": "MARIA ROSARIA",
+      "cognome": "CARFAGNA",
+      "gruppo": "NM-M-C",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308820_19",
+      "nome": "IDA",
+      "cognome": "CARMINA",
+      "gruppo": "M5S",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308807_19",
+      "nome": "ANDREA",
+      "cognome": "CAROPPO",
+      "gruppo": "FI-PPE",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308844_19",
+      "nome": "DARIO",
+      "cognome": "CAROTENUTO",
+      "gruppo": "M5S",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308900_19",
+      "nome": "ANASTASIO",
+      "cognome": "CARRA'",
+      "gruppo": "LEGA",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308793_19",
+      "nome": "MAURIZIO",
+      "cognome": "CASASCO",
+      "gruppo": "FI-PPE",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308840_19",
+      "nome": "ANTONIO",
+      "cognome": "CASO",
+      "gruppo": "M5S",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d306158_19",
+      "nome": "GIUSEPPE",
+      "cognome": "CASTIGLIONE",
+      "gruppo": "FI-PPE",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308600_19",
+      "nome": "ANDREA",
+      "cognome": "CASU",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307657_19",
+      "nome": "ALESSANDRO",
+      "cognome": "CATTANEO",
+      "gruppo": "FI-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307716_19",
+      "nome": "VANESSA",
+      "cognome": "CATTOI",
+      "gruppo": "LEGA",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307285_19",
+      "nome": "LAURA",
+      "cognome": "CAVANDOLI",
+      "gruppo": "LEGA",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308785_19",
+      "nome": "ILARIA",
+      "cognome": "CAVO",
+      "gruppo": "NM-M-C",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307680_19",
+      "nome": "FABRIZIO",
+      "cognome": "CECCHETTI",
+      "gruppo": "LEGA",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307632_19",
+      "nome": "GIULIO",
+      "cognome": "CENTEMERO",
+      "gruppo": "LEGA",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d309321_19",
+      "nome": "GIULIO",
+      "cognome": "CENTENARO",
+      "gruppo": "LEGA",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308874_19",
+      "nome": "MARCO",
+      "cognome": "CERRETO",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d301439_19",
+      "nome": "LORENZO",
+      "cognome": "CESA",
+      "gruppo": "M-ALT",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308858_19",
+      "nome": "SUSANNA",
+      "cognome": "CHERCHI",
+      "gruppo": "M5S",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308915_19",
+      "nome": "PAOLA MARIA",
+      "cognome": "CHIESA",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307511_19",
+      "nome": "MONICA",
+      "cognome": "CIABURRO",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308764_19",
+      "nome": "FRANCESCO MARIA SALVATORE",
+      "cognome": "CIANCITTO",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308835_19",
+      "nome": "PAOLO",
+      "cognome": "CIANI",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d35980_19",
+      "nome": "LUCIANO",
+      "cognome": "CIOCCHETTI",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d300319_19",
+      "nome": "EDMONDO",
+      "cognome": "CIRIELLI",
+      "gruppo": "FDI",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "viceministro",
+        "incarichi": [
+          "Vice Ministro degli Affari esteri e della cooperazione internazionale"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307688_19",
+      "nome": "DIMITRI",
+      "cognome": "COIN",
+      "gruppo": "LEGA",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308926_19",
+      "nome": "BEATRIZ",
+      "cognome": "COLOMBO",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308917_19",
+      "nome": "CHIARA",
+      "cognome": "COLOSIMO",
+      "gruppo": "FDI",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307603_19",
+      "nome": "ALESSANDRO",
+      "cognome": "COLUCCI",
+      "gruppo": "NM-M-C",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308841_19",
+      "nome": "ALFONSO",
+      "cognome": "COLUCCI",
+      "gruppo": "M5S",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d302764_19",
+      "nome": "SILVANA ANDREINA",
+      "cognome": "COMAROLI",
+      "gruppo": "LEGA",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308826_19",
+      "nome": "FABRIZIO",
+      "cognome": "COMBA",
+      "gruppo": "FDI",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308833_19",
+      "nome": "SAVERIO",
+      "cognome": "CONGEDO",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307926_19",
+      "nome": "GIUSEPPE",
+      "cognome": "CONTE",
+      "gruppo": "M5S",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308796_19",
+      "nome": "MARCELLO",
+      "cognome": "COPPO",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307580_19",
+      "nome": "PIERGIORGIO",
+      "cognome": "CORTELAZZO",
+      "gruppo": "FI-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d301541_19",
+      "nome": "ENRICO",
+      "cognome": "COSTA",
+      "gruppo": "FI-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307922_19",
+      "nome": "SERGIO",
+      "cognome": "COSTA",
+      "gruppo": "M5S",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307639_19",
+      "nome": "ANDREA",
+      "cognome": "CRIPPA",
+      "gruppo": "LEGA",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d302422_19",
+      "nome": "GIOVANNI",
+      "cognome": "CUPERLO",
+      "gruppo": "PD-IDP",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308804_19",
+      "nome": "AUGUSTO",
+      "cognome": "CURTI",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308875_19",
+      "nome": "ANTONIO",
+      "cognome": "D'ALESSIO",
+      "gruppo": "APERRE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307782_19",
+      "nome": "LUCIANO",
+      "cognome": "D'ALFONSO",
+      "gruppo": "PD-IDP",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d309380_19",
+      "nome": "LUCIANO",
+      "cognome": "D'AMICO",
+      "gruppo": "M-ALT",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307312_19",
+      "nome": "MAURO",
+      "cognome": "D'ATTIS",
+      "gruppo": "FI-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307388_19",
+      "nome": "VALENTINA",
+      "cognome": "D'ORSO",
+      "gruppo": "M5S",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308829_19",
+      "nome": "RITA",
+      "cognome": "DALLA CHIESA",
+      "gruppo": "FI-PPE",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307683_19",
+      "nome": "ANDREA",
+      "cognome": "DARA",
+      "gruppo": "LEGA",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307918_19",
+      "nome": "ANDREA",
+      "cognome": "DE BERTOLDI",
+      "gruppo": "LEGA",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d200291_19",
+      "nome": "RICCARDO",
+      "cognome": "DE CORATO",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307561_19",
+      "nome": "PIERO",
+      "cognome": "DE LUCA",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d305698_19",
+      "nome": "ANDREA",
+      "cognome": "DE MARIA",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d302856_19",
+      "nome": "PAOLA",
+      "cognome": "DE MICHELI",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d306379_19",
+      "nome": "ISABELLA",
+      "cognome": "DE MONTE",
+      "gruppo": "FI-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308806_19",
+      "nome": "VITO",
+      "cognome": "DE PALMA",
+      "gruppo": "FI-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307219_19",
+      "nome": "SALVATORE",
+      "cognome": "DEIDDA",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d306382_19",
+      "nome": "MAURO",
+      "cognome": "DEL BARBA",
+      "gruppo": "IV-CR",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307790_19",
+      "nome": "GIANMAURO",
+      "cognome": "DELL'OLIO",
+      "gruppo": "M5S",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d301577_19",
+      "nome": "BENEDETTO",
+      "cognome": "DELLA VEDOVA",
+      "gruppo": "M-+E-S",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307479_19",
+      "nome": "ANDREA",
+      "cognome": "DELMASTRO DELLE VEDOVE",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308843_19",
+      "nome": "MICHELA",
+      "cognome": "DI BIASE",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308784_19",
+      "nome": "ANDREA",
+      "cognome": "DI GIUSEPPE",
+      "gruppo": "FDI",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307210_19",
+      "nome": "CARMELA",
+      "cognome": "DI LAURO",
+      "gruppo": "M5S",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308888_19",
+      "nome": "GRAZIA",
+      "cognome": "DI MAGGIO",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308808_19",
+      "nome": "SALVATORE MARCELLO",
+      "cognome": "DI MATTINA",
+      "gruppo": "LEGA",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d309320_19",
+      "nome": "ALBERTO",
+      "cognome": "DI RUBBA",
+      "gruppo": "LEGA",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308783_19",
+      "nome": "CHRISTIAN DIEGO",
+      "cognome": "DI SANZO",
+      "gruppo": "PD-IDP",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308935_19",
+      "nome": "DANIELA",
+      "cognome": "DONDI",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307348_19",
+      "nome": "LEONARDO",
+      "cognome": "DONNO",
+      "gruppo": "M5S",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307246_19",
+      "nome": "GIOVANNI",
+      "cognome": "DONZELLI",
+      "gruppo": "FDI",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307634_19",
+      "nome": "DEVIS",
+      "cognome": "DORI",
+      "gruppo": "AVS",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308893_19",
+      "nome": "ELEONORA",
+      "cognome": "EVI",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d306005_19",
+      "nome": "DAVIDE",
+      "cognome": "FARAONE",
+      "gruppo": "IV-CR",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307185_19",
+      "nome": "MARTA ANTONIA",
+      "cognome": "FASCINA",
+      "gruppo": "FI-PPE",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d36500_19",
+      "nome": "PIERO FRANCO",
+      "cognome": "FASSINO",
+      "gruppo": "PD-IDP",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307803_19",
+      "nome": "GIORGIO",
+      "cognome": "FEDE",
+      "gruppo": "M5S",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308876_19",
+      "nome": "TULLIO",
+      "cognome": "FERRANTE",
+      "gruppo": "FI-PPE",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretario di Stato per le Infrastrutture e i trasporti"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d309140_19",
+      "nome": "ANTONIO",
+      "cognome": "FERRARA",
+      "gruppo": "M5S",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308834_19",
+      "nome": "SARA",
+      "cognome": "FERRARI",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307567_19",
+      "nome": "WANDA",
+      "cognome": "FERRO",
+      "gruppo": "FDI",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretaria di Stato per l'Interno"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308799_19",
+      "nome": "FRANCESCO",
+      "cognome": "FILINI",
+      "gruppo": "FDI",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d306395_19",
+      "nome": "ROSANNA",
+      "cognome": "FILIPPIN",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307459_19",
+      "nome": "ILARIA",
+      "cognome": "FONTANA",
+      "gruppo": "M5S",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307591_19",
+      "nome": "LORENZO",
+      "cognome": "FONTANA",
+      "gruppo": "LEGA",
+      "voto": "non_votante"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308916_19",
+      "nome": "ANTONELLA",
+      "cognome": "FORATTINI",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307602_19",
+      "nome": "PAOLO",
+      "cognome": "FORMENTINI",
+      "gruppo": "LEGA",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d306398_19",
+      "nome": "FEDERICO",
+      "cognome": "FORNARO",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308881_19",
+      "nome": "EMILIANO",
+      "cognome": "FOSSI",
+      "gruppo": "PD-IDP",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d50204_19",
+      "nome": "TOMMASO",
+      "cognome": "FOTI",
+      "gruppo": "FDI",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "ministro",
+        "incarichi": [
+          "Ministro per gli Affari europei, il PNRR e le politiche di coesione"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d301457_19",
+      "nome": "PAOLA",
+      "cognome": "FRASSINETTI",
+      "gruppo": "FDI",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretaria di Stato per l'Istruzione e il merito"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307630_19",
+      "nome": "REBECCA",
+      "cognome": "FRASSINI",
+      "gruppo": "LEGA",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d305880_19",
+      "nome": "NICOLA",
+      "cognome": "FRATOIANNI",
+      "gruppo": "AVS",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308837_19",
+      "nome": "FEDERICO",
+      "cognome": "FRENI",
+      "gruppo": "LEGA",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretario di Stato per l'Economia e le finanze"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308870_19",
+      "nome": "MARIA GRAZIA",
+      "cognome": "FRIJIA",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308892_19",
+      "nome": "MARCO",
+      "cognome": "FURFARO",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307718_19",
+      "nome": "DOMENICO",
+      "cognome": "FURGIUELE",
+      "gruppo": "M-FNVF",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d309200_19",
+      "nome": "ANTONIO MARIA",
+      "cognome": "GABELLONE",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d305553_19",
+      "nome": "MARIA CHIARA",
+      "cognome": "GADDA",
+      "gruppo": "IV-CR",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308767_19",
+      "nome": "FRANCESCO",
+      "cognome": "GALLO",
+      "gruppo": "M-SCN",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d301558_19",
+      "nome": "ELISABETTA",
+      "cognome": "GARDINI",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308827_19",
+      "nome": "GIACOMO DIEGO",
+      "cognome": "GATTA",
+      "gruppo": "FI-PPE",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307138_19",
+      "nome": "VANNIA",
+      "cognome": "GAVA",
+      "gruppo": "LEGA",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "viceministro",
+        "incarichi": [
+          "Vice Ministra dell'Ambiente e della sicurezza energetica"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d305580_19",
+      "nome": "RENATE",
+      "cognome": "GEBHARD",
+      "gruppo": "M-MIN",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307332_19",
+      "nome": "MARCELLO",
+      "cognome": "GEMMATO",
+      "gruppo": "FDI",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretario di Stato per la Salute"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308620_19",
+      "nome": "ANDREA",
+      "cognome": "GENTILE",
+      "gruppo": "FI-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308871_19",
+      "nome": "VALENTINA",
+      "cognome": "GHIO",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308861_19",
+      "nome": "FRANCESCA",
+      "cognome": "GHIRRA",
+      "gruppo": "M-ALT",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307508_19",
+      "nome": "ANDREA",
+      "cognome": "GIACCONE",
+      "gruppo": "LEGA",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d300480_19",
+      "nome": "ROBERTO",
+      "cognome": "GIACHETTI",
+      "gruppo": "IV-CR",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308770_19",
+      "nome": "DARIO",
+      "cognome": "GIAGONI",
+      "gruppo": "LEGA",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308880_19",
+      "nome": "FEDERICO",
+      "cognome": "GIANASSI",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307502_19",
+      "nome": "ALESSANDRO",
+      "cognome": "GIGLIO VIGNA",
+      "gruppo": "LEGA",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308823_19",
+      "nome": "ANTONIO",
+      "cognome": "GIORDANO",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d50115_19",
+      "nome": "GIANCARLO",
+      "cognome": "GIORGETTI",
+      "gruppo": "LEGA",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "ministro",
+        "incarichi": [
+          "Ministro dell'Economia e delle finanze"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308787_19",
+      "nome": "CARMEN LETIZIA",
+      "cognome": "GIORGIANNI",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308855_19",
+      "nome": "SILVIO",
+      "cognome": "GIOVINE",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308912_19",
+      "nome": "GIAN ANTONIO",
+      "cognome": "GIRELLI",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307370_19",
+      "nome": "CARLA",
+      "cognome": "GIULIANO",
+      "gruppo": "M5S",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308932_19",
+      "nome": "ANDREA",
+      "cognome": "GNASSI",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d309260_19",
+      "nome": "IRENE",
+      "cognome": "GORI",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d302818_19",
+      "nome": "STEFANO",
+      "cognome": "GRAZIANO",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d306008_19",
+      "nome": "CHIARA",
+      "cognome": "GRIBAUDO",
+      "gruppo": "PD-IDP",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308810_19",
+      "nome": "MARCO",
+      "cognome": "GRIMALDI",
+      "gruppo": "AVS",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308802_19",
+      "nome": "VALENTINA",
+      "cognome": "GRIPPO",
+      "gruppo": "APERRE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308924_19",
+      "nome": "NAIKE",
+      "cognome": "GRUPPIONI",
+      "gruppo": "FDI",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307531_19",
+      "nome": "MICHELE",
+      "cognome": "GUBITOSA",
+      "gruppo": "M5S",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d305624_19",
+      "nome": "LORENZO",
+      "cognome": "GUERINI",
+      "gruppo": "PD-IDP",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d306412_19",
+      "nome": "MARIA CECILIA",
+      "cognome": "GUERRA",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307475_19",
+      "nome": "ALBERTO LUIGI",
+      "cognome": "GUSMEROLI",
+      "gruppo": "LEGA",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308821_19",
+      "nome": "GIOVANNA",
+      "cognome": "IACONO",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308831_19",
+      "nome": "DARIO",
+      "cognome": "IAIA",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308809_19",
+      "nome": "ANTONINO",
+      "cognome": "IARIA",
+      "gruppo": "M5S",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307641_19",
+      "nome": "IGOR GIANCARLO",
+      "cognome": "IEZZI",
+      "gruppo": "LEGA",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308904_19",
+      "nome": "SARA",
+      "cognome": "KELANY",
+      "gruppo": "FDI",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307822_19",
+      "nome": "PASQUA",
+      "cognome": "L'ABBATE",
+      "gruppo": "M5S",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308811_19",
+      "nome": "GIANDONATO",
+      "cognome": "LA SALANDRA",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307308_19",
+      "nome": "MARCO",
+      "cognome": "LACARRA",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d306417_19",
+      "nome": "BACHISIO SILVIO",
+      "cognome": "LAI",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308768_19",
+      "nome": "GIANNI",
+      "cognome": "LAMPIS",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308920_19",
+      "nome": "ELISABETTA CHRISTIANA",
+      "cognome": "LANCELLOTTA",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307173_19",
+      "nome": "GIORGIA",
+      "cognome": "LATINI",
+      "gruppo": "LEGA",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307826_19",
+      "nome": "MAURO ANTONIO DONATO",
+      "cognome": "LAUS",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307570_19",
+      "nome": "ARIANNA",
+      "cognome": "LAZZARINI",
+      "gruppo": "LEGA",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d300444_19",
+      "nome": "MAURIZIO",
+      "cognome": "LEO",
+      "gruppo": "FDI",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "viceministro",
+        "incarichi": [
+          "Vice Ministro dell'Economia e delle finanze"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308911_19",
+      "nome": "SIMONA",
+      "cognome": "LOIZZO",
+      "gruppo": "LEGA",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307463_19",
+      "nome": "FRANCESCO",
+      "cognome": "LOLLOBRIGIDA",
+      "gruppo": "FDI",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "ministro",
+        "incarichi": [
+          "Ministro dell'Agricoltura, della sovranità alimentare e delle foreste"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307829_19",
+      "nome": "ARNALDO",
+      "cognome": "LOMUTI",
+      "gruppo": "M5S",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308898_19",
+      "nome": "ELIANA",
+      "cognome": "LONGI",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308940_19",
+      "nome": "EMANUELE",
+      "cognome": "LOPERFIDO",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307356_19",
+      "nome": "GIORGIO",
+      "cognome": "LOVECCHIO",
+      "gruppo": "FI-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307340_19",
+      "nome": "YLENJA",
+      "cognome": "LUCASELLI",
+      "gruppo": "FDI",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d300447_19",
+      "nome": "MAURIZIO ENZO",
+      "cognome": "LUPI",
+      "gruppo": "NM-M-C",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d302980_19",
+      "nome": "ELENA",
+      "cognome": "MACCANTI",
+      "gruppo": "LEGA",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308914_19",
+      "nome": "CARLO",
+      "cognome": "MACCARI",
+      "gruppo": "FDI",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d302789_19",
+      "nome": "MARIA ANNA",
+      "cognome": "MADIA",
+      "gruppo": "IV-CR",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308905_19",
+      "nome": "NOVO UMBERTO",
+      "cognome": "MAERNA",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d309300_19",
+      "nome": "MANUELA",
+      "cognome": "MAFFIOLI",
+      "gruppo": "LEGA",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307436_19",
+      "nome": "RICCARDO",
+      "cognome": "MAGI",
+      "gruppo": "M-+E-S",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308814_19",
+      "nome": "LUIGI GIOVANNI",
+      "cognome": "MAIORANO",
+      "gruppo": "FDI",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308886_19",
+      "nome": "LORENZO",
+      "cognome": "MALAGOLA",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308938_19",
+      "nome": "MAURO",
+      "cognome": "MALAGUTI",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308934_19",
+      "nome": "ILENIA",
+      "cognome": "MALAVASI",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307481_19",
+      "nome": "CLAUDIO",
+      "cognome": "MANCINI",
+      "gruppo": "PD-IDP",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308760_19",
+      "nome": "FRANCO",
+      "cognome": "MANES",
+      "gruppo": "M-MIN",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307837_19",
+      "nome": "GIUSEPPE TOMMASO VINCENZO",
+      "cognome": "MANGIALAVORI",
+      "gruppo": "FI-PPE",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308101_19",
+      "nome": "LUCREZIA MARIA BENEDETTA",
+      "cognome": "MANTOVANI",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d305771_19",
+      "nome": "IRENE",
+      "cognome": "MANZI",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307328_19",
+      "nome": "LUIGI",
+      "cognome": "MARATTIN",
+      "gruppo": "M-ALT",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307453_19",
+      "nome": "RICCARDO AUGUSTO",
+      "cognome": "MARCHETTI",
+      "gruppo": "LEGA",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308800_19",
+      "nome": "MARINA",
+      "cognome": "MARCHETTO",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308869_19",
+      "nome": "FRANCESCO",
+      "cognome": "MARI",
+      "gruppo": "AVS",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308901_19",
+      "nome": "MARIA STEFANIA",
+      "cognome": "MARINO",
+      "gruppo": "PD-IDP",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307466_19",
+      "nome": "PATRIZIA",
+      "cognome": "MARROCCO",
+      "gruppo": "FI-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308903_19",
+      "nome": "ANDREA",
+      "cognome": "MASCARETTI",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307575_19",
+      "nome": "CIRO",
+      "cognome": "MASCHIO",
+      "gruppo": "FDI",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308828_19",
+      "nome": "MARIANGELA",
+      "cognome": "MATERA",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308836_19",
+      "nome": "SIMONETTA",
+      "cognome": "MATONE",
+      "gruppo": "FI-PPE",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308941_19",
+      "nome": "NICOLE",
+      "cognome": "MATTEONI",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308939_19",
+      "nome": "ALDO",
+      "cognome": "MATTIA",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308885_19",
+      "nome": "STEFANO GIOVANNI",
+      "cognome": "MAULLU",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d306176_19",
+      "nome": "MATTEO",
+      "cognome": "MAURI",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307248_19",
+      "nome": "ERICA",
+      "cognome": "MAZZETTI",
+      "gruppo": "FI-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308860_19",
+      "nome": "GIANMARCO",
+      "cognome": "MAZZI",
+      "gruppo": "FDI",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "ministro",
+        "incarichi": [
+          "Ministro del Turismo"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d302103_19",
+      "nome": "GIORGIA",
+      "cognome": "MELONI",
+      "gruppo": "FDI",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "presidente",
+        "incarichi": [
+          "Presidente del Consiglio dei ministri"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308936_19",
+      "nome": "VIRGINIO",
+      "cognome": "MEROLA",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308897_19",
+      "nome": "MANLIO",
+      "cognome": "MESSINA",
+      "gruppo": "M-SCN",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308887_19",
+      "nome": "FRANCESCO",
+      "cognome": "MICHELOTTI",
+      "gruppo": "FDI",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308921_19",
+      "nome": "GIOVANNA",
+      "cognome": "MIELE",
+      "gruppo": "LEGA",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308922_19",
+      "nome": "MASSIMO",
+      "cognome": "MILANI",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d302913_19",
+      "nome": "ANTONINO",
+      "cognome": "MINARDO",
+      "gruppo": "FI-PPE",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307507_19",
+      "nome": "RICCARDO",
+      "cognome": "MOLINARI",
+      "gruppo": "LEGA",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307424_19",
+      "nome": "FEDERICO",
+      "cognome": "MOLLICONE",
+      "gruppo": "FDI",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d302762_19",
+      "nome": "NICOLA",
+      "cognome": "MOLTENI",
+      "gruppo": "LEGA",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretario di Stato per l'Interno"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307464_19",
+      "nome": "AUGUSTA",
+      "cognome": "MONTARULI",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308878_19",
+      "nome": "ELISA",
+      "cognome": "MONTEMAGNI",
+      "gruppo": "LEGA",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d302794_19",
+      "nome": "ROBERTO",
+      "cognome": "MORASSUT",
+      "gruppo": "PD-IDP",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308818_19",
+      "nome": "DANIELA",
+      "cognome": "MORFINO",
+      "gruppo": "M5S",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308863_19",
+      "nome": "MADDALENA",
+      "cognome": "MORGANTE",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307300_19",
+      "nome": "JACOPO",
+      "cognome": "MORRONE",
+      "gruppo": "LEGA",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307130_19",
+      "nome": "GIORGIO",
+      "cognome": "MULE'",
+      "gruppo": "FI-PPE",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308859_19",
+      "nome": "FRANCESCO",
+      "cognome": "MURA",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307454_19",
+      "nome": "RAFFAELE",
+      "cognome": "NEVI",
+      "gruppo": "FI-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307851_19",
+      "nome": "TIZIANA",
+      "cognome": "NISINI",
+      "gruppo": "LEGA",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308798_19",
+      "nome": "CARLO",
+      "cognome": "NORDIO",
+      "gruppo": "FDI",
+      "voto": "contrario",
+      "governo": {
+        "ruolo": "ministro",
+        "incarichi": [
+          "Ministro della Giustizia"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308781_19",
+      "nome": "FEDERICA",
+      "cognome": "ONORI",
+      "gruppo": "APERRE",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d305815_19",
+      "nome": "MATTEO",
+      "cognome": "ORFINI",
+      "gruppo": "PD-IDP",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307564_19",
+      "nome": "ANNA LAURA",
+      "cognome": "ORRICO",
+      "gruppo": "M5S",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d300299_19",
+      "nome": "ANDREA GIORGIO FELICE MARIA",
+      "cognome": "ORSINI",
+      "gruppo": "FI-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307612_19",
+      "nome": "MARCO",
+      "cognome": "OSNATO",
+      "gruppo": "FDI",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308918_19",
+      "nome": "NICOLA",
+      "cognome": "OTTAVIANI",
+      "gruppo": "LEGA",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308864_19",
+      "nome": "MARCO",
+      "cognome": "PADOVANI",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307857_19",
+      "nome": "NAZARIO",
+      "cognome": "PAGANO",
+      "gruppo": "FI-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308839_19",
+      "nome": "ALESSANDRO",
+      "cognome": "PALOMBI",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d309220_19",
+      "nome": "ALBERTO",
+      "cognome": "PANDOLFO",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307376_19",
+      "nome": "MASSIMILIANO",
+      "cognome": "PANIZZUT",
+      "gruppo": "LEGA",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308895_19",
+      "nome": "GIULIA",
+      "cognome": "PASTORELLA",
+      "gruppo": "APERRE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d305733_19",
+      "nome": "LUCA",
+      "cognome": "PASTORINO",
+      "gruppo": "M-+E-S",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308852_19",
+      "nome": "ANNARITA",
+      "cognome": "PATRIARCA",
+      "gruppo": "M-ALT",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308221_19",
+      "nome": "EMMA",
+      "cognome": "PAVANELLI",
+      "gruppo": "M5S",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307496_19",
+      "nome": "ROBERTO",
+      "cognome": "PELLA",
+      "gruppo": "FI-PPE",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307863_19",
+      "nome": "MARCO",
+      "cognome": "PELLEGRINI",
+      "gruppo": "M5S",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308792_19",
+      "nome": "ANDREA",
+      "cognome": "PELLICINI",
+      "gruppo": "FDI",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d302746_19",
+      "nome": "VINICIO GIUSEPPE GUIDO",
+      "cognome": "PELUFFO",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308845_19",
+      "nome": "PASQUALINO",
+      "cognome": "PENZA",
+      "gruppo": "M5S",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307109_19",
+      "nome": "MARIO",
+      "cognome": "PERANTONI",
+      "gruppo": "M5S",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308812_19",
+      "nome": "MARCO",
+      "cognome": "PERISSA",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308816_19",
+      "nome": "ELISABETTA",
+      "cognome": "PICCOLOTTI",
+      "gruppo": "AVS",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d303089_19",
+      "nome": "GILBERTO",
+      "cognome": "PICHETTO FRATIN",
+      "gruppo": "FI-PPE",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "ministro",
+        "incarichi": [
+          "Ministro dell'Ambiente e della sicurezza energetica"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308791_19",
+      "nome": "ATTILIO",
+      "cognome": "PIERRO",
+      "gruppo": "M-FNVF",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308889_19",
+      "nome": "FABIO",
+      "cognome": "PIETRELLA",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308761_19",
+      "nome": "CALOGERO",
+      "cognome": "PISANO",
+      "gruppo": "M-ALT",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307223_19",
+      "nome": "PIETRO",
+      "cognome": "PITTALIS",
+      "gruppo": "FI-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308942_19",
+      "nome": "GRAZIANO",
+      "cognome": "PIZZIMENTI",
+      "gruppo": "LEGA",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d302968_19",
+      "nome": "CATIA",
+      "cognome": "POLIDORI",
+      "gruppo": "FI-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308769_19",
+      "nome": "BARBARA",
+      "cognome": "POLO",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d302902_19",
+      "nome": "FABIO",
+      "cognome": "PORTA",
+      "gruppo": "PD-IDP",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308822_19",
+      "nome": "EMANUELE",
+      "cognome": "POZZOLO",
+      "gruppo": "M-FNVF",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307430_19",
+      "nome": "PATRIZIA",
+      "cognome": "PRESTIPINO",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307585_19",
+      "nome": "ERIK UMBERTO",
+      "cognome": "PRETTO",
+      "gruppo": "FI-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307452_19",
+      "nome": "EMANUELE",
+      "cognome": "PRISCO",
+      "gruppo": "FDI",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretario di Stato per l'Interno"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308243_19",
+      "nome": "GIUSEPPE LUCIANO CALOGERO",
+      "cognome": "PROVENZANO",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308923_19",
+      "nome": "PAOLO",
+      "cognome": "PULCIANI",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d306189_19",
+      "nome": "LIA",
+      "cognome": "QUARTAPELLE PROCOPIO",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308896_19",
+      "nome": "ANDREA",
+      "cognome": "QUARTINI",
+      "gruppo": "M5S",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307406_19",
+      "nome": "ANGELA",
+      "cognome": "RAFFA",
+      "gruppo": "M5S",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308795_19",
+      "nome": "CARMINE FABIO",
+      "cognome": "RAIMONDO",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d301436_19",
+      "nome": "FABIO",
+      "cognome": "RAMPELLI",
+      "gruppo": "FDI",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d301459_19",
+      "nome": "LAURA",
+      "cognome": "RAVETTO",
+      "gruppo": "M-FNVF",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308853_19",
+      "nome": "MARIANNA",
+      "cognome": "RICCIARDI",
+      "gruppo": "M5S",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307250_19",
+      "nome": "RICCARDO",
+      "cognome": "RICCIARDI",
+      "gruppo": "M5S",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308780_19",
+      "nome": "TONI",
+      "cognome": "RICCIARDI",
+      "gruppo": "PD-IDP",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d305708_19",
+      "nome": "MATTEO",
+      "cognome": "RICHETTI",
+      "gruppo": "APERRE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d304521_19",
+      "nome": "EDOARDO",
+      "cognome": "RIXI",
+      "gruppo": "LEGA",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "viceministro",
+        "incarichi": [
+          "Vice Ministro delle Infrastrutture e dei trasporti"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d305688_19",
+      "nome": "WALTER",
+      "cognome": "RIZZETTO",
+      "gruppo": "FDI",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d302748_19",
+      "nome": "EUGENIA MARIA",
+      "cognome": "ROCCELLA",
+      "gruppo": "FDI",
+      "voto": "contrario",
+      "governo": {
+        "ruolo": "ministro",
+        "incarichi": [
+          "Ministra per la Famiglia, la natalità e le pari opportunità"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308891_19",
+      "nome": "SILVIA",
+      "cognome": "ROGGIANI",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d300369_19",
+      "nome": "FRANCESCO SAVERIO",
+      "cognome": "ROMANO",
+      "gruppo": "NM-M-C",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d309160_19",
+      "nome": "NADIA",
+      "cognome": "ROMEO",
+      "gruppo": "PD-IDP",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d300674_19",
+      "nome": "ETTORE",
+      "cognome": "ROSATO",
+      "gruppo": "APERRE",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308867_19",
+      "nome": "FABIO",
+      "cognome": "ROSCANI",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d309360_19",
+      "nome": "FABIO",
+      "cognome": "ROSCIOLI",
+      "gruppo": "FI-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307678_19",
+      "nome": "CRISTINA",
+      "cognome": "ROSSELLO",
+      "gruppo": "FI-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307306_19",
+      "nome": "ANDREA",
+      "cognome": "ROSSI",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308848_19",
+      "nome": "ANGELO",
+      "cognome": "ROSSI",
+      "gruppo": "FDI",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308877_19",
+      "nome": "FABRIZIO",
+      "cognome": "ROSSI",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308868_19",
+      "nome": "MATTEO",
+      "cognome": "ROSSO",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307455_19",
+      "nome": "MAURO",
+      "cognome": "ROTELLI",
+      "gruppo": "FDI",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d38560_19",
+      "nome": "GIANFRANCO",
+      "cognome": "ROTONDI",
+      "gruppo": "FDI",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308788_19",
+      "nome": "FRANCESCO MARIA",
+      "cognome": "RUBANO",
+      "gruppo": "FI-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307478_19",
+      "nome": "DANIELA",
+      "cognome": "RUFFINO",
+      "gruppo": "APERRE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307889_19",
+      "nome": "MASSIMO",
+      "cognome": "RUSPANDINI",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308927_19",
+      "nome": "GAETANA",
+      "cognome": "RUSSO",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308899_19",
+      "nome": "PAOLO EMILIO",
+      "cognome": "RUSSO",
+      "gruppo": "FI-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307659_19",
+      "nome": "GLORIA",
+      "cognome": "SACCANI",
+      "gruppo": "FI-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308882_19",
+      "nome": "FABRIZIO",
+      "cognome": "SALA",
+      "gruppo": "M-ALT",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307892_19",
+      "nome": "AGOSTINO",
+      "cognome": "SANTILLO",
+      "gruppo": "M5S",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308856_19",
+      "nome": "MARCO",
+      "cognome": "SARRACINO",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307360_19",
+      "nome": "ROSSANO",
+      "cognome": "SASSO",
+      "gruppo": "M-FNVF",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308908_19",
+      "nome": "LUCA",
+      "cognome": "SBARDELLA",
+      "gruppo": "M-SCN",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308803_19",
+      "nome": "RACHELE",
+      "cognome": "SCARPA",
+      "gruppo": "PD-IDP",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307418_19",
+      "nome": "FILIPPO",
+      "cognome": "SCERRA",
+      "gruppo": "M5S",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308850_19",
+      "nome": "MICHELE",
+      "cognome": "SCHIANO DI VISCONTI",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308851_19",
+      "nome": "MARTA",
+      "cognome": "SCHIFONE",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308930_19",
+      "nome": "ELENA ETHEL",
+      "cognome": "SCHLEIN",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d305586_19",
+      "nome": "MANFRED",
+      "cognome": "SCHULLIAN",
+      "gruppo": "M-MIN",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d302069_19",
+      "nome": "ARTURO",
+      "cognome": "SCOTTO",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308797_19",
+      "nome": "MARTINA",
+      "cognome": "SEMENZATO",
+      "gruppo": "NM-M-C",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307374_19",
+      "nome": "DEBORA",
+      "cognome": "SERRACCHIANI",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307447_19",
+      "nome": "FRANCESCO",
+      "cognome": "SILVESTRI",
+      "gruppo": "M5S",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307175_19",
+      "nome": "RACHELE",
+      "cognome": "SILVESTRI",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308894_19",
+      "nome": "MARCO",
+      "cognome": "SIMIANI",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307402_19",
+      "nome": "MATILDE",
+      "cognome": "SIRACUSANO",
+      "gruppo": "FI-PPE",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "sottosegretario",
+        "incarichi": [
+          "Sottosegretaria di Stato per i Rapporti con il Parlamento",
+          "Sottosegretaria di stato alla Presidenza del Consiglio dei Ministri"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307608_19",
+      "nome": "ALESSANDRO",
+      "cognome": "SORTE",
+      "gruppo": "FI-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d306064_19",
+      "nome": "GIULIO CESARE",
+      "cognome": "SOTTANELLI",
+      "gruppo": "APERRE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308929_19",
+      "nome": "ABOUBAKAR",
+      "cognome": "SOUMAHORO",
+      "gruppo": "M-ALT",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d305974_19",
+      "nome": "ROBERTO",
+      "cognome": "SPERANZA",
+      "gruppo": "PD-IDP",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307202_19",
+      "nome": "GILDA",
+      "cognome": "SPORTIELLO",
+      "gruppo": "M5S",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d306214_19",
+      "nome": "LUCA",
+      "cognome": "SQUERI",
+      "gruppo": "FI-PPE",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308817_19",
+      "nome": "CLAUDIO MICHELE",
+      "cognome": "STEFANAZZI",
+      "gruppo": "PD-IDP",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307902_19",
+      "nome": "DIETER",
+      "cognome": "STEGER",
+      "gruppo": "M-MIN",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d306139_19",
+      "nome": "NICOLA",
+      "cognome": "STUMPO",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307903_19",
+      "nome": "VALERIA CARMELA MARIA",
+      "cognome": "SUDANO",
+      "gruppo": "LEGA",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d34580_19",
+      "nome": "BRUNO",
+      "cognome": "TABACCI",
+      "gruppo": "M-ALT",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308838_19",
+      "nome": "ANTONIO",
+      "cognome": "TAJANI",
+      "gruppo": "FI-PPE",
+      "voto": "missione",
+      "governo": {
+        "ruolo": "vicepresidente",
+        "incarichi": [
+          "Vicepresidente del Consiglio dei ministri",
+          "Ministro degli Affari esteri e della cooperazione internazionale"
+        ]
+      }
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308925_19",
+      "nome": "ROSARIA",
+      "cognome": "TASSINARI",
+      "gruppo": "FI-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308879_19",
+      "nome": "CHIARA",
+      "cognome": "TENERINI",
+      "gruppo": "FI-PPE",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308866_19",
+      "nome": "GUERINO",
+      "cognome": "TESTA",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308782_19",
+      "nome": "FRANCO",
+      "cognome": "TIRELLI",
+      "gruppo": "NM-M-C",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307983_19",
+      "nome": "LUCA",
+      "cognome": "TOCCALINI",
+      "gruppo": "LEGA",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307234_19",
+      "nome": "DANIELA",
+      "cognome": "TORTO",
+      "gruppo": "M5S",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307457_19",
+      "nome": "PAOLO",
+      "cognome": "TRANCASSINI",
+      "gruppo": "FDI",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307132_19",
+      "nome": "ROBERTO",
+      "cognome": "TRAVERSI",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308907_19",
+      "nome": "ANDREA",
+      "cognome": "TREMAGLIA",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d39130_19",
+      "nome": "GIULIO CARLO DANILO",
+      "cognome": "TREMONTI",
+      "gruppo": "FDI",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307726_19",
+      "nome": "RICCARDO",
+      "cognome": "TUCCI",
+      "gruppo": "M5S",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308862_19",
+      "nome": "ALESSANDRO",
+      "cognome": "URZI'",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d306497_19",
+      "nome": "STEFANO",
+      "cognome": "VACCARI",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307400_19",
+      "nome": "MARIA CAROLINA",
+      "cognome": "VARCHI",
+      "gruppo": "FDI",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308789_19",
+      "nome": "MARIA IMMACOLATA",
+      "cognome": "VIETRI",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d309280_19",
+      "nome": "FRANCESCA",
+      "cognome": "VIGGIANO",
+      "gruppo": "PD-IDP",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307334_19",
+      "nome": "GIANLUCA",
+      "cognome": "VINCI",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308847_19",
+      "nome": "ANDREA",
+      "cognome": "VOLPI",
+      "gruppo": "FDI",
+      "voto": "assente"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d300469_19",
+      "nome": "LUANA",
+      "cognome": "ZANELLA",
+      "gruppo": "AVS",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d306521_19",
+      "nome": "FILIBERTO",
+      "cognome": "ZARATTI",
+      "gruppo": "AVS",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307143_19",
+      "nome": "EDOARDO",
+      "cognome": "ZIELLO",
+      "gruppo": "M-FNVF",
+      "voto": "favorevole"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308873_19",
+      "nome": "GIANPIERO",
+      "cognome": "ZINZI",
+      "gruppo": "LEGA",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307616_19",
+      "nome": "EUGENIO",
+      "cognome": "ZOFFILI",
+      "gruppo": "LEGA",
+      "voto": "missione"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d307142_19",
+      "nome": "RICCARDO",
+      "cognome": "ZUCCONI",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    },
+    {
+      "id_fonte": "http://dati.camera.it/ocd/deputato.rdf/d308813_19",
+      "nome": "IMMACOLATA",
+      "cognome": "ZURZOLO",
+      "gruppo": "FDI",
+      "voto": "contrario"
+    }
+  ]
+}
